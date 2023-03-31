@@ -1,6 +1,5 @@
 import streamlit as st
 st.set_page_config(layout="wide",initial_sidebar_state="expanded")
-import streamlit.components.v1 as components
 
 
 
@@ -140,6 +139,6 @@ p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
 
-export_png(p, filename="plot.png")
+
 # st.bokeh_chart(p)
-st.image("plot.png")
+
