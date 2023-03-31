@@ -32,9 +32,6 @@ ponudjeni_simboli =  ["BTC","ETH", 'BNB', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
-st.title('RSI')
-
-
 st.sidebar.header('RSI `version 1`')
 
 st.sidebar.subheader('Select TF')
@@ -141,8 +138,6 @@ p.xaxis.major_label_orientation = 1.2
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
-
-
 
 
 st.bokeh_chart(p)
