@@ -2,16 +2,6 @@ import streamlit as st
 st.set_page_config(layout="wide",initial_sidebar_state="expanded")
 import streamlit.components.v1 as components
 
-if bokeh.__version__ != ST_BOKEH_VERSION and bokeh_version_check:
-    raise StreamlitAPIException(
-                f"Streamlit only supports Bokeh version {ST_BOKEH_VERSION}, "
-                f"but you have version {bokeh.__version__} installed. Please "
-                f"run `pip install --force-reinstall --no-deps bokeh=="
-                f"{ST_BOKEH_VERSION}` to install the correct version.")
-
-    
-
-
 
 
 from tradingview_ta import TA_Handler, Interval, Exchange
