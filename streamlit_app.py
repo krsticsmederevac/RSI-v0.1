@@ -10,7 +10,7 @@ import pandas as pd
 
 from bokeh.io import curdoc, show
 from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet
-from bokeh.plotting import figure, output_file, save
+from bokeh.plotting import figure
 from bokeh.models import BoxAnnotation
 from bokeh.models import HoverTool
 from bokeh.transform import linear_cmap
@@ -138,7 +138,6 @@ p.xaxis.major_label_orientation = 1.2
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
-output_file(filename="custom_filename.html", title="Static HTML file")
-save(p)
-# st.bokeh_chart(p)
+
+st.bokeh_chart(p)
 
