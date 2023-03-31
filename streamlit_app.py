@@ -138,7 +138,7 @@ p.xaxis.major_label_orientation = 1.2
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
-
-
+output_file(filename="custom_filename.html", title="Static HTML file")
+save(p)
 # st.bokeh_chart(p)
 
