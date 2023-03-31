@@ -1,18 +1,15 @@
 import streamlit as st
-st.set_page_config(
-    page_title="RSI",layout="wide",
-    initial_sidebar_state="expanded")
+st.set_page_config(layout="wide",initial_sidebar_state="expanded")
 
 
 from tradingview_ta import TA_Handler, Interval, Exchange
-import time
 
+import time
 import pandas as pd
 
 from bokeh.io import curdoc, show
-from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text
+from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet
 from bokeh.plotting import figure, output_notebook
-from bokeh.models import ColumnDataSource, LabelSet
 from bokeh.models import BoxAnnotation
 from bokeh.models import HoverTool
 from bokeh.transform import linear_cmap
@@ -101,7 +98,7 @@ group = dt['coin']
 p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
            title="RSI")
 
-# p.sizing_mode = 'scale_width'
+
 p.sizing_mode='stretch_both'
 
 upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
