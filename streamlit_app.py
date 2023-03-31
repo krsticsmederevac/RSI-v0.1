@@ -1,6 +1,16 @@
 import streamlit as st
 st.set_page_config(layout="wide",initial_sidebar_state="expanded")
+import streamlit.components.v1 as components
 
+def use_file_for_bokeh(chart: figure, chart_height=500):
+    output_file('bokeh_graph.html')
+    save(chart)
+    with open("bokeh_graph.html", 'r', encoding='utf-8') as f:
+        html = f.read()
+    components.html(html, height=chart_height)
+
+
+st.bokeh_chart = use_file_for_bokeh
 
 from tradingview_ta import TA_Handler, Interval, Exchange
 
