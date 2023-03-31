@@ -138,5 +138,5 @@ p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
 
-
-st.bokeh_chart(p)
+p.show()
+# st.bokeh_chart(p)
