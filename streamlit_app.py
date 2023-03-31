@@ -1,3 +1,8 @@
+import streamlit as st
+st.set_page_config(
+    page_title="RSI",layout="wide",
+    initial_sidebar_state="expanded")
+
 class Recommendation:
     buy = "BUY"
     strong_buy = "STRONG_BUY"
@@ -649,7 +654,9 @@ from bokeh.transform import linear_cmap
 from bokeh.transform import factor_cmap
 from bokeh.palettes import  RdYlGn
 
-import streamlit as st
+
+
+
 
 ponudjeni_simboli =  ["BTC","ETH", 'BNB', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT',
            'LTC', 'SHIB', 'AVAX', 'LINK', 'ATOM', 'XMR', 'ETC', 'CRO',
@@ -769,8 +776,8 @@ p.xaxis.major_label_orientation = 1.2
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
-output_notebook()
-show(p)
+
+
 
 
 st.bokeh_chart(p)
