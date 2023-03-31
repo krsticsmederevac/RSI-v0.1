@@ -669,7 +669,7 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 st.title('RSI')
 
-st.set_page_config(layout='wide', initial_sidebar_state='expanded')
+
 st.sidebar.header('RSI `version 1`')
 
 st.sidebar.subheader('Select TF')
