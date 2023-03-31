@@ -2,12 +2,22 @@ import streamlit as st
 st.set_page_config(layout="wide",initial_sidebar_state="expanded")
 import streamlit.components.v1 as components
 
-def use_file_for_bokeh(chart: figure, chart_height=500):
+def use_file_for_bokeh(chart: figure, chart_height=500,use_container_width=False, bokeh_version_check: bool = True):
+    
+     if bokeh.__version__ != ST_BOKEH_VERSION and bokeh_version_check:
+            raise StreamlitAPIException(
+                f"Streamlit only supports Bokeh version {ST_BOKEH_VERSION}, "
+                f"but you have version {bokeh.__version__} installed. Please "
+                f"run `pip install --force-reinstall --no-deps bokeh=="
+                f"{ST_BOKEH_VERSION}` to install the correct version."
+            )
     output_file('bokeh_graph.html')
     save(chart)
     with open("bokeh_graph.html", 'r', encoding='utf-8') as f:
         html = f.read()
     components.html(html, height=chart_height)
+    
+    
 
 
 st.bokeh_chart = use_file_for_bokeh
