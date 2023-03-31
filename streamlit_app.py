@@ -24,7 +24,7 @@ from bokeh.io import export_png
 
 
 ponudjeni_simboli =  ["BTC","ETH", 'BNB', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT',
-           'LTC', 'SHIB', 'AVAX', 'LINK', 'ATOM', 'XMR', 'ETC', 'CRO',
+           'LTC', 'SHIB', 'AVAX', 'LINK', 'ATOM', 'XMR', 'ETC', 'HOT',
            'UNI', 'XLM', 'FIL', 'APT', 'HBAR', 'LDO', 'NEAR', 
 'VET', 'ALGO', 'ARB', 'QNT', 'APE','GRT', 'FTM', 'CFX', 'EGLD', 
               'THETA', 'AAVE', 
@@ -70,7 +70,7 @@ for i in usdt_lista:
     
     try:
         
-        recnik['rsi'].append(round(analysis.indicators["RSI"],1))
+        recnik['rsi'].append(round(analysis.indicators["RSI"],2))
         recnik['coin'].append(i[:-4])
     except:
             print(i[:-4] + " nema toliku istoriju!")    
