@@ -1,4 +1,4 @@
 streamlit
-bokeh
+bokeh >=3.1.0
 pandas
 tradingview_ta
