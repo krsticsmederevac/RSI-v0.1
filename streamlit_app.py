@@ -70,7 +70,7 @@ for i in usdt_lista:
     
     try:
         
-        recnik['rsi'].append(int(analysis.indicators["RSI"]))
+        recnik['rsi'].append(round(analysis.indicators["RSI"],1))
         recnik['coin'].append(i[:-4])
     except:
             print(i[:-4] + " nema toliku istoriju!")    
