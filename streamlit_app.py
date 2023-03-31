@@ -23,6 +23,8 @@ from bokeh.io import export_png
 
 
 
+pocetni_simboli = ["BTC","ETH", 'BNB','LINK', 'ATOM','LTC', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT','AVAX']
+
 ponudjeni_simboli =  ["BTC","ETH", 'BNB', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT',
            'LTC', 'SHIB', 'AVAX', 'LINK', 'ATOM', 'XMR', 'ETC', 'HOT',
            'UNI', 'XLM', 'FIL', 'APT', 'HBAR', 'LDO', 'NEAR', 
@@ -38,7 +40,7 @@ st.sidebar.subheader('Select TF')
 intervali = st.sidebar.selectbox('Select tf', ponudjeni_intervali)
 
 st.sidebar.subheader('Select Coin')
-simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, ponudjeni_simboli)
+simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
 
 
