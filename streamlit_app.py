@@ -638,7 +638,6 @@ def get_multiple_analysis(screener, interval, symbols, additional_indicators=[],
 import time
 
 import pandas as pd
-import matplotlib.pyplot as plt 
 
 from bokeh.io import curdoc, show
 from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text
