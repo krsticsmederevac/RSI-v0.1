@@ -7,7 +7,7 @@ if bokeh.__version__ != ST_BOKEH_VERSION and bokeh_version_check:
                 f"Streamlit only supports Bokeh version {ST_BOKEH_VERSION}, "
                 f"but you have version {bokeh.__version__} installed. Please "
                 f"run `pip install --force-reinstall --no-deps bokeh=="
-                f"{ST_BOKEH_VERSION}` to install the correct version."
+                f"{ST_BOKEH_VERSION}` to install the correct version.")
 
     
 
