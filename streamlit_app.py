@@ -11,12 +11,14 @@ import pandas as pd
 
 from bokeh.io import curdoc, show
 from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet
-from bokeh.plotting import figure, output_notebook
+from bokeh.plotting import figure, output_file, save
 from bokeh.models import BoxAnnotation
 from bokeh.models import HoverTool
 from bokeh.transform import linear_cmap
 from bokeh.transform import factor_cmap
 from bokeh.palettes import  RdYlGn
+
+from bokeh.io import export_png
 
 
 
@@ -138,5 +140,6 @@ p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
 
-p.show()
+export_png(p, filename="plot.png")
 # st.bokeh_chart(p)
+st.image("plot.png")
