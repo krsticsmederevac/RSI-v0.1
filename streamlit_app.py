@@ -141,5 +141,6 @@ p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
 
-st.bokeh_chart(p)
+with st.spinner('Loading'):
+           st.bokeh_chart(p)
 
