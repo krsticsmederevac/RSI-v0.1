@@ -104,6 +104,8 @@ source = ColumnDataSource(data=dict(
 
 group = dt['coin']
 
+rsi_tf = "RSI " + intervali[0]
+
 p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
            title="RSI")
 
