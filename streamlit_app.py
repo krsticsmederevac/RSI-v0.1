@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config( layout="wide",initial_sidebar_state="expanded")
-
+st.markdown('RSI')
 
 
 from tradingview_ta import TA_Handler, Interval, Exchange
