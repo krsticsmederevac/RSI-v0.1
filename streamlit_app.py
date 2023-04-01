@@ -23,14 +23,12 @@ from bokeh.io import export_png
 
 
 
-pocetni_simboli = ["BTC","ETH", 'BNB','LINK', 'ATOM','LTC', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT','AVAX']
+pocetni_simboli = ['ADA', 'ATOM', 'AVAX', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'SOL', 'XRP']
 
-ponudjeni_simboli =  ["BTC","ETH", 'BNB', 'XRP', 'ADA', 'MATIC', 'DOGE', 'SOL', 'DOT',
-           'LTC', 'SHIB', 'AVAX', 'LINK', 'ATOM', 'XMR', 'ETC', 'HOT',
-           'UNI', 'XLM', 'FIL', 'APT', 'HBAR', 'LDO', 'NEAR', 
-'VET', 'ALGO', 'ARB', 'QNT', 'APE','GRT', 'FTM', 'CFX', 'EGLD', 
-              'THETA', 'AAVE', 
-           'OP', 'MASK', 'DYDX', 'GMX', 'FET', 'JOE','HOOK' , 'COTI' ]
+ponudjeni_simboli =  ['AAVE', 'ADA', 'ALGO', 'APE', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CFX', 'COTI',
+                      'DOGE', 'DOT', 'DYDX', 'EGLD', 'ETC', 'ETH', 'FET', 'FIL', 'FTM', 'GMX', 'GRT', 'HBAR', 
+                      'HOOK', 'HOT', 'JOE', 'LDO', 'LINK', 'LTC', 'MASK', 'MATIC', 'NEAR', 'OP', 'QNT', 'SHIB',
+                      'SOL', 'THETA', 'UNI', 'VET', 'XLM', 'XMR', 'XRP']
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
