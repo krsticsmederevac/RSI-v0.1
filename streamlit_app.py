@@ -36,8 +36,9 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 st.sidebar.header('RSI `version 1`')
 
-st.sidebar.subheader('Select TF')
-intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
+with st.spinner('Loading'):
+    st.sidebar.subheader('Select TF')
+    intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
 
 st.sidebar.subheader('Select Coin')
 simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
@@ -141,6 +142,6 @@ p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
 p.add_layout(labels)
 
-with st.spinner('Loading'):
-    st.bokeh_chart(p)
+
+st.bokeh_chart(p)
 
