@@ -36,12 +36,19 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 st.sidebar.header('RSI `version 1`')
 
+with st.sidebar.form(""):
+    st.subheader('Select TF')
+    intervali = st.selectbox('Time Frame', ponudjeni_intervali)
 
-st.sidebar.subheader('Select TF')
-intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
+    st.subheader('Select Coin', key="select_coins")
+    simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
-st.sidebar.subheader('Select Coin')
-simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
+
+# st.sidebar.subheader('Select TF')
+# intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
+
+# st.sidebar.subheader('Select Coin', key="select_coins")
+# simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
 if len(simboli) == 0:
     simboli = ['BTC']
