@@ -40,7 +40,7 @@ st.sidebar.header('RSI `version 1`')
 st.sidebar.subheader('Select TF')
 intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
 
-with st.sidebar.form(""):
+with st.sidebar.form("forma"):
     st.subheader('Select Coin', key="select_coins")
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
            
