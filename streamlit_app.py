@@ -1,9 +1,5 @@
 import streamlit as st
-st.set_page_config( layout="wide",initial_sidebar_state="expanded")
-st.markdown("""
-# RSI Field
-
-""")
+st.set_page_config( page_title="RSI Field",layout="wide",initial_sidebar_state="expanded")
 
 
 
