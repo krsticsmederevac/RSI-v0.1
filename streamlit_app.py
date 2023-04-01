@@ -9,7 +9,7 @@ import time
 import pandas as pd
 
 from bokeh.io import curdoc, show
-from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet
+from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span
 from bokeh.plotting import figure
 from bokeh.models import BoxAnnotation
 from bokeh.models import HoverTool
@@ -154,6 +154,8 @@ labels = LabelSet(x='coin', y='rsi',
                   source=source)
 p.xaxis.major_label_orientation = 1.2
 
+
+p.line(50,0, legend_label="50", line_width=2)
 
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
