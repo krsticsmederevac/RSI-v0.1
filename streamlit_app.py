@@ -108,7 +108,7 @@ rsi_tf = "RSI " + intervali
 
 p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
            title = rsi_tf)
-
+p.title.align = 'center'
 
 p.sizing_mode='stretch_both'
 
