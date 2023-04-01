@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "RSI Field", page_icon = ":plus:",layout="wide",initial_sidebar_state="expanded")
+st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="expanded")
 
 
 
