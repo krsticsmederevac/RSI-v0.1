@@ -42,6 +42,8 @@ with st.sidebar.form(""):
 
     st.subheader('Select Coin', key="select_coins")
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
+           
+    st.form_submit_button("Submit")
 
 
 # st.sidebar.subheader('Select TF')
