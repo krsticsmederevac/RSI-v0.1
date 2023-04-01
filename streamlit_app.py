@@ -44,7 +44,7 @@ st.sidebar.subheader('Select Coin')
 simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
 if len(simboli) == 0:
-           break
+    simboli = ['BTC']
 
 
 
