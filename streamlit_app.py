@@ -38,7 +38,7 @@ st.sidebar.header('RSI `version 1`')
 
 
 st.sidebar.subheader('Select TF')
-intervali = st.sidebarselectbox('Time Frame', ponudjeni_intervali)
+intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
 
 with st.sidebar.form(""):
     st.subheader('Select Coin', key="select_coins")
