@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto")
+st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "mailto:krsticsmederevac@gmail.com"})
 
 
 
