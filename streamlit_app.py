@@ -155,7 +155,7 @@ labels = LabelSet(x='coin', y='rsi',
 p.xaxis.major_label_orientation = 1.2
 
 
-p.line(50,0, legend_label="50", line_width=2)
+p.line(0,50,  line_width=2)
 
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
 
