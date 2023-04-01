@@ -155,7 +155,7 @@ labels = LabelSet(x='coin', y='rsi',
 p.xaxis.major_label_orientation = 1.2
 
 
-polovina = Span(50, dimension='height',
+polovina = Span(50, dimension='width',
                  line_color='orange', line_width=1)
 p.add_layout(polovina)
 
