@@ -137,7 +137,7 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 ponudjeni_parovi = ["USDT", "BTC"]
 
-sortiranje_ponuda = ['Coin', 'RSI']
+sortiranje_ponuda = ['coin', 'rsi']
 
 oscilator = 'rsi'
 
