@@ -2,6 +2,7 @@ import streamlit as st
 st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
+
 from tradingview_ta import TA_Handler, Interval, Exchange
 
 import time
@@ -159,7 +160,16 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
+@st.cache(allow_output_mutation=True)
+def get_manager():
+    return stx.CookieManager()
+
+cookie_manager = get_manager()
+
+
+
 with st.sidebar.form(key ='Form1'):
+    cookies = cookie_manager.get_all()
     
     st.header('RSI `version 1`')
     
