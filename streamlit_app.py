@@ -156,7 +156,7 @@ with st.sidebar.form(key ='Form1'):
     
     usdt_btc = st.multiselect('USDT and//or BTC',ponudjeni_parovi, 'USDT')
     
-if usdt_btc:
+if usdt_btc and kolona_sortiranja:
 
     for izbor_usdt_btc in usdt_btc:
         data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja, menjacnica = 'binance')
