@@ -1,6 +1,7 @@
 import streamlit as st
 st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
+import extra_streamlit_components as stx
 from tradingview_ta import TA_Handler, Interval, Exchange
 
 import time
@@ -176,6 +177,7 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc and kolona_sortiranja:
 
     for izbor_usdt_btc in usdt_btc:
+      
         dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         
