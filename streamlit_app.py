@@ -70,7 +70,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     group = dt['coin']
 
-    ime_grafika = oscilator.upper() + ' ' + interval + " per " + usdt_btc
+    ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
     p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
                title = ime_grafika)
@@ -126,12 +126,31 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
   
   
   
-pocetni_simboli = ['ADA', 'ATOM', 'AVAX', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'SOL', 'XRP']
+pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
 
-ponudjeni_simboli =  ['AAVE', 'ADA', 'ALGO', 'APE', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CFX', 'COTI',
+ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'ADAAION', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
+                      'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUD', 'AUDIO', 'AUTO', 'AVA', 'AVAX', 
+                      'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC',
+                      'BTS', 'BTT', 'BZRX','BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
+                      'COMP', 'COS', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'DASH', 'DATA', 'DCR', 
+                      'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 
+                      'EGLD', 'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 
+                      'FTM', 'FTT', 'FUN', 'GBP', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOT', 'ICX', 
+                      'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'JST', 'JUV', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', 
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNA', 'MANA', 'MATIC', 
+                      'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'NANO', 'NBS', 'NEAR', 'NEO', 'NKN', 'NMR', 
+                      'NPXS', 'NULS', 'OCEAN', 'OG', 'OGN', 'OM', 'OMG', 'ONE', 'ONG', 'ONT', 'ORN', 'OXT', 
+                      'PAX', 'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RAMP', 'REEF', 'REN', 
+                      'REP', 'RIF', 'RLC', 'ROSE', 'RSR', 'RUNE', 'RVN', 'SAND', 'SC', 'SFP', 'SKL', 'SNX', 
+                      'SOL', 'SRM', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 'SUSD', 'SUSHI', 
+                      'SXP', 'TCT', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'UMA', 'UNFI',
+                      'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WNXM', 'WRX', 'WTC',
+                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII', 'OP',].sort()
+
+['AAVE', 'ADA', 'ALGO', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CFX', 'COTI',
                       'DOGE', 'DOT', 'DYDX', 'EGLD', 'ETC', 'ETH', 'FET', 'FIL', 'FTM', 'GMX', 'GRT', 'HBAR', 
                       'HOOK', 'HOT', 'JOE', 'LDO', 'LINK', 'LTC', 'MASK', 'MATIC', 'NEAR', 'OP', 'QNT', 'SHIB',
-                      'SOL', 'THETA', 'UNI', 'VET', 'XLM', 'XMR', 'XRP']
+                      'SOL', 'THETA','TRX' 'UNI', 'VET', 'XLM', 'XMR', 'XRP']
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
