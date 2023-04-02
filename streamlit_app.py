@@ -34,6 +34,8 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 
 with st.sidebar.form(key ='Form1'):
+    st.form_submit_button(label = "Submite")
+    
     st.header('RSI `version 1`')
     st.subheader('Select TF')
     intervali = st.selectbox('Time Frame', ponudjeni_intervali)
@@ -41,7 +43,7 @@ with st.sidebar.form(key ='Form1'):
     st.subheader('Select Coin')
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
-    st.form_submit_button(label = "Submite")
+    
 
            
            
