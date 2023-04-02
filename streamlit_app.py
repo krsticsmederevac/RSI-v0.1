@@ -175,26 +175,20 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submite")
     
-    cookie = st.text_input("Cookie", key="0")
+    
     interval = st.selectbox('Time Frame', ponudjeni_intervali)
     
-    if interval:
-        cookie_manager.get(cookie=cookie)
         
-    cookie = st.text_input("Cookie", key="1")
+   
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
-    if simboli:
-        cookie_manager.get(cookie=cookie)
+    cookie_manager.get(cookie=simboli)
         
-    cookie = st.text_input("Cookie", key="2")
+
     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda)
-    if kolona_sortiranja:
-        cookie_manager.get(cookie=cookie)
     
-    cookie = st.text_input("Cookie", key="3")
+    
     usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi, 'USDT')
-    if usdt_btc:
-        cookie_manager.get(cookie=cookie)
+
     
 if usdt_btc and kolona_sortiranja:
 
