@@ -147,7 +147,7 @@ ponudjeni_simboli =  ['1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALICE', 'A
                       'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 
                       'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII']
 
-ponudjeni_simbopli.sort()
+ponudjeni_simboli.sort()
 
 
 
