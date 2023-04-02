@@ -160,7 +160,7 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
-@st.cache_data
+@st.cache(allow_output_mutation=True)
 def get_manager():
     return stx.CookieManager()
 
