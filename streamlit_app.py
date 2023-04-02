@@ -60,7 +60,7 @@ def data_frame_maker(simboli, interval, oscilator, usdt_btc, kolona_sortiranja, 
   
   
   
-  def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
+def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     source = ColumnDataSource(data=dict(
         coin=dt['coin'], 
