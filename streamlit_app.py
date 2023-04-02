@@ -137,10 +137,10 @@ ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'AKRO', 'ALGO', 'ALICE', 'A
                       'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX' 
                       'EGLD', 'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 
                       'FTM', 'FTT', 'FUN', 'GBP', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOT', 'ICX',
-                      'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', ]
-#                       'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNA', 'MANA', 'MATIC', 
-#                       'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'NANO', 'NBS', 'NEAR', 'NEO', 'NKN', 'NMR', 
-#                       'NPXS', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'ORN', 'OXT', 
+                      'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', 
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNA', 'MANA', 'MATIC', 
+                      'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'NANO', 'NBS', 'NEAR', 'NEO', 'NKN', 'NMR', 
+                      'NPXS', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'ORN', 'OXT', ]
 #                       'PAX', 'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RAMP', 'REEF', 'REN', 
 #                       'REP', 'RIF', 'RLC', 'ROSE', 'RSR', 'RUNE', 'RVN', 'SAND', 'SC', 'SFP', 'SKL', 'SNX', 
 #                       'SOL', 'SRM', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 'SUSD', 'SUSHI', 
@@ -154,7 +154,7 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 ponudjeni_parovi = ["USDT", "BTC"]
 
-sortiranje_ponuda = ['coin', 'rsi']
+sortiranje_ponuda = ['rsi','coin']
 
 oscilator = 'rsi'
 
