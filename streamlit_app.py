@@ -181,7 +181,7 @@ with st.sidebar.form(key ='Form1'):
         
    
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
-    cookie_manager.get(cookie=simboli)
+    
         
 
     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda)
