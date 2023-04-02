@@ -149,8 +149,6 @@ ponudjeni_simboli =  ['JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALI
 
 ponudjeni_simboli.sort()
 
-
-
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 ponudjeni_parovi = ["USDT", "BTC"]
@@ -158,6 +156,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 sortiranje_ponuda = ['rsi','coin']
 
 oscilator = 'rsi'
+
 
 with st.sidebar.form(key ='Form1'):
     
