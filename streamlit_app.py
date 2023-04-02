@@ -160,7 +160,7 @@ p.xaxis.major_label_orientation = 1.2
 polovina = Span(location=50,
                  line_color='orange',line_dash='dashed', line_width=1)
 p.add_layout(polovina)
-p.y_range = Range1d(0,100)
+p.y_range = Range1d(0,100,bounds=(0, 100))
 
 
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
