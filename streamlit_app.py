@@ -172,7 +172,7 @@ with st.sidebar.form(key ='Form1'):
     
     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda)
     
-    usdt_btc = st.multiselect('USDT and//or BTC',ponudjeni_parovi, 'USDT')
+    usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi, 'USDT')
     
 if usdt_btc and kolona_sortiranja:
 
