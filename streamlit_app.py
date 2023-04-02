@@ -17,8 +17,6 @@ from bokeh.transform import linear_cmap
 from bokeh.transform import factor_cmap
 from bokeh.palettes import  RdYlGn
 
-from bokeh.io import export_png
-
 
 
 
@@ -48,7 +46,7 @@ with st.sidebar.form(key ='Form1'):
 
                          
                          
-usdt_lista =  [i + "USDT" for i in simboli]                         
+usdt_lista =  [i + "BTC" for i in simboli]                         
 lista_handler = []
 recnik = {'coin': [], 'rsi' : []}
 
