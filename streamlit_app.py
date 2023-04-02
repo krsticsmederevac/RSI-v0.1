@@ -126,7 +126,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
   
   
   
-  pocetni_simboli = ['ADA', 'ATOM', 'AVAX', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'SOL', 'XRP']
+pocetni_simboli = ['ADA', 'ATOM', 'AVAX', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'SOL', 'XRP']
 
 ponudjeni_simboli =  ['AAVE', 'ADA', 'ALGO', 'APE', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CFX', 'COTI',
                       'DOGE', 'DOT', 'DYDX', 'EGLD', 'ETC', 'ETH', 'FET', 'FIL', 'FTM', 'GMX', 'GRT', 'HBAR', 
