@@ -45,24 +45,6 @@ with st.sidebar.form(key ='Form1'):
     st.subheader('Select Coin')
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
-    
-
-           
-           
-# st.sidebar.header('RSI `version 1`')
-
-# st.sidebar.subheader('Select TF')
-# intervali = st.sidebar.selectbox('Time Frame', ponudjeni_intervali)
-
-# st.sidebar.subheader('Select Coin')
-# simboli = st.sidebar.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
-
-# if len(simboli) == 0:
-#     simboli = ['BTC']
-
-
-
-
 
                          
                          
