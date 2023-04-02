@@ -34,9 +34,11 @@ ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
 
 with st.sidebar.form(key ='Form1'):
-    st.form_submit_button(label = "Submite")
     
     st.header('RSI `version 1`')
+    
+    st.form_submit_button(label = "Submite")
+    
     st.subheader('Select TF')
     intervali = st.selectbox('Time Frame', ponudjeni_intervali)
 
