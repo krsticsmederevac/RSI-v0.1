@@ -145,7 +145,7 @@ ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'ADAAION', 'AKRO', 'ALGO', 
                       'SOL', 'SRM', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 'SUSD', 'SUSHI', 
                       'SXP', 'TCT', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'UMA', 'UNFI',
                       'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WNXM', 'WRX', 'WTC',
-                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII', 'OP', 'GMX', 'HOOK'].sort()
+                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII', 'OP', 'GMX', 'HOOK']
 
 
 
