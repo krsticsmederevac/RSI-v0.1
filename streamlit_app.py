@@ -159,7 +159,7 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc and kolona_sortiranja:
 
     for izbor_usdt_btc in usdt_btc:
-        data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja, menjacnica = 'binance')
+        data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, 'rsi')
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         
         st.bokeh_chart(p)
