@@ -46,7 +46,7 @@ with st.sidebar.form(key ='Form1'):
 
                          
                          
-usdt_lista =  [i + "BTC" for i in simboli]                         
+usdt_lista =  [i + "USDT" for i in simboli]                         
 lista_handler = []
 recnik = {'coin': [], 'rsi' : []}
 
