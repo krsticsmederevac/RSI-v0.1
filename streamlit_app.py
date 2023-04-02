@@ -153,6 +153,6 @@ p.add_layout(labels)
 
 st.bokeh_chart(p)
 
-st.write("Feal free to leave a tip.")
+st.write("Feel free to leave a tip.")
 st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
 st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
