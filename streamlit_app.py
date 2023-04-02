@@ -108,7 +108,7 @@ dt.sort_values(by=['rsi'], inplace=True)
 
 
 if len(dt.index) == 0:
-  dt = pd.DataFrame({"No data" : 0})
+  dt = pd.DataFrame({'coin': ["No Data"], 'rsi' : [0]})
 
 
 source = ColumnDataSource(data=dict(
