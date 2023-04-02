@@ -12,7 +12,7 @@ from bokeh.plotting import figure
 from bokeh.transform import linear_cmap
 from bokeh.palettes import  RdYlGn
 
-@st.cache
+@st.cache_data
 def data_frame_maker(simboli, interval, oscilator, usdt_btc, kolona_sortiranja, menjacnica = 'binance'):                        
                          
     usdt_ili_btc_lista =  [i + usdt_btc for i in simboli]  
@@ -59,7 +59,7 @@ def data_frame_maker(simboli, interval, oscilator, usdt_btc, kolona_sortiranja, 
   
   
   
-@st.cache
+@st.cache_data
 def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     source = ColumnDataSource(data=dict(
