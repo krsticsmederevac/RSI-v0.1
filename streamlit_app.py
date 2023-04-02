@@ -9,7 +9,7 @@ import time
 import pandas as pd
 
 from bokeh.io import curdoc, show
-from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span
+from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d
 from bokeh.plotting import figure
 from bokeh.models import BoxAnnotation
 from bokeh.models import HoverTool
@@ -160,6 +160,7 @@ p.xaxis.major_label_orientation = 1.2
 polovina = Span(location=50,
                  line_color='orange',line_dash='dashed', line_width=1)
 p.add_layout(polovina)
+p.y_range = Range1d(0,100)
 
 
 p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), ("rsi", "@rsi")]))
