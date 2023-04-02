@@ -133,7 +133,7 @@ ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'ADAAION', 'AKRO', 'ALGO', 
                       'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC',
                       'BTS', 'BTT', 'BZRX','BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
                       'COMP', 'COS', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'DASH', 'DATA', 'DCR', 
-                      'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 
+                      'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX' 
                       'EGLD', 'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 
                       'FTM', 'FTT', 'FUN', 'GBP', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOT', 'ICX', 
                       'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'JST', 'JUV', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', 
@@ -145,12 +145,9 @@ ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'ADAAION', 'AKRO', 'ALGO', 
                       'SOL', 'SRM', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 'SUSD', 'SUSHI', 
                       'SXP', 'TCT', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'UMA', 'UNFI',
                       'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WNXM', 'WRX', 'WTC',
-                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII', 'OP',].sort()
+                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII', 'OP', 'GMX', 'HOOK'].sort()
 
-['AAVE', 'ADA', 'ALGO', 'APT', 'ARB', 'ATOM', 'AVAX', 'BNB', 'BTC', 'CFX', 'COTI',
-                      'DOGE', 'DOT', 'DYDX', 'EGLD', 'ETC', 'ETH', 'FET', 'FIL', 'FTM', 'GMX', 'GRT', 'HBAR', 
-                      'HOOK', 'HOT', 'JOE', 'LDO', 'LINK', 'LTC', 'MASK', 'MATIC', 'NEAR', 'OP', 'QNT', 'SHIB',
-                      'SOL', 'THETA','TRX' 'UNI', 'VET', 'XLM', 'XMR', 'XRP']
+
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
