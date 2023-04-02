@@ -130,14 +130,14 @@ pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'L
 
 ponudjeni_simboli =  ['RDNT','1INCH', 'AAVE', 'ACM', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AUTO', 'AVAX',
-                     'ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
-#                       'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC',
-#                        'BTT', 'BZRX','BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
-#                       'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'DASH', 'DATA', 'DCR', 
-#                       'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX' 
-#                       'EGLD', 'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 
-#                       'FTM', 'FTT', 'FUN', 'GBP', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOT', 'ICX',
-#                       'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', 
+                     'ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP',
+                      'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC',
+                       'BTT', 'BZRX','BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
+                      'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'DASH', 'DATA', 'DCR', 
+                      'DEGO', 'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX' 
+                      'EGLD', 'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 
+                      'FTM', 'FTT', 'FUN', 'GBP', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOT', 'ICX',
+                      'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM', ]
 #                       'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNA', 'MANA', 'MATIC', 
 #                       'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'NANO', 'NBS', 'NEAR', 'NEO', 'NKN', 'NMR', 
 #                       'NPXS', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'ORN', 'OXT', 
