@@ -113,7 +113,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     polovina = Span(location=50,
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
-    p.y_range = Range1d(10,90,bounds=(0, 100))
+    p.y_range = Range1d(15,85,bounds=(0, 100))
 
     hovertool_oscilator = "@" + oscilator
     p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), (oscilator.upper(), hovertool_oscilator)]))
