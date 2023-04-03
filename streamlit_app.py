@@ -158,6 +158,8 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
+container = st.container()
+
 
 podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
 
@@ -215,7 +217,7 @@ if usdt_btc and kolona_sortiranja:
         dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         
-        st.bokeh_chart(p)
+        container.bokeh_chart(p)
         
 st.download_button("Download Coin List",json_podesavanja,"coin_setup.json","application/json")
 
