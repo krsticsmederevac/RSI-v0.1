@@ -194,7 +194,7 @@ with st.sidebar.form(key ='Form1'):
     
     
 
-    st.download_button("Download JSON",json_podesavanja,"coin_setup.json","application/json")
+st.download_button("Download JSON",json_podesavanja,"coin_setup.json","application/json")
 
     
 if usdt_btc and kolona_sortiranja:
