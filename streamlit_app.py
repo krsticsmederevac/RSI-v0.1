@@ -163,11 +163,11 @@ podesavanja_korisnika = st.file_uploader("Upload Setup",'json')
 
 if podesavanja_korisnika:
   
-    podesavanja_korisnika_recnik = json.load(podesavanja_korisnika)
+    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
     
     
 
-    pocetni_simboli = []
+    pocetni_simboli = podesavanja_korisnika_lista
     
 #     for key in podesavanja_korisnika_recnik['simboli']:
 #         st.write(pocetni_simboli)
@@ -176,8 +176,8 @@ if podesavanja_korisnika:
         
             
     
-    st.write(podesavanja_korisnika_recnik['simboli'])
-    st.write(type(podesavanja_korisnika_recnik['simboli']))
+    st.write(podesavanja_korisnika_lista)
+    
 
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
