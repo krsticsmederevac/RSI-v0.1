@@ -177,6 +177,7 @@ if podesavanja_korisnika:
             
     
     st.write(podesavanja_korisnika_recnik['simboli'])
+    st.write(type(podesavanja_korisnika_recnik['simboli']))
 
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
