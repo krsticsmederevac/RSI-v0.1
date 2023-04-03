@@ -217,7 +217,7 @@ if usdt_btc and kolona_sortiranja:
         
         st.bokeh_chart(p)
         
-st.download_button("Download Setup",json_podesavanja,"coin_setup.json","application/json")
+st.download_button("Download Coin List",json_podesavanja,"coin_setup.json","application/json")
 
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
