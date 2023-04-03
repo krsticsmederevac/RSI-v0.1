@@ -7,6 +7,7 @@ from tradingview_ta import TA_Handler, Interval, Exchange
 
 import time
 import pandas as pd
+import json 
 
 from bokeh.io import curdoc, show
 from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d, BoxAnnotation, HoverTool
@@ -184,6 +185,12 @@ with st.sidebar.form(key ='Form1'):
     
     
     usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi, 'USDT')
+    
+    
+    podesavanja = {'interval' : interval, 'simboli' : simboli, 
+                   'kolona_sortiranja' : kolona_sortiranja,'usdt_btc' : usdt_btc }
+    
+    json_podesavanja = json.dump(podesavanja)
 
     
 if usdt_btc and kolona_sortiranja:
