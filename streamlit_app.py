@@ -169,14 +169,14 @@ if podesavanja_korisnika:
 
     pocetni_simboli = []
     
-    for key in podesavanja_korisnika_recnik['simboli']:
-        st.write(pocetni_simboli)
-        st.write(key.values())
+#     for key in podesavanja_korisnika_recnik['simboli']:
+#         st.write(pocetni_simboli)
+#         st.write(key.values())
 #         pocetni_simboli.append(key.values())
         
             
     
-    st.write(pocetni_simboli)
+    st.write(podesavanja_korisnika_recnik['simboli'])
 
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
