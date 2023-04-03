@@ -128,7 +128,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
   
 
 
-ponudjeni_simboli =  ['JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
+ponudjeni_simboli =  ['ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AUTO', 'AVAX', 'AXS', 
                       'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC', 'BTT',
                       'BURGER', 'BZRX', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
@@ -171,7 +171,7 @@ if podesavanja_korisnika:
     
     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
        pocetni_simboli = ['BTC']
-       st.write('Bad input file, try again.') 
+       st.write('Bad input file, please try again.') 
       
     
 else:
@@ -224,8 +224,12 @@ if usdt_btc and kolona_sortiranja:
         
         container.bokeh_chart(p)
         
-container.download_button("Download Coin List",json_podesavanja,"coin_setup.json","application/json")
+container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
 st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
+st.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
+st.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
+
+
