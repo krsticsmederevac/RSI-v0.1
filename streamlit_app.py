@@ -159,16 +159,16 @@ oscilator = 'rsi'
 
 
 
-# podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
+podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
 
-# if podesavanja_korisnika:
+if podesavanja_korisnika:
   
-#     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
+    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-#     pocetni_simboli = podesavanja_korisnika_lista
+    pocetni_simboli = podesavanja_korisnika_lista
     
-# else:
-#     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
+else:
+    pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
   
 
 ponudjeni_intervali_pocetni = 5
@@ -218,16 +218,6 @@ if usdt_btc and kolona_sortiranja:
         st.bokeh_chart(p)
         
 st.download_button("Download Setup",json_podesavanja,"coin_setup.json","application/json")
-podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
-
-if podesavanja_korisnika:
-  
-    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
-
-    pocetni_simboli = podesavanja_korisnika_lista
-    
-else:
-    pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
 
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
