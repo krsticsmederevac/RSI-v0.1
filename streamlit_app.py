@@ -126,10 +126,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     return p
   
   
-  
-  
-  
-pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
+
 
 ponudjeni_simboli =  ['JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AUTO', 'AVAX', 'AXS', 
@@ -153,18 +150,36 @@ ponudjeni_simboli =  ['JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALI
 ponudjeni_simboli.sort()
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
-ponudjeni_intervali_pocetni = 5
 
 ponudjeni_parovi = ["USDT", "BTC"]
-ponudjeni_parovi_pocetni = 0
 
 sortiranje_ponuda = ['rsi','coin']
-sortiranje_ponuda_pocetni = 0
 
 oscilator = 'rsi'
 
 
+podesavanja_korisnika = st.file_uploader("Upload Setup",'json')  
 
+
+if podesavanja_korisnika:
+  
+    podesavanja_korisnika_recnik = json.load(podesavanja_korisnika)
+    {'interval' : interval, 'simboli' : simboli, 
+                       'kolona_sortiranja' : kolona_sortiranja,'usdt_btc' : usdt_btc }
+    
+    ponudjeni_intervali_pocetni = ponudjeni_intervali.index(podesavanja_korisnika_recnik['interval'])
+
+    pocetni_simboli = podesavanja_korisnika_recnik['simboli']
+    sortiranje_ponuda_pocetni = podesavanja_korisnika_recnik['kolona_sortiranja']
+    ponudjeni_parovi_pocetni = podesavanja_korisnika_recnik['usdt_btc']
+   
+
+
+else:
+    pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
+    ponudjeni_intervali_pocetni = 5
+    ponudjeni_parovi_pocetni = 0
+    sortiranje_ponuda_pocetni = 0
 
 
 
