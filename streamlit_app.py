@@ -210,8 +210,7 @@ with st.sidebar.form(key ='Form1'):
     usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi,ponudjeni_parovi[ponudjeni_parovi_pocetni])
     
     
-    podesavanja = {'interval' : interval, 'simboli' : simboli, 
-                       'kolona_sortiranja' : kolona_sortiranja,'usdt_btc' : usdt_btc }
+    podesavanja = {'simboli' : simboli}
 
     json_podesavanja = json.dumps(podesavanja)
     
