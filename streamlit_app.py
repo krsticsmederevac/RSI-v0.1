@@ -194,7 +194,7 @@ with st.sidebar.form(key ='Form1'):
     
     
 
-st.download_button("Download Setup",json_podesavanja,"coin_setup.json","application/json")
+
 
     
 if usdt_btc and kolona_sortiranja:
@@ -205,6 +205,8 @@ if usdt_btc and kolona_sortiranja:
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         
         st.bokeh_chart(p)
+        
+st.download_button("Download Setup",json_podesavanja,"coin_setup.json","application/json")
 
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
