@@ -7,7 +7,7 @@ from tradingview_ta import TA_Handler, Interval, Exchange
 
 import time
 import pandas as pd
-import json 
+# import json 
 
 from bokeh.io import curdoc, show
 from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d, BoxAnnotation, HoverTool
