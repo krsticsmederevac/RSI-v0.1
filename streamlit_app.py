@@ -164,24 +164,28 @@ podesavanja_korisnika = st.file_uploader("Upload Setup",'json')
 if podesavanja_korisnika:
   
     podesavanja_korisnika_recnik = json.load(podesavanja_korisnika)
+    
+   
     st.write(podesavanja_korisnika_recnik)
     
-    ponudjeni_intervali_pocetni = int(ponudjeni_intervali.index(podesavanja_korisnika_recnik['interval']))
 
-    pocetni_simboli = podesavanja_korisnika_recnik['simboli']
-    sortiranje_ponuda_pocetni = podesavanja_korisnika_recnik['kolona_sortiranja']
-    ponudjeni_parovi_pocetni = podesavanja_korisnika_recnik['usdt_btc']
-   
-
+    pocetni_simboli = []
+    
+    for key in podesavanja_korisnika_recnik['simboli]:
+        pocetni_simboli.append(key.value())
+            
+    
+     st.write(pocetni_simboli)
 
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
-    ponudjeni_intervali_pocetni = 5
-    ponudjeni_parovi_pocetni = 0
-    sortiranje_ponuda_pocetni = 0
+  
 
+ponudjeni_intervali_pocetni = 5
+ponudjeni_parovi_pocetni = 0
+sortiranje_ponuda_pocetni = 0
 
-
+  
 with st.sidebar.form(key ='Form1'):
     
     
