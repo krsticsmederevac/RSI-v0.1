@@ -164,21 +164,9 @@ podesavanja_korisnika = st.file_uploader("Upload Setup",'json')
 if podesavanja_korisnika:
   
     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
-    
-    
 
     pocetni_simboli = podesavanja_korisnika_lista
     
-#     for key in podesavanja_korisnika_recnik['simboli']:
-#         st.write(pocetni_simboli)
-#         st.write(key.values())
-#         pocetni_simboli.append(key.values())
-        
-            
-    
-    st.write(podesavanja_korisnika_lista)
-    st.write(podesavanja_korisnika_lista[0])
-    st.write(type(podesavanja_korisnika_lista[0]))
     
 
 else:
