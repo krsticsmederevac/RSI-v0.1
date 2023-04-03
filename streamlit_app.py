@@ -170,7 +170,10 @@ if podesavanja_korisnika:
     pocetni_simboli = []
     
     for key in podesavanja_korisnika_recnik['simboli']:
-        pocetni_simboli.append(key.values())
+        st.write(pocetni_simboli)
+        st.write(key.values())
+#         pocetni_simboli.append(key.values())
+        
             
     
     st.write(pocetni_simboli)
