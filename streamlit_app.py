@@ -165,8 +165,6 @@ if podesavanja_korisnika:
   
     podesavanja_korisnika_recnik = json.load(podesavanja_korisnika)
     
-   
-    st.write(podesavanja_korisnika_recnik)
     
 
     pocetni_simboli = []
@@ -175,7 +173,7 @@ if podesavanja_korisnika:
         pocetni_simboli.append(key.value())
             
     
-     st.write(pocetni_simboli)
+    st.write(pocetni_simboli)
 
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
