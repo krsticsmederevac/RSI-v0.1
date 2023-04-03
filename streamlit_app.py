@@ -177,6 +177,8 @@ if podesavanja_korisnika:
             
     
     st.write(podesavanja_korisnika_lista)
+    st.write(podesavanja_korisnika_lista[0])
+    st.write(type(podesavanja_korisnika_lista[0]))
     
 
 else:
