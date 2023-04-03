@@ -164,6 +164,7 @@ podesavanja_korisnika = st.file_uploader("Upload Setup",'json')
 if podesavanja_korisnika:
   
     podesavanja_korisnika_recnik = json.load(podesavanja_korisnika)
+    st.write(podesavanja_korisnika_recnik)
     
     ponudjeni_intervali_pocetni = ponudjeni_intervali.index(podesavanja_korisnika_recnik['interval'])
 
