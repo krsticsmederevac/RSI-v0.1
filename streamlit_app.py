@@ -169,6 +169,11 @@ if podesavanja_korisnika:
 
     pocetni_simboli = podesavanja_korisnika_lista
     
+    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+       pocetni_simboli = ['BTC']
+       st.write('Bad input file, try again.') 
+      
+    
 else:
     pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
   
@@ -200,7 +205,7 @@ with st.sidebar.form(key ='Form1'):
     usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi,ponudjeni_parovi[ponudjeni_parovi_pocetni])
     
     
-#     podesavanja = {'simboli' : simboli}
+
     podesavanja = simboli
 
     json_podesavanja = json.dumps(podesavanja)
