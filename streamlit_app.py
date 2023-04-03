@@ -192,7 +192,7 @@ with st.sidebar.form(key ='Form1'):
 
     json_podesavanja = json.dumps(podesavanja)
     
-    st.json(json_string, expanded=True)
+    st.json(json_podesavanja, expanded=True)
 
     
 #     st.download_button(label="Download JSON",file_name="coin_setup.json",mime="json",data=json_podesavanja)
