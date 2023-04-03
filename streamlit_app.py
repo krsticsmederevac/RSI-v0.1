@@ -153,10 +153,13 @@ ponudjeni_simboli =  ['JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALI
 ponudjeni_simboli.sort()
 
 ponudjeni_intervali = ["1m", "5m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
+ponudjeni_intervali_pocetni = 5
 
 ponudjeni_parovi = ["USDT", "BTC"]
+ponudjeni_parovi_pocetni = 0
 
 sortiranje_ponuda = ['rsi','coin']
+sortiranje_ponuda_pocetni = 0
 
 oscilator = 'rsi'
 
@@ -173,7 +176,7 @@ with st.sidebar.form(key ='Form1'):
     st.form_submit_button(label = "Submite")
     
     
-    interval = st.selectbox('Time Frame', ponudjeni_intervali,4)
+    interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
         
    
@@ -181,10 +184,10 @@ with st.sidebar.form(key ='Form1'):
     
         
 
-    kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda)
+    kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda,sortiranje_ponuda_pocetni)
     
     
-    usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi, 'USDT')
+    usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi,ponudjeni_parovi[ponudjeni_parovi_pocetni])
     
     
     podesavanja = {'interval' : interval, 'simboli' : simboli, 
