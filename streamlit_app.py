@@ -160,16 +160,12 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
-@st.cache(allow_output_mutation=True)
-def get_manager():
-    return stx.CookieManager()
 
-cookie_manager = get_manager()
 
 
 
 with st.sidebar.form(key ='Form1'):
-    cookies = cookie_manager.get_all()
+    
     
     st.header('RSI `version 1`')
     
