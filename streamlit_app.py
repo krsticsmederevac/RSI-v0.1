@@ -173,7 +173,7 @@ with st.sidebar.form(key ='Form1'):
     st.form_submit_button(label = "Submite")
     
     
-    interval = st.selectbox('Time Frame', ponudjeni_intervali)
+    interval = st.selectbox('Time Frame', ponudjeni_intervali,4)
     
         
    
