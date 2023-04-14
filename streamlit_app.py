@@ -227,7 +227,7 @@ if usdt_btc and kolona_sortiranja:
         dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         dt = dt.set_index('coin')
-        stil = dt.style.background_gradient(axis=0, gmap = 'GrOrRd',vmin=0,vmax = 100)
+        stil = dt.style.background_gradient(axis=0, cmap = 'GrOrRd')
         container.bokeh_chart(p)
         container.dataframe(stil)
         
