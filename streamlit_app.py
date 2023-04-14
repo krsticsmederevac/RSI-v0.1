@@ -229,7 +229,7 @@ if usdt_btc and kolona_sortiranja:
         dt = dt.set_index('coin')
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
         container.bokeh_chart(p)
-        container.dataframe(stil)
+        container.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
