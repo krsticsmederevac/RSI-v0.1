@@ -76,7 +76,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
     p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
-               title = ime_grafika)
+               title = ime_grafika, toolbar_location="above")
 
     p.title.align = 'center'
 
@@ -117,6 +117,12 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
     p.y_range = Range1d(15,85,bounds=(0, 100))
+    
+    prosecan_rsi = dt.oscilator.mean()
+    
+    prosek_rsi = Label(x=len(dt)//2, y=85, text=str(prosecan_rsi))
+
+    p.add_layout(prosek_rsi)
 
     hovertool_oscilator = "@" + oscilator
     p.add_tools(HoverTool(tooltips=[("Coin", "@coin"), (oscilator.upper(), hovertool_oscilator)]))
@@ -212,8 +218,6 @@ with st.sidebar.form(key ='Form1'):
     
     
 
-
-
     
 if usdt_btc and kolona_sortiranja:
 
@@ -231,5 +235,3 @@ st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
 st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
 st.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 st.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
-
-
