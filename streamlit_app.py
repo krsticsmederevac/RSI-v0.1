@@ -212,6 +212,8 @@ with st.sidebar.form(key ='Form1'):
     usdt_btc = st.multiselect('USDT and/or BTC',ponudjeni_parovi,ponudjeni_parovi[ponudjeni_parovi_pocetni])
     
     
+    chart_table = st.multiselect('Chart and/or Table', ['Chart','Table'],'Chart')
+    
 
     podesavanja = simboli
 
@@ -228,8 +230,10 @@ if usdt_btc and kolona_sortiranja:
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         dt = dt.set_index('coin')
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
-        container.bokeh_chart(p)
-        container.dataframe(stil,use_container_width= True)
+        if 'Chart' in chart_table:
+            container.bokeh_chart(p)
+        if 'Table' in chart_table:
+            container.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
