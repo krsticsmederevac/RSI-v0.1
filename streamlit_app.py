@@ -120,7 +120,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     
     prosecan_rsi = dt[oscilator].mean()
     
-    prosek_rsi = Label(x=len(dt)//2, y=17, text='Mean: ' + str(prosecan_rsi)[:4], text_color = 'orange',text_font_size = '8pt' )
+    prosek_rsi = Label(x=len(dt)//2, y=17, text='Mean: ' + str(prosecan_rsi)[:4], text_color = color_mapper,text_font_size = '14pt' )
 
     p.add_layout(prosek_rsi)
 
