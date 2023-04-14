@@ -225,8 +225,9 @@ if usdt_btc and kolona_sortiranja:
       
         dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
-        
+        dt.style.background_gradient(axis=0, gmap=df['rsi'], cmap='YlOrRd')
         container.bokeh_chart(p)
+        container.dataframe(dt)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
