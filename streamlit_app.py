@@ -10,7 +10,7 @@ import pandas as pd
 import json 
 
 from bokeh.io import curdoc, show
-from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d, BoxAnnotation, HoverTool
+from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d, BoxAnnotation, HoverTool, Label
 from bokeh.plotting import figure
 from bokeh.transform import linear_cmap
 from bokeh.palettes import  RdYlGn
