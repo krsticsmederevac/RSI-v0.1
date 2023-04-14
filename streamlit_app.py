@@ -118,7 +118,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     p.add_layout(polovina)
     p.y_range = Range1d(15,85,bounds=(0, 100))
     
-    prosecan_rsi = dt.oscilator.mean()
+    prosecan_rsi = dt['oscilator'].mean()
     
     prosek_rsi = Label(x=len(dt)//2, y=85, text=str(prosecan_rsi))
 
