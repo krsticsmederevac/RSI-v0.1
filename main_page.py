@@ -21,7 +21,7 @@ def streamlit_menu():
                   "nav-link-selected": {"background-color": "green"},
               },
           )
-         return selected
+   return selected
  
  
 selected = streamlit_menu()
