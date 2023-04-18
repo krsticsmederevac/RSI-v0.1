@@ -1,6 +1,6 @@
 import streamlit as st
 st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
-st.markdown("RSI")
+
 import extra_streamlit_components as stx
 
 from tradingview_ta import TA_Handler, Interval, Exchange
