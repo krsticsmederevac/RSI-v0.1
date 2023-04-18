@@ -1,4 +1,6 @@
 import streamlit as st
+st.set_page_config( page_title = "Scaner", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+
 from tradingview_ta import TA_Handler, Interval, Exchange
 import time
 from colorama import Fore, Back, Style, init
@@ -35,12 +37,12 @@ def izvestaj(analysis):
     else:
         signal = Fore.BLUE + analysis.summary['RECOMMENDATION'] + Style.RESET_ALL
             
-    print(Fore.CYAN + analysis.symbol, 
+    st.write(Fore.CYAN + analysis.symbol, 
           Fore.YELLOW + analysis.interval,
           Style.RESET_ALL)
 
-    print(signal, analysis.indicators["close"])
-    print('Sell: ', Fore.RED + str(analysis.summary['SELL']),Style.RESET_ALL,
+    st.write(signal, analysis.indicators["close"])
+    st.write('Sell: ', Fore.RED + str(analysis.summary['SELL']),Style.RESET_ALL,
           'Buy: ',Fore.GREEN + str(analysis.summary['BUY']),Style.RESET_ALL,
          'Neutral: ', Fore.BLUE +  str(analysis.summary['NEUTRAL']),Style.RESET_ALL)
 
@@ -55,5 +57,5 @@ while True:
             print('\n',Fore.BLUE + 'Time: ' + str(analysis.time)[:19],Style.RESET_ALL,'\n')
             izvestaj(analysis)
 
-    time.sleep(10)
+    time.sleep(15)
  
