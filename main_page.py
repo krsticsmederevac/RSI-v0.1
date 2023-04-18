@@ -11,4 +11,4 @@ selected = option_menu(
           )
  
  
-selected
+st.open(selected)
