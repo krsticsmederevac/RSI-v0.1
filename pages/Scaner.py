@@ -3,9 +3,6 @@ st.set_page_config( page_title = "Scaner", page_icon = ":shark:",layout="wide",i
 
 from tradingview_ta import TA_Handler, Interval, Exchange
 import time
-from colorama import Fore, Back, Style, init
-init()
-
 simboli = ["ETHUSDT", "BTCUSDT"]
 
 intervali = ["1h", "4h", "1d" ] #"15m",
@@ -31,20 +28,19 @@ for i in simboli:
 def izvestaj(analysis):
     
     if analysis.summary['RECOMMENDATION'] in ['SELL', 'STRONG_SELL']:
-        signal = Fore.RED + analysis.summary['RECOMMENDATION'] + Style.RESET_ALL
+        signal = analysis.summary['RECOMMENDATION']
     elif analysis.summary['RECOMMENDATION'] in ['BUY', 'STRONG_BUY']:
-        signal = Fore.GREEN + analysis.summary['RECOMMENDATION'] + Style.RESET_ALL
+        signal =  analysis.summary['RECOMMENDATION']
     else:
-        signal = Fore.BLUE + analysis.summary['RECOMMENDATION'] + Style.RESET_ALL
+        signal =analysis.summary['RECOMMENDATION']
             
-    st.write(Fore.CYAN + analysis.symbol, 
-          Fore.YELLOW + analysis.interval,
-          Style.RESET_ALL)
+    st.write(analysis.symbol, 
+          analysis.interval)
 
     st.write(signal, analysis.indicators["close"])
-    st.write('Sell: ', Fore.RED + str(analysis.summary['SELL']),Style.RESET_ALL,
-          'Buy: ',Fore.GREEN + str(analysis.summary['BUY']),Style.RESET_ALL,
-         'Neutral: ', Fore.BLUE +  str(analysis.summary['NEUTRAL']),Style.RESET_ALL)
+    st.write('Sell: ',str(analysis.summary['SELL']),
+          'Buy: ',str(analysis.summary['BUY']),
+         'Neutral: ', str(analysis.summary['NEUTRAL']))
 
 while True:
     
@@ -54,7 +50,7 @@ while True:
         
         if recnik[analysis.symbol + ' ' + analysis.interval] != analysis.summary['RECOMMENDATION']:
             recnik[analysis.symbol + ' ' + analysis.interval] = analysis.summary['RECOMMENDATION']
-            print('\n',Fore.BLUE + 'Time: ' + str(analysis.time)[:19],Style.RESET_ALL,'\n')
+            st.write('\n','Time: ' + str(analysis.time)[:19],'\n')
             izvestaj(analysis)
 
     time.sleep(15)
