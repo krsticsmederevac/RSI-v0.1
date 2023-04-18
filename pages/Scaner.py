@@ -35,7 +35,7 @@ def izvestaj(analysis):
         signal =analysis.summary['RECOMMENDATION']
             
     st.write(analysis.symbol, 
-          analysis.interval,(signal, analysis.indicators["close"], ' Sell: ',str(analysis.summary['SELL']),
+          analysis.interval, signal, analysis.indicators["close"], ' Sell: ',str(analysis.summary['SELL']),
           'Buy: ',str(analysis.summary['BUY']),
          'Neutral: ', str(analysis.summary['NEUTRAL']))
 
