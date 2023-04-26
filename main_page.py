@@ -244,6 +244,7 @@ if usdt_btc and kolona_sortiranja:
             with tab1:
                 container.bokeh_chart(p)
         if 'Table' in chart_table:
+            with tab2:
             container.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
