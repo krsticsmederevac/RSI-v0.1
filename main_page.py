@@ -196,7 +196,7 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 
-tab1, tab2, tab3 = st.tabs(["Chart", "Table"])
+tab1, tab2 = st.tabs(["Chart", "Table"])
 
 
 with st.sidebar.form(key ='Form1'):
