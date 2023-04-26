@@ -166,7 +166,12 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
+
 container = st.container()
+
+tab1, tab2 = container.tabs(["📈 Chart", "📋 Table"])
+
+
 
 
 podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
@@ -196,7 +201,7 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 
-tab1, tab2 = container.tabs(["📈 Chart", "🗃 Table"])
+
 
 
 
