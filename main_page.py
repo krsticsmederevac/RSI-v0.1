@@ -196,7 +196,7 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 
-tab1, tab2 = container.tabs(["Chart", "Table"])
+tab1, tab2 = container.tabs(["📈 Chart", "🗃 Table"])
 
 
 
@@ -242,10 +242,10 @@ if usdt_btc and kolona_sortiranja:
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
         if 'Chart' in chart_table:
             with tab1:
-                container.bokeh_chart(p)
+                tab1.bokeh_chart(p)
         if 'Table' in chart_table:
             with tab2:
-                container.dataframe(stil,use_container_width= True)
+                tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
