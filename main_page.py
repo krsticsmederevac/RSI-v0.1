@@ -198,6 +198,8 @@ sortiranje_ponuda_pocetni = 0
 
 tab1, tab2 = st.tabs(["Chart", "Table"])
 
+container.tab1
+container.tab2
 
 with st.sidebar.form(key ='Form1'):
     
