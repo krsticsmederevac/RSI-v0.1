@@ -240,7 +240,8 @@ if usdt_btc and kolona_sortiranja:
         dt = dt.set_index('coin')
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
         if 'Chart' in chart_table:
-            container.bokeh_chart(p)
+            with tab1:
+                container.bokeh_chart(p)
         if 'Table' in chart_table:
             container.dataframe(stil,use_container_width= True)
         
