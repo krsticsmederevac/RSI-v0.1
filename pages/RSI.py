@@ -238,7 +238,7 @@ if usdt_btc and kolona_sortiranja:
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
 st.write("Feel free to leave a tip.")
-st.write("Eth: 0xe183bf9861b995107df580e1f9fa2a5e56e9ea40")
+st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
 st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
 st.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 st.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
