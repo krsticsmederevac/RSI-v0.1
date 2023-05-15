@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "RSI Field", page_icon = ":shark:",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+st.set_page_config( page_title = "RSI Field", page_icon = "📊",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
 
@@ -120,8 +120,9 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     p.y_range = Range1d(15,85,bounds=(0, 100))
     
     prosecan_rsi = dt[oscilator].mean()
+    mediana_rsi = dt[oscilator].median()
     
-    prosek_rsi = Label(x=len(dt)//2, y=17, text='Mean: ' + str(prosecan_rsi)[:4], text_color = 'orange' ,text_font_size = '12pt' )
+    prosek_rsi = Label(x=len(dt)//2 - 4, y=17, text='Mean: ' + str(prosecan_rsi)[:4] +'  Median: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '12pt' )
 
     p.add_layout(prosek_rsi)
 
@@ -135,24 +136,24 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
   
 
 
-ponudjeni_simboli =  ['ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 'ANT',
+ponudjeni_simboli =  ['ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AUTO', 'AVAX', 'AXS', 
-                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BTC', 'BTT',
+                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEAM', 'BEL', 'BLZ', 'BNB', 'BIT', 'BTC', 'BTT',
                       'BURGER', 'BZRX', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
-                      'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'DASH', 'DATA', 'DCR', 'DEGO',
-                      'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDXEGLD',
-                      'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM', 'FTM', 
-                      'FTT', 'FUN', 'GBP', 'GMX', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HNT', 'HOOK', 'HOT',
-                      'ICX', 'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KMD', 'KNC', 'KSM',
-                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNA', 'MANA', 
-                      'MATIC', 'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'NANO', 'NBS', 'NEAR', 'NEO', 
-                      'NKN', 'NMR', 'NPXS', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OXT', 
+                      'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO',
+                      'DENT', 'DGB', 'DIA', 'DNT', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 'EGLD',
+                      'ENJ', 'EOS', 'EPS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLOW', 'FTM', 
+                      'FTT', 'FUN', 'FXS', 'GALA','GBP', 'GMX', 'GRT', 'GTO', 'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT','ICP',
+                      'ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM',
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC', 'MANA', 'MASK',
+                      'MATIC', 'MBL', 'MDT', 'MFT', 'MITH', 'MKR', 'MTL', 'MINA', 'MIOTA', 'NANO', 'NBS', 'NEAR', 'NEO', 'NEXO',
+                      'NKN', 'NMR', 'NPXS', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 
                       'PAX', 'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RAMP', 'RDNT', 'REEF', 
-                      'REN', 'REP', 'RIF', 'RLC', 'ROSE', 'RSR', 'RUNE', 'RVN', 'SAND', 'SC', 'SFP', 'SKL', 
+                      'REN', 'RNDR', 'REP', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 'QNT', 'SAND', 'SC', 'SFP','SHIB', 'SKL', 
                       'SNX', 'SOL', 'SRM', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 'SUSD', 
-                      'SUSHI', 'SXP', 'TCT', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 
-                      'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 
-                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEN', 'ZIL', 'ZRXYFII']
+                      'SUSHI', 'SXP', 'TCT', 'TFUEL', 'THETA','TON', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 
+                      'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WOO',
+                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'YFI', 'ZEC', 'ZEN', 'ZIL', 'ZRXYFII']
 
 ponudjeni_simboli.sort()
 
@@ -165,7 +166,12 @@ sortiranje_ponuda = ['rsi','coin']
 oscilator = 'rsi'
 
 
+
 container = st.container()
+
+tab1, tab2 = container.tabs(["📈 Chart", "📋 Table"])
+
+
 
 
 podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
@@ -182,14 +188,23 @@ if podesavanja_korisnika:
       
     
 else:
-    pocetni_simboli = ['ADA', 'ATOM', 'BNB', 'BTC', 'DOGE', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', 'XRP']
+    pocetni_simboli = ['1INCH', 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'BCH', 'BNB', 'BTC',
+                       'BTT', 'CAKE', 'CFX', 'CHZ', 'COCOS', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
+                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
+                       'KLAY', 'LDO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MIOTA', 'MKR', 'NANO', 'NEAR', 'NEO', 'NEXO', 
+                       'OCEAN', 'OP', 'OSMO', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
+                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TON', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
   
 
 ponudjeni_intervali_pocetni = 5
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
-  
+
+
+
+
+
 with st.sidebar.form(key ='Form1'):
     
     
@@ -231,9 +246,11 @@ if usdt_btc and kolona_sortiranja:
         dt = dt.set_index('coin')
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
         if 'Chart' in chart_table:
-            container.bokeh_chart(p)
+            with tab1:
+                tab1.bokeh_chart(p)
         if 'Table' in chart_table:
-            container.dataframe(stil,use_container_width= True)
+            with tab2:
+                tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
