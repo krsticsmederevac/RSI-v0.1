@@ -188,12 +188,7 @@ if podesavanja_korisnika:
       
     
 else:
-    pocetni_simboli = ['1INCH', 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'BCH', 'BNB', 'BTC',
-                       'BTT', 'CAKE', 'CFX', 'CHZ', 'COCOS', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
-                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
-                       'KLAY', 'LDO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MIOTA', 'MKR', 'NANO', 'NEAR', 'NEO', 'NEXO', 
-                       'OCEAN', 'OP', 'OSMO', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
-                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TON', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
+    pocetni_simboli = [ 'ADA',  'ATOM', 'AVAX',  'BNB', 'BTC', 'DOT', 'ETH', 'LINK', 'LTC', 'MATIC', ]
   
 
 ponudjeni_intervali_pocetni = 5
