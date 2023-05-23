@@ -180,7 +180,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, interval, [ "change",'RSI','RSI[1]','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], usdt_btc, ['timeframe'])
     
   
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
@@ -197,11 +197,11 @@ if usdt_btc :
     dt.RSI = round(dt[['RSI']],1).astype(str)
     dt.change = round(dt[['change']],2)
     
-    dt1 = dt[['RSI']]
+    dt1 = dt[['RSI','RSI[1]']]
     dt2 = dt[['change']]
     
     
-    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset=['RSI'] )
+    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset=['RSI','RSI[1]'] )
     dt2 = dt2.style.background_gradient(subset=['change'], cmap = 'Greens')
     
     with tab1:
