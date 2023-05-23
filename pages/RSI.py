@@ -202,7 +202,7 @@ else:
                        'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
   
 
-ponudjeni_intervali_pocetni = 5
+ponudjeni_intervali_pocetni = 6
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
