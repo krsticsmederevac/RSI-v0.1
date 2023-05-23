@@ -188,7 +188,7 @@ if usdt_btc :
     dt['Change'] = round(dt['change'],2).astype(str) + '%'
     dt.RSI = round(dt[['RSI']],1)
     
-    dt1 = dt.loc[:,['Change','RSI]]
+    dt1 = dt[['Change','RSI]]
     stil = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['Change'] )
     
     with tab1:
