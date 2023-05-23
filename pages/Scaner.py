@@ -186,6 +186,7 @@ if usdt_btc :
     
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
     dt.timeframe = dt.timeframe.astype(time_type)
+    
     dt.set_index(['coin','timeframe'], inplace = True)
     dt.sort_index(level=0, inplace = True)
     
@@ -194,7 +195,7 @@ if usdt_btc :
     
     
     stil = dt.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
-#     'YlOrRd'
+    stil = dt.style.background_gradient(cmap = 'YlOrRd',subset = ['change'] )  
     with tab1:
         tab1.dataframe(stil,use_container_width= True)
     with tab2:
