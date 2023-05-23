@@ -185,8 +185,8 @@ if usdt_btc :
     dt.set_index(['coin','timeframe'], inplace = True)
     dt.sort_index(level=0, inplace = True)
     
-    dt['Change'] = round(dt['change'],2).astype(str) + '%'
-    dt.RSI = round(dt[['RSI']],1)
+#     dt['Change'] = round(dt['change'],2).astype(str) + '%'
+#     dt.RSI = round(dt[['RSI']],1)
     
     dt1 = dt[['Change','RSI']]
     stil = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
