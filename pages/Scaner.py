@@ -156,7 +156,7 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form1'):
     
     
-    st.header('Scaner `version 1`')
+    st.header('Scanner `version 1`')
     
     st.form_submit_button(label = "Submite")
     
