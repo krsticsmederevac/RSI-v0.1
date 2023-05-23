@@ -171,6 +171,7 @@ with st.sidebar.form(key ='Form1'):
 
     json_podesavanja = json.dumps(podesavanja)
     
+    st.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
     
 
     
@@ -192,7 +193,7 @@ if usdt_btc :
     dt.RSI = round(dt[['RSI']],1).astype(str)
     dt.change = round(dt[['change']],2)
     
-    dt1 = dt[['Change','RSI']]
+    dt1 = dt[['RSI','Change']]
    
     dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
     
@@ -201,7 +202,7 @@ if usdt_btc :
     with tab2:
         tab2.dataframe(dt1,use_container_width= True)
         
-container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
+# container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
