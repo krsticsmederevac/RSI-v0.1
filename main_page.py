@@ -248,7 +248,7 @@ import extra_streamlit_components as stx
 #                 tab2.dataframe(stil,use_container_width= True)
         
 # container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
-url = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
+url = "https://www.tradingview.com/u/mare_car/#published-scripts"
 st.write("Check out my TradingView indicators [link](%s)" % url)
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
