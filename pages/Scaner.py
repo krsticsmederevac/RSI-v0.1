@@ -202,7 +202,7 @@ if usdt_btc :
     
     
     dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
-    dt2 = dt2.style.background_gradient(subset=['change'], cmap = 'RdYlGn')
+    dt2 = dt2.style.background_gradient(subset=['change'], cmap = 'RdWhGn')
     
     with tab1:
         tab1.dataframe(dt1,use_container_width= False)
