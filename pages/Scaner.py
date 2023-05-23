@@ -109,9 +109,6 @@ ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1
 
 ponudjeni_parovi = ["USDT", "BTC"]
 
-# sortiranje_ponuda = ['rsi','coin']
-
-# oscilator = 'rsi'
 
 
 
@@ -128,7 +125,7 @@ container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 
 podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
-container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
+
 
 if podesavanja_korisnika:
   
@@ -208,6 +205,4 @@ if usdt_btc :
     with tab2:
         tab2.dataframe(dt1,use_container_width= True)
         
-# container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
-
-
+container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
