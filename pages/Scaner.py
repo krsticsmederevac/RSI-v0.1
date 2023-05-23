@@ -171,7 +171,7 @@ with st.sidebar.form(key ='Form1'):
 #     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda,sortiranje_ponuda_pocetni)
     
     
-    usdt_btc = st.select('USDT or BTC',ponudjeni_parovi,'USDT')
+    usdt_btc = st.select('USDT or BTC',ponudjeni_parovi,0)
     
     
 #     chart_table = st.multiselect('Chart and/or Table', ['Chart','Table'],'Chart')
