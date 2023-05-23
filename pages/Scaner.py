@@ -114,7 +114,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2 = container.tabs(["📈 RSI and Price Change %", "📋 EMA and MA"])
+tab1, tab2 = container.tabs(["📋 RSI and Price Change %", "📋 EMA and MA"])
 
 
 
@@ -133,12 +133,8 @@ if podesavanja_korisnika:
       
     
 else:
-    pocetni_simboli = ['1INCH', 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'BCH', 'BNB', 'BTC',
-                       'CAKE', 'CFX', 'CHZ', 'COCOS', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
-                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
-                       'KLAY', 'LDO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'NEAR', 'NEO', 'NEXO', 
-                       'OCEAN', 'OP', 'OSMO', 'PEPE', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
-                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
+    pocetni_simboli = [ 'ADA', 'ARB', 'ATOM', 'AVAX',  'BNB', 'BTC',
+                      'DOT', 'ETH', 'FTM', 'LDO', 'LINK', 'LTC', 'PEPE', 'RNDR', 'ROSE',  'WOO']
   
 
 ponudjeni_intervali_pocetni = ['1h', '4h', '1d']
@@ -184,16 +180,23 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'MA10','MA20',"MA100","MA200"], izbor_usdt_btc, ['timeframe'])
     
-#     dt = dt.set_index('coin')
+    
+    time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
+    dt.timeframe = dt.timeframe.astype(time_type)
+    dt.set_index(['coin','timeframe'], inplace = True)
+    dt.sort_index(level=0, inplace = True)
+    
+    dt.change = round(dt['change'],2).astype(str) + '%'
+    dt.RSI = round(dt['RSI'],1)
+    
+    
     stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
-    if 'Chart' in chart_table:
-        with tab1:
-            tab1.bokeh_chart(p)
-    if 'Table' in chart_table:
-        with tab2:
-            tab2.dataframe(stil,use_container_width= True)
+   with tab1:
+        tab1.dataframe(stil,use_container_width= True)
+   with tab2:
+        tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
