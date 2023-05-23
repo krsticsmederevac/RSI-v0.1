@@ -121,13 +121,14 @@ tab1, tab2 ,tab3 = container.tabs(["📋 RSI and Price Change %", "📋 EMAs", "
 
 
 
-st.write("Feel free to leave a tip.")
-st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
-st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
-st.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
-st.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
+container.write("Feel free to leave a tip.")
+container.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
+container.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
+container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
+container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 
-podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
+podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
+container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
 if podesavanja_korisnika:
   
@@ -207,6 +208,6 @@ if usdt_btc :
     with tab2:
         tab2.dataframe(dt1,use_container_width= True)
         
-container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
+# container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
 
