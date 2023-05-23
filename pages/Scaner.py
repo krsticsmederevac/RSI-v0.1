@@ -198,11 +198,11 @@ if usdt_btc :
     dt.change = round(dt[['change']],2)
     
     dt1 = dt[['RSI']]
-    dt2 = dt[['Change %']]
+    dt2 = dt[['change']]
     
     
     dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
-    dt2 = dt2.style.bar(subset=['Change %'], color='#d65f5f')
+    dt2 = dt2.style.bar(subset=['change'], color='#d65f5f')
     
     with tab1:
         tab1.dataframe(dt1,use_container_width= False)
