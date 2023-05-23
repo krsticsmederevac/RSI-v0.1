@@ -190,7 +190,7 @@ if usdt_btc :
     dt.set_index(['coin','timeframe'], inplace = True)
     dt.sort_index(level=0, inplace = True)
     
-    dt.Change = round(dt['change'],2).astype(str) + '%'
+    dt['Change'] = round(dt['change'],2).astype(str) + '%'
     dt.RSI = round(dt['RSI'],1)
     
     
