@@ -75,7 +75,9 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
 
     if len(dt.index) == 0:
         dt = pd.DataFrame({'coin': ["No Data"], oscilator : [0]})
-
+    
+    dt['Change'] = round(dt['change'],2).astype(str) + '%'
+    dt.RSI = round(dt[['RSI']],1)
     return dt
   
   
