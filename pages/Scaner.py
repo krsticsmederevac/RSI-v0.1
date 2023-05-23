@@ -190,12 +190,12 @@ if usdt_btc :
     dt.change = round(dt[['change']],2)
     
     dt1 = dt[['Change','RSI']]
-    stil = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
+    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
     
     with tab1:
-        tab1.dataframe(stil,use_container_width= True)
+        tab1.dataframe(dt1,use_container_width= True)
     with tab2:
-        tab2.dataframe(stil,use_container_width= True)
+        tab2.dataframe(dt1,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
