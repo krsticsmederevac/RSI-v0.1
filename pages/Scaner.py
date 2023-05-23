@@ -190,8 +190,8 @@ if usdt_btc :
     dt.change = round(dt[['change']],2)
     
     dt1 = dt[['Change','RSI']]
-    dt1.style.format({"RSI": "{:.2f}"})
-    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
+   
+    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] ).set_precision(2)
     
     with tab1:
         tab1.dataframe(dt1,use_container_width= True)
