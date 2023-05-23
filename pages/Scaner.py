@@ -78,7 +78,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     
     dt['Change'] = round(dt['change'],2).astype(str) + '%'
     dt.RSI = round(dt[['RSI']],1)
-    dt.change = round(dt[['RSI']],1)
+    dt.change = round(dt[['change']],1)
     return dt
   
   
