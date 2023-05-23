@@ -114,7 +114,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2 ,tab3 = container.tabs(["📋 RSI and Price Change %", "📋 EMAs", "📋 MAs"])
+tab1 = container.tabs(["📋 RSI"]) 
 
 
 
@@ -206,7 +206,7 @@ if usdt_btc :
     
     with tab1:
         tab1.dataframe(dt1,use_container_width= False)
-    with tab2:
-        tab2.dataframe(dt2,use_container_width= False)
+#     with tab2:
+#         tab2.dataframe(dt2,use_container_width= False)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
