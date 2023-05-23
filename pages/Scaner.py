@@ -78,6 +78,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     
     dt['Change'] = round(dt['change'],2).astype(str) + '%'
     dt.RSI = round(dt[['RSI']],1)
+    dt.change = round(dt[['RSI']],1)
     return dt
   
   
@@ -187,8 +188,8 @@ if usdt_btc :
     dt['Change'] = round(dt['change'],2).astype(str) + '%'
     dt.RSI = round(dt[['RSI']],1)
     
-    
-    stil = dt.style.background_gradient(cmap = 'RdYlGn',subset = ['change'] )
+    dt1 = dt[['Change'.'RSI]]
+    stil = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['Change'] )
     
     with tab1:
         tab1.dataframe(stil,use_container_width= True)
