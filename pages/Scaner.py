@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "RSI Field", page_icon = "📊",layout="centered",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+st.set_page_config( page_title = "Scaner", page_icon = "📊",layout="centered",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
 
@@ -150,7 +150,7 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form1'):
     
     
-    st.header('CryptoData `version 1`')
+    st.header('Scaner `version 1`')
     
     st.form_submit_button(label = "Submite")
     
