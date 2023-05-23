@@ -83,24 +83,22 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
 
 
 
-ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT',
-                      'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 'AXS', 
-                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 
-                      'BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 
-                      'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO',
-                      'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 'EGLD',
-                      'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLOW', 'FTM', 
-                      'FUN', 'FXS', 'GALA','GBP', 'GMX', 'GRT', 'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT','ICP',
-                      'ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM',
-                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC', 'MANA', 'MASK',
-                      'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 'NEAR', 'NEO', 'NEXO',
-                      'NKN', 'NMR', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 
-                      'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RDNT', 'REEF', 
-                      'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 'QNT', 'SAND', 'SC', 'SFP','SHIB', 'SKL', 
-                      'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 
-                      'SUSHI', 'SXP', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 
-                      'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WOO',
-                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'YFI', 'ZEC', 'ZEN', 'ZIL']
+ponudjeni_simboli =  ['1INCH', 'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 
+                      'ANT', 'APE', 'APT', 'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 
+                      'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB', 'BTC', 'BURGER', 'CAKE',
+                      'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 
+                      'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO', 'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 
+                      'DREP', 'DUSK', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 
+                      'FLM', 'FLOW', 'FTM', 'FUN', 'FXS', 'GALA', 'GBP', 'GMX', 'GRT', 'HARD', 'HBAR', 'HIVE', 'HOOK',
+                      'HOT', 'ICP', 'ICX', 'ID', 'IMX', 'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'JOE', 'KAVA', 'KEY', 
+                      'KLAY', 'KMD', 'KNC', 'KSM', 'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 
+                      'LUNC', 'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MINA', 'MKR', 'MTL', 'NEAR', 'NEO', 'NEXO', 'NKN', 
+                      'NMR', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'PAXG', 'PEPE', 'PERL', 
+                      'PERP', 'PNT', 'POND', 'PSG', 'QNT', 'QTUM', 'RDNT', 'REEF', 'REN', 'RIF', 'RLC', 'RLC', 'RNDR', 'ROSE',
+                      'RPL', 'RSR', 'RUNE', 'RVN', 'SAND', 'SC', 'SFP', 'SHIB', 'SKL', 'SNX', 'SOL', 'STMX', 'STORJ', 'STPT',
+                      'STRAX', 'STX', 'SUN', 'SUPER', 'SUSHI', 'SXP', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 
+                      'TWT', 'UMA', 'UNFI', 'UNI', 'UTK','VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WNXM', 'WOO', 
+                      'WRX', 'WTC', 'XEC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEC', 'ZEN', 'ZIL']
 
 ponudjeni_simboli.sort()
 
@@ -116,7 +114,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2 = container.tabs(["📈 RSI and %", "📋 EMA and MA"])
+tab1, tab2 = container.tabs(["📈 RSI and Price Change %", "📋 EMA and MA"])
 
 
 
@@ -186,7 +184,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
+    dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, ['timeframe'])
     
 #     dt = dt.set_index('coin')
     stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
