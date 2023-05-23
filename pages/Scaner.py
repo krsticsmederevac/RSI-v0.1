@@ -199,8 +199,9 @@ if usdt_btc :
     with tab1:
         tab1.dataframe(stil,use_container_width= True)
     with tab2:
+        tab2.table(dt)
        
-        tab2.dataframe(stil,use_container_width= True)
+#         tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
 
