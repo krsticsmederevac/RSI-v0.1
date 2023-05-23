@@ -201,7 +201,7 @@ if usdt_btc :
     dt2 = dt[['Change %']]
     
     
-    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
+    dt1 = dt1.style.apply(lambda x: ["background: red" if v > x.iloc[0] else "background: green" for v in x], axis = 1)
     dt2 = dt2.style.background_gradient(cmap = 'RdYlGn',subset = ['Change %'] )
     
     with tab1:
