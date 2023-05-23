@@ -180,7 +180,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'MA10','MA20',"MA100","MA200"], izbor_usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], izbor_usdt_btc, ['timeframe'])
     
     
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
