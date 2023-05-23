@@ -157,19 +157,11 @@ with st.sidebar.form(key ='Form1'):
     
     interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
-        
    
     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
     
-        
-
-#     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda,sortiranje_ponuda_pocetni)
-    
     
     usdt_btc = st.selectbox('USDT or BTC',ponudjeni_parovi,0)
-    
-    
-#     chart_table = st.multiselect('Chart and/or Table', ['Chart','Table'],'Chart')
     
 
     podesavanja = simboli
@@ -183,7 +175,7 @@ if usdt_btc :
 
     dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], usdt_btc, ['timeframe'])
     
-    
+  
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
     dt.timeframe = dt.timeframe.astype(time_type)
     
@@ -199,8 +191,6 @@ if usdt_btc :
     with tab1:
         tab1.dataframe(stil,use_container_width= True)
     with tab2:
-        
-       
         tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
