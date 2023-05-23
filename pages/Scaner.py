@@ -195,7 +195,7 @@ if usdt_btc :
     
     
     stil = dt.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
-    stil = dt.style.background_gradient(cmap = 'YlOrRd',subset = ['change'] )  
+    
     with tab1:
         tab1.dataframe(stil,use_container_width= True)
     with tab2:
