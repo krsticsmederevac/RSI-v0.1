@@ -206,7 +206,7 @@ if usdt_btc :
     
     def style_negative(v, props=''):
         return props if v < 0 else 'color:green;'
-    dt2 = dt2.style.applymap(lambda x: 'background-color : yellow' if x>"0" else '')
+    dt2 = dt2.style.applymap(lambda x: 'background-color : green' if x>="0" else 'background-color : red')
     
     with tab1:
         tab1.dataframe(dt1,use_container_width= False)
