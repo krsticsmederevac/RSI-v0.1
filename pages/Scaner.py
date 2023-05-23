@@ -77,8 +77,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
         dt = pd.DataFrame({'coin': ["No Data"], oscilator : [0]})
     
 #     dt['Change'] = round(dt['change'],2).astype(str) + '%'
-    dt.RSI = round(dt[['RSI']],1)
-    dt.change = round(dt[['change']],2)
+#     dt.RSI = round(dt[['RSI']],1)
+#     dt.change = round(dt[['change']],2)
     return dt
   
   
@@ -185,8 +185,9 @@ if usdt_btc :
     dt.set_index(['coin','timeframe'], inplace = True)
     dt.sort_index(level=0, inplace = True)
     
-#     dt['Change'] = round(dt['change'],2).astype(str) + '%'
-#     dt.RSI = round(dt[['RSI']],1)
+    dt['Change'] = round(dt['change'],2).astype(str) + '%'
+    dt.RSI = round(dt[['RSI']],1)
+    dt.change = round(dt[['change']],2)
     
     dt1 = dt[['Change','RSI']]
     stil = dt1.style.background_gradient(cmap = 'RdYlGn',subset = ['RSI'] )
