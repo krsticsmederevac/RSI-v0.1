@@ -134,7 +134,8 @@ if podesavanja_korisnika:
     
 else:
     pocetni_simboli = [ 'ADA', 'ARB', 'ATOM', 'AVAX',  'BNB', 'BTC',
-                      'DOT', 'ETH', 'FTM', 'LDO', 'LINK', 'LTC', 'PEPE', 'RNDR', 'ROSE',  'WOO']
+                      'DOT', 'ETH', 'FTM', 'LDO', 'LINK', 'LTC', 'PEPE',
+                       'RNDR', 'ROSE',  'WOO']
   
 
 ponudjeni_intervali_pocetni = ['1h', '4h', '1d']
@@ -180,7 +181,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], izbor_usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, interval, [ "change",'RSI','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], usdt_btc, ['timeframe'])
     
     
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
