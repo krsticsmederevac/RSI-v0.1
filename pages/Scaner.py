@@ -193,9 +193,9 @@ if usdt_btc :
     
     
     stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
-   with tab1:
+    with tab1:
         tab1.dataframe(stil,use_container_width= True)
-   with tab2:
+    with tab2:
         tab2.dataframe(stil,use_container_width= True)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
