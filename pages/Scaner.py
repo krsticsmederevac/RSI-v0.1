@@ -192,7 +192,8 @@ if usdt_btc :
     
     
     
-    dt['Change'] = round(dt['change'],2).astype(str) + '%'
+#     dt['Change'] = round(dt['change'],2).astype(str) + '%'
+    dt['Change' = round(dt['change'],2).astype(str)
     dt.RSI = round(dt[['RSI']],1).astype(str)
     dt.change = round(dt[['change']],2)
     
