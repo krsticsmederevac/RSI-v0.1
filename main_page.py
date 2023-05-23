@@ -3,7 +3,7 @@ st.set_page_config( page_title = "Crypto Data", page_icon = "📊",layout="wide"
 
 import extra_streamlit_components as stx
 
-from tradingview_ta import TA_Handler, Interval, Exchange
+# from tradingview_ta import TA_Handler, Interval, Exchange
 
 # import time
 # import pandas as pd
@@ -248,7 +248,9 @@ from tradingview_ta import TA_Handler, Interval, Exchange
 #                 tab2.dataframe(stil,use_container_width= True)
         
 # container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
-
+url = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
+st.write("check out this [link](%s)" % url)
+st.markdown("check out this [link](%s)" % url)
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
 st.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
