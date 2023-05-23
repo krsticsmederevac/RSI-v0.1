@@ -114,7 +114,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2 = container.tabs(["📋 RSI and Price Change %", "📋 EMA and MA"])
+tab1, tab2 ,tab3 = container.tabs(["📋 RSI and Price Change %", "📋 EMAs", "📋 MAs"])
 
 
 
