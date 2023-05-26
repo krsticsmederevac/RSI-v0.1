@@ -179,7 +179,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
     try:
-        dt = data_frame_maker(simboli, interval, [ 'RSI'], usdt_btc, ['timeframe'])
+        dt = data_frame_maker(simboli, interval, [ 'RSI','change'], usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
         time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
