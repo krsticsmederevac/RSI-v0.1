@@ -7,6 +7,7 @@ from tradingview_ta import TA_Handler, Interval, Exchange
 
 import time
 import pandas as pd
+import numpy as np
 import json 
 
 import seaborn as sns
@@ -110,7 +111,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2 = container.tabs(["📋 RSI","📋 Price Change %"]) 
+tab1, tab2, tab3, tab4 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ]) 
 
 
 
@@ -188,12 +189,11 @@ if usdt_btc :
         dt.timeframe = dt.timeframe.astype(time_type)
         
         dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
-#         dt1.style.background_gradient(cmap ='RdYlGn')
         
         dt2 = dt.pivot(index='coin', columns='timeframe', values='change')
-#         dt2.style.background_gradient(cmap ='RdYlGn')
+
         
-        fig_high = len(dt1.index ) / 5
+        fig_high = len(dt.index ) / 5
         sns.set(font_scale=0.4)
         
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
@@ -203,12 +203,33 @@ if usdt_btc :
         fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
         ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        
+        dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
+        dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
+        dt['100'] =np.where((dt['EMA100']<=dt.close), 100, -100)
+        dt['200'] =np.where((dt['EMA200']<=dt.close), 200, -200)
+        
+        data_frames = []
+        for time_int in interval:
+            dt_name = 'dt' + interval 
+            dt_name = dt[dt['timeframe'] == time_int]
+            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
+            data_frames.append(dt_name)
+        
+        dt_ema = pd.concat(data_frames,axis=1)
+        
+        fig3, ax3 = plt.subplots(figsize = (3,fig_high))
+        sns.heatmap(dt1, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+        ax1.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+            
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
 
         with tab2:
             tab2.pyplot(fig2,use_container_width= False)
+        with tab2:
+            tab3.pyplot(fig3,use_container_width= False)
     except:
         st.write('Check again your data!')
     
