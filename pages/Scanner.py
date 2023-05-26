@@ -220,7 +220,8 @@ if usdt_btc :
         
         dt_ema = pd.concat(data_frames,axis=1)
         
-        fig3, ax3 = plt.subplots(figsize = (3,fig_high))
+        ema_sma_size = len(interval)//2
+        fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
             
