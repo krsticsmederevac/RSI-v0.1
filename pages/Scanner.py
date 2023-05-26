@@ -182,21 +182,33 @@ if usdt_btc :
         dt = data_frame_maker(simboli, interval, [ 'RSI','change'], usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
+        dt.change = round(dt['change'],1)
+        
         time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
         dt.timeframe = dt.timeframe.astype(time_type)
+        
         dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
-        dt1.style.background_gradient(cmap ='RdYlGn')
+#         dt1.style.background_gradient(cmap ='RdYlGn')
+        
+        dt2 = dt.pivot(index='coin', columns='timeframe', values='change')
+#         dt2.style.background_gradient(cmap ='RdYlGn')
+        
         fig_high = len(dt1.index ) / 5
-        fig, ax = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
-        ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         sns.set(font_scale=0.4)
+        
+        fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
+        sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
+        ax1.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        
+        fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
+        sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
+        ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
 
         with tab1:
-            tab1.pyplot(fig,use_container_width= False)
+            tab1.pyplot(fig1,use_container_width= False)
 
-    #     with tab2:
-    #         tab2.dataframe(dt,use_container_width= False)
+        with tab2:
+            tab2.pyplot(fig2,use_container_width= False)
     except:
         st.write('Check again your data!')
     
