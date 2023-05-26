@@ -228,7 +228,8 @@ if usdt_btc :
 
         with tab2:
             tab2.pyplot(fig2,use_container_width= False)
-        with tab2:
+            
+        with tab3:
             tab3.pyplot(fig3,use_container_width= False)
     except:
         st.write('Check again your data!')
