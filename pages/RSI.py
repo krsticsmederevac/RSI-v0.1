@@ -250,6 +250,7 @@ if usdt_btc and kolona_sortiranja:
         dt = data_frame_maker(simboli, interval, oscilator, izbor_usdt_btc, kolona_sortiranja)
         p = grafik_oscilator_interval(dt,interval,oscilator,izbor_usdt_btc)
         dt = dt.set_index('coin')
+        dt.RSI = round(dt[['RSI']],1).astype(str)
         stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn')
         if 'Chart' in chart_table:
             with tab1:
