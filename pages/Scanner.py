@@ -198,7 +198,7 @@ if usdt_btc :
     #     with tab2:
     #         tab2.dataframe(dt,use_container_width= False)
     except:
-        print('Check again your data!')
+        st.write('Check again your data!')
     
   
     
