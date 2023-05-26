@@ -180,7 +180,9 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
     try:
-        dt = data_frame_maker(simboli, interval, [ 'RSI','change'], usdt_btc, ['timeframe'])
+        dt = data_frame_maker(simboli, interval, 
+                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], 
+                              usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
         dt.change = round(dt['change'],1)
@@ -218,9 +220,9 @@ if usdt_btc :
         
         dt_ema = pd.concat(data_frames,axis=1)
         
-#         fig3, ax3 = plt.subplots(figsize = (3,fig_high))
-#         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
-#         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        fig3, ax3 = plt.subplots(figsize = (3,fig_high))
+        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+        ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
             
 
         with tab1:
@@ -229,8 +231,8 @@ if usdt_btc :
         with tab2:
             tab2.pyplot(fig2,use_container_width= False)
             
-#         with tab3:
-#             tab3.pyplot(fig3,use_container_width= False)
+        with tab3:
+            tab3.pyplot(fig3,use_container_width= False)
     except:
         st.write('Check again your data!')
     
