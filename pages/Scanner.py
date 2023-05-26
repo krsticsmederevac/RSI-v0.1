@@ -192,6 +192,7 @@ if usdt_btc :
     sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
     ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
 #     ax.autoscale(enable=True) 
+    sns.set(font_scale=0.5)
     
     with tab1:
         tab1.pyplot(fig,use_container_width= False)
