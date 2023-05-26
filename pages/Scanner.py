@@ -180,26 +180,27 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc :
     try:
         dt = data_frame_maker(simboli, interval, [ 'RSI'], usdt_btc, ['timeframe'])
+        
+        dt.RSI = round(dt['RSI'],1)
+        time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
+        dt.timeframe = dt.timeframe.astype(time_type)
+        dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
+        dt1.style.background_gradient(cmap ='RdYlGn')
+        fig_high = len(dt1.index ) / 5
+        fig, ax = plt.subplots(figsize = (1.5,fig_high))
+        sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
+        ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        sns.set(font_scale=0.4)
+
+        with tab1:
+            tab1.pyplot(fig,use_container_width= False)
+
+    #     with tab2:
+    #         tab2.dataframe(dt,use_container_width= False)
     except:
         print('Check again your data!')
     
   
-    dt.RSI = round(dt['RSI'],1)
-    time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
-    dt.timeframe = dt.timeframe.astype(time_type)
-    dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
-    dt1.style.background_gradient(cmap ='RdYlGn')
-    fig_high = len(dt1.index ) / 5
-    fig, ax = plt.subplots(figsize = (1.5,fig_high))
-    sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
-    ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-#     ax.autoscale(enable=True) 
-    sns.set(font_scale=0.4)
     
-    with tab1:
-        tab1.pyplot(fig,use_container_width= False)
-        
-#     with tab2:
-#         tab2.dataframe(dt,use_container_width= False)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
