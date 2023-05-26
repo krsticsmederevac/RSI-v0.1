@@ -211,7 +211,7 @@ if usdt_btc :
         
         data_frames = []
         for time_int in interval:
-            dt_name = 'dt' + interval 
+            dt_name = 'dt' + time_int 
             dt_name = dt[dt['timeframe'] == time_int]
             dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
             data_frames.append(dt_name)
