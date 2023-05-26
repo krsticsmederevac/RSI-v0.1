@@ -188,9 +188,10 @@ if usdt_btc :
     dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
     dt1.style.background_gradient(cmap ='RdYlGn')
     
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize = ())
     sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
     ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+    ax.autoscale(enable=True) 
     
     with tab1:
         tab1.pyplot(fig,use_container_width= False)
