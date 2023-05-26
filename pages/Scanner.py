@@ -204,23 +204,23 @@ if usdt_btc :
         sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
         ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         
-        dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
-        dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
-        dt['100'] =np.where((dt['EMA100']<=dt.close), 100, -100)
-        dt['200'] =np.where((dt['EMA200']<=dt.close), 200, -200)
+#         dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
+#         dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
+#         dt['100'] =np.where((dt['EMA100']<=dt.close), 100, -100)
+#         dt['200'] =np.where((dt['EMA200']<=dt.close), 200, -200)
         
-        data_frames = []
-        for time_int in interval:
-            dt_name = 'dt' + time_int 
-            dt_name = dt[dt['timeframe'] == time_int]
-            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
-            data_frames.append(dt_name)
+#         data_frames = []
+#         for time_int in interval:
+#             dt_name = 'dt' + time_int 
+#             dt_name = dt[dt['timeframe'] == time_int]
+#             dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
+#             data_frames.append(dt_name)
         
-        dt_ema = pd.concat(data_frames,axis=1)
+#         dt_ema = pd.concat(data_frames,axis=1)
         
-        fig3, ax3 = plt.subplots(figsize = (3,fig_high))
-        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
-        ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+#         fig3, ax3 = plt.subplots(figsize = (3,fig_high))
+#         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+#         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
             
 
         with tab1:
@@ -229,8 +229,8 @@ if usdt_btc :
         with tab2:
             tab2.pyplot(fig2,use_container_width= False)
             
-        with tab3:
-            tab3.pyplot(fig3,use_container_width= False)
+#         with tab3:
+#             tab3.pyplot(fig3,use_container_width= False)
     except:
         st.write('Check again your data!')
     
