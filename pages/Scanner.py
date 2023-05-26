@@ -224,7 +224,26 @@ if usdt_btc :
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-            
+        
+        
+        dt['10'] =np.where((dt['SMA10']<=dt.close), 10, -10)
+        dt['20'] =np.where((dt['SMA20']<=dt.close), 20, -20)
+        dt['100'] =np.where((dt['SMA100']<=dt.close), 100, -100)
+        dt['200'] =np.where((dt['SMA200']<=dt.close), 200, -200)
+        
+        data_frames = []
+        for time_int in interval:
+            dt_name = 'dt' + time_int 
+            dt_name = dt[dt['timeframe'] == time_int]
+            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
+            data_frames.append(dt_name)
+        
+        dt_sma = pd.concat(data_frames,axis=1)
+        
+        ema_sma_size = len(interval)+1
+        fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
+        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+        ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
@@ -234,6 +253,9 @@ if usdt_btc :
             
         with tab3:
             tab3.pyplot(fig3,use_container_width= False)
+            
+        with tab4:
+            tab4.pyplot(fig4,use_container_width= False)
     except:
         st.write('Check again your data!')
     
