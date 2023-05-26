@@ -252,7 +252,7 @@ if usdt_btc and kolona_sortiranja:
         dt = dt.set_index('coin')
         dt.rsi = round(dt[['rsi']],1).astype(str)
        
-        stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn' subset=['RSI'] )
+        stil = dt.style.background_gradient(axis=0, cmap = 'RdYlGn' ,subset=['RSI'] )
         if 'Chart' in chart_table:
             with tab1:
                 tab1.bokeh_chart(p)
