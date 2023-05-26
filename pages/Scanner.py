@@ -12,13 +12,6 @@ import json
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-# import matplotlib.pyplot
-# from bokeh.io import curdoc, show
-# from bokeh.models import ColumnDataSource, Grid, LinearAxis, Plot, Text, LabelSet, Span, Range1d, BoxAnnotation, HoverTool, Label
-# from bokeh.plotting import figure
-# from bokeh.transform import linear_cmap
-# from bokeh.palettes import  RdYlGn
-
 
 def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja, menjacnica = 'binance'):                        
     
@@ -147,7 +140,7 @@ else:
                        'RNDR', 'ROSE',  'WOO']
   
 
-ponudjeni_intervali_pocetni = ['1h', '4h', '1d']
+ponudjeni_intervali_pocetni = ['15m','1h', '4h', '1d','1W']
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
@@ -183,37 +176,23 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc :
 
-    dt = data_frame_maker(simboli, interval, [ "change",'RSI','RSI[1]','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, interval, [ 'RSI'], usdt_btc, ['timeframe'])
     
   
+    dt.RSI = round(dt['RSI'],1)
     time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
     dt.timeframe = dt.timeframe.astype(time_type)
+    dt1 = dt.pivot(index='coin', columns='timeframe', values='RSI')
+    dt1.style.background_gradient(cmap ='RdYlGn')
     
-    
-    dt.set_index(['coin','timeframe'], inplace = True)
-    dt.sort_index(level=0, inplace = True)
-    
-    
-    
-#     dt['Change'] = round(dt['change'],2).astype(str) + '%'
-    dt['Change %'] = round(dt['change'],2).astype(str)
-    dt.RSI = round(dt[['RSI']],1).astype(str)
-    dt['RSI[1]'] = round(dt[['RSI[1]']],1).astype(str)
-    dt.change = round(dt[['change']],2).astype(str)
-    
-    dt1 = dt[['RSI','RSI[1]']]
-    dt2 = dt[['change']]
-    
-    
-    dt1 = dt1.style.background_gradient(cmap = 'RdYlGn',subset=['RSI','RSI[1]'] )
-    
-    def style_negative(v, props=''):
-        return props if v < 0 else 'color:green;'
-    dt2 = dt2.style.applymap(lambda x: 'background-color : green' if x>="0" else 'background-color : red')
+    fig, ax = plt.subplots(figsize = (6, 25))
+    sns.heatmap(dt1, cmap ='RdYlGn',vmin=-0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
+    ax.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
     
     with tab1:
-        tab1.dataframe(dt1,use_container_width= False)
-    with tab2:
-        tab2.dataframe(dt2,use_container_width= False)
+        tab1.pyplot(fig,use_container_width= False)
+        
+#     with tab2:
+#         tab2.dataframe(dt,use_container_width= False)
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
