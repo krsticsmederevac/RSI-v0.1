@@ -169,15 +169,15 @@ oscilator = 'rsi'
 
 container = st.container()
 
+
+
+tab1, tab2 = container.tabs(["📈 Chart", "📋 Table"])
+
 container.write("Feel free to leave a tip.")
 container.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
 container.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
 container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
-
-tab1, tab2 = container.tabs(["📈 Chart", "📋 Table"])
-
-
 
 
 podesavanja_korisnika = st.file_uploader("Upload Coin List",'json')  
