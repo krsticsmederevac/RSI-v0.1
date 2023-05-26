@@ -178,8 +178,10 @@ with st.sidebar.form(key ='Form1'):
 
     
 if usdt_btc :
-
-    dt = data_frame_maker(simboli, interval, [ 'RSI'], usdt_btc, ['timeframe'])
+    try:
+        dt = data_frame_maker(simboli, interval, [ 'RSI'], usdt_btc, ['timeframe'])
+    except:
+        print('Check again your data!')
     
   
     dt.RSI = round(dt['RSI'],1)
