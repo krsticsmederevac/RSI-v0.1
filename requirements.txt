@@ -4,4 +4,5 @@ bokeh == 2.4.3
 pandas
 tradingview_ta
 matplotlib
+seaborn
 streamlit_option_menu
