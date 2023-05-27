@@ -144,7 +144,7 @@ else:
                        'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
   
 
-ponudjeni_intervali_pocetni = ['15m','1h', '4h', '1d','1W']
+ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
