@@ -228,7 +228,7 @@ if usdt_btc :
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA 10 20 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-        ax3.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
+        ax3.set_xticklabels(ax3.get_xticklabels(), rotation=90, ha='center')
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         
@@ -246,7 +246,7 @@ if usdt_btc :
         
         dt_sma = pd.concat(data_frames,axis=1)
         
-        ema_sma_size = len(interval)/2
+        
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("SMA 10 20 100 200")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
