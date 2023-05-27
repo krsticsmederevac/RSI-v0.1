@@ -263,7 +263,7 @@ if usdt_btc :
         
         dt['BB'] =np.where(dt['BB.upper'].isna() | dt['BB.lower'].isna() ,
                            np.nan, np.where((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)) ,
-                           1, np.where((dt[BB.lower']>= dt.low) | (dt[BB.lower']>=dt.close)) ,-1,0)
+                           1, np.where((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)) ,-1,0)
         
 
         with tab1:
