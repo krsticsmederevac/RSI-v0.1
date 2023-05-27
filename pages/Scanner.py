@@ -192,9 +192,10 @@ if usdt_btc :
         dt2 = dt.pivot(index='coin', columns='timeframe', values='change')
 
         if len(interval) == 1:
-            fig_high = len(dt.index ) / 10
+            fig_high = len(dt.index ) / 5
         else:
             fig_high = len(dt.index ) / 20
+            
         sns.set(font_scale=0.4)
         
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
