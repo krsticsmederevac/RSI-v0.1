@@ -229,6 +229,7 @@ if usdt_btc :
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA 10 20 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax3.set_xticklabels(ax3.get_xticklabels(), rotation=90, ha='center')
+        ax3.set_yticklabels(ax3.get_yticklabels(), rotation=90, ha='center')
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         
