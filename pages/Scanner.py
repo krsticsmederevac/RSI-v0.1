@@ -222,7 +222,7 @@ if usdt_btc :
         
         ema_sma_size = len(interval)+1
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA 10 20 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         
         
@@ -242,9 +242,10 @@ if usdt_btc :
         
         ema_sma_size = len(interval)/2
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
+        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("SMA 10 20 100 200")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-        ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='right')
+        ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='right',rotation_mode='anchor')
+        ax4.set_xlabel('SMA')
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
