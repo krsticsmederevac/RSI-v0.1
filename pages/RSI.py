@@ -66,9 +66,8 @@ def data_frame_maker(simboli, interval, oscilator, usdt_btc, kolona_sortiranja, 
 
 def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
-    source = ColumnDataSource(data=dict(
+    source = ColumnDataSource(data=dict(rsi=dt[oscilator],
         coin=dt['coin'], 
-        rsi=dt[oscilator],
         names=dt['coin']))
 
 
@@ -76,8 +75,8 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
-    p = figure(x_range=(0,101), y_range=group,#height=600,width=1200,  
-               title = ime_grafika, toolbar_location="above")
+    p = figure(x_range=(0,101), y_range=group,height=1200,width=600,  
+               title = ime_grafika, toolbar_location="below")
 
     p.title.align = 'center'
 
