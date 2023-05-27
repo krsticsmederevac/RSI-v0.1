@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "RSI Field", page_icon = "📊",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+st.set_page_config( page_title = "RSI Field", page_icon = "📊",layout="centered",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
 
