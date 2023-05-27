@@ -72,6 +72,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
 
     y = dt['coin']
+    x = dt[oscilator]
 
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
@@ -103,19 +104,19 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
                                palette = palette, low = dt[oscilator].max(), 
                                high = dt[oscilator].min())
 
-    p.hbar(dt[oscilator],right =dt['coin'], height =8, fill_color=color_mapper)
+    p.hbar(y = 'coin' ,right ='rsi', height =8, fill_color=color_mapper)
     
     glyph = HBar(y="y", right=100, left=0, height=0.5, fill_color="#b3de69")
     p.add_glyph(source, glyph)
     
      
 
-    labels = LabelSet(x=oscilator, y='coin', 
-                      text='names',text_alpha = 0.9,text_font_size = '4pt',
-                      text_align = 'right',
-                      level='glyph',
-                      x_offset = 10, y_offset = 10,
-                      source=source)
+#     labels = LabelSet(x=oscilator, y='coin', 
+#                       text='names',text_alpha = 0.9,text_font_size = '4pt',
+#                       text_align = 'right',
+#                       level='glyph',
+#                       x_offset = 10, y_offset = 10,
+#                       source=source)
 #     p.xaxis.major_label_orientation = 1.2
 
 
