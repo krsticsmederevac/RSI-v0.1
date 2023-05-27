@@ -66,37 +66,34 @@ def data_frame_maker(simboli, interval, oscilator, usdt_btc, kolona_sortiranja, 
 
 def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
-    source = ColumnDataSource(data=dict(rsi=dt[oscilator],
+    source = ColumnDataSource(data=dict(
         coin=dt['coin'], 
+        rsi=dt[oscilator],
         names=dt['coin']))
 
 
-    y = dt['coin']
-    x = dt[oscilator]
+    group = dt['coin']
 
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
-    p = figure(x_range=(0,101), y_range=y,height=1200,width=600,  
-               title = ime_grafika, toolbar_location=None)
+    p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
+               title = ime_grafika, toolbar_location="above")
 
     p.title.align = 'center'
 
     p.sizing_mode='stretch_both'
-    
-    p.xaxis.axis_label = oscilator.upper() 
-    p.yaxis.axis_label = 'Coin'
 
-#     upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
-#     p.add_layout(upper)
+    upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
+    p.add_layout(upper)
 
-#     upper = BoxAnnotation(bottom=60, fill_alpha=0.1, fill_color='olive')
-#     p.add_layout(upper)
+    upper = BoxAnnotation(bottom=60, fill_alpha=0.1, fill_color='olive')
+    p.add_layout(upper)
 
-#     lower = BoxAnnotation(top=40, fill_alpha=0.1, fill_color='red')
-#     p.add_layout(lower)
+    lower = BoxAnnotation(top=40, fill_alpha=0.1, fill_color='red')
+    p.add_layout(lower)
 
-#     lower = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='firebrick')
-#     p.add_layout(lower)
+    lower = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='firebrick')
+    p.add_layout(lower)
 
 
     palette = RdYlGn[10]
@@ -104,15 +101,12 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
                                palette = palette, low = dt[oscilator].max(), 
                                high = dt[oscilator].min())
 
-    p.hbar(y = 'coin' ,right ='rsi', height =8, fill_color=color_mapper)
-    
-    glyph = HBar(y="y", right=100, left=0, height=0.5, fill_color="#b3de69")
-    p.add_glyph(source, glyph)
-    
-     
+    p.scatter(x='coin', y=oscilator, size=8, source=source, fill_color=color_mapper)
+    p.xaxis.axis_label = 'Coin'
+    p.yaxis.axis_label = oscilator.upper() 
 
-    labels = LabelSet(x=oscilator, y='coin', 
-                      text='names',text_alpha = 0.9,text_font_size = '4pt',
+    labels = LabelSet(x='coin', y=oscilator, 
+                      text='names',text_alpha = 0.9,text_font_size = '6pt',
                       text_align = 'right',
                       level='glyph',
                       x_offset = 10, y_offset = 10,
@@ -120,16 +114,15 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     p.xaxis.major_label_orientation = 1.2
 
 
-    polovina = Span(location=10,
+    polovina = Span(location=50,
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
-    
-    p.x_range = Range1d(15,85,bounds=(0, 100))
+    p.y_range = Range1d(15,85,bounds=(0, 100))
     
     prosecan_rsi = dt[oscilator].mean()
     mediana_rsi = dt[oscilator].median()
     
-    prosek_rsi = Label(y=len(dt)- 4, x=10, text='Mean: ' + str(prosecan_rsi)[:4] +'\nMedian: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '10pt' )
+    prosek_rsi = Label(x=len(dt)//2 - 4, y=17, text='Mean: ' + str(prosecan_rsi)[:4] +'  Median: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '12pt' )
 
     p.add_layout(prosek_rsi)
 
