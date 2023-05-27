@@ -9,10 +9,10 @@ url2 = 'https://www.tradingview.com/script/T1z24zxb-CryptoData-Oscillators-ic/'
 url3 = 'https://www.tradingview.com/script/fGl81yI5-CryptoData-ic/'
 url4 = 'https://www.tradingview.com/script/0Kur5zUX-CryptoData-Pack2-ic/'
 st.write("Check out my TradingView indicators")
-st.write(" [CryptoData Coin/BTC Quick Chart [+ic]](%s)" % url1)
-st.write("CryptoData Oscillators [+ic] [link](%s)" % url2)
-st.write("CryptoData [+ic] [link](%s)" % url3)
-st.write("CryptoData Pack2 [+ic] [link](%s)" % url4)
+st.write("[CryptoData Coin/BTC Quick Chart [+ic]](%s)" % url1)
+st.write("[CryptoData Oscillators [+ic]](%s)" % url2)
+st.write("[CryptoData [+ic]](%s)" % url3)
+st.write("[CryptoData Pack2 [+ic]](%s)" % url4)
 st.write('\n')
 st.write("Feel free to leave a tip.")
 st.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
