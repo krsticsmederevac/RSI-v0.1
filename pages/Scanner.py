@@ -245,7 +245,8 @@ if usdt_btc :
         sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("SMA 10 20 100 200")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
-        ax4.set_xlabel('SMA')
+        ax4.set_xlabel('')
+        ax4.set_ylabel('')
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
