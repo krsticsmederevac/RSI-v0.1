@@ -199,12 +199,14 @@ if usdt_btc :
         sns.set(font_scale=0.4)
         
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False,square=True).set_title("RSI")
+        sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
         ax1.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90, ha='center')
         ax1.set_yticklabels(ax1.get_yticklabels(), rotation=0, ha='center')
         ax1.set_xlabel('')
         ax1.set_ylabel('')
+        
+        plt.tight_layout()
         
         fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
