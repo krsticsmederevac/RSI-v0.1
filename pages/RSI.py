@@ -83,17 +83,17 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     p.sizing_mode='stretch_both'
 
-    upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
-    p.add_layout(upper)
+#     upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
+#     p.add_layout(upper)
 
-    upper = BoxAnnotation(bottom=60, fill_alpha=0.1, fill_color='olive')
-    p.add_layout(upper)
+#     upper = BoxAnnotation(bottom=60, fill_alpha=0.1, fill_color='olive')
+#     p.add_layout(upper)
 
-    lower = BoxAnnotation(top=40, fill_alpha=0.1, fill_color='red')
-    p.add_layout(lower)
+#     lower = BoxAnnotation(top=40, fill_alpha=0.1, fill_color='red')
+#     p.add_layout(lower)
 
-    lower = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='firebrick')
-    p.add_layout(lower)
+#     lower = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='firebrick')
+#     p.add_layout(lower)
 
 
     palette = RdYlGn[10]
@@ -105,7 +105,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     p.xaxis.axis_label = 'Coin'
     p.yaxis.axis_label = oscilator.upper() 
 
-    labels = LabelSet(x='coin', y=oscilator, 
+    labels = LabelSet(x=oscilator, y='coin', 
                       text='names',text_alpha = 0.9,text_font_size = '6pt',
                       text_align = 'right',
                       level='glyph',
@@ -117,12 +117,12 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     polovina = Span(location=50,
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
-    p.y_range = Range1d(15,85,bounds=(0, 100))
+    p.x_range = Range1d(15,85,bounds=(0, 100))
     
     prosecan_rsi = dt[oscilator].mean()
     mediana_rsi = dt[oscilator].median()
     
-    prosek_rsi = Label(x=len(dt)//2 - 4, y=17, text='Mean: ' + str(prosecan_rsi)[:4] +'  Median: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '12pt' )
+    prosek_rsi = Label(y=len(dt)//2 - 4, x=17, text='Mean: ' + str(prosecan_rsi)[:4] +'  Median: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '12pt' )
 
     p.add_layout(prosek_rsi)
 
