@@ -158,7 +158,7 @@ with st.sidebar.form(key ='Form1'):
     
     st.header('Scanner `version 1`')
     
-    st.form_submit_button(label = "Submite")
+    st.form_submit_button(label = "Submit")
     
     
     interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
