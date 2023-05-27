@@ -217,7 +217,7 @@ if usdt_btc :
         dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
         dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
         dt['100'] =np.where((dt['EMA100']<=dt.close), 100, -100)
-        dt['200'] =np.where((dt['EMA200']<=dt.close), 200, -200)
+        dt['200'] =np.where(dt['EMA200'].isna() , np.nan, np.where((dt['EMA200']<=dt.close) , 10, -10))
         
         data_frames = []
         for time_int in interval:
