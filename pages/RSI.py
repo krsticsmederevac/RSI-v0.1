@@ -111,13 +111,13 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     
      
 
-#     labels = LabelSet(x=oscilator, y='coin', 
-#                       text='names',text_alpha = 0.9,text_font_size = '4pt',
-#                       text_align = 'right',
-#                       level='glyph',
-#                       x_offset = 10, y_offset = 10,
-#                       source=source)
-#     p.xaxis.major_label_orientation = 1.2
+    labels = LabelSet(x=oscilator, y='coin', 
+                      text='names',text_alpha = 0.9,text_font_size = '4pt',
+                      text_align = 'right',
+                      level='glyph',
+                      x_offset = 10, y_offset = 10,
+                      source=source)
+    p.xaxis.major_label_orientation = 1.2
 
 
     polovina = Span(location=10,
