@@ -5,7 +5,7 @@ import extra_streamlit_components as stx
 
 
 url1 = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
-st.write("Check out my TradingView indicators
+st.write("Check out my TradingView indicators)
 st.write("CryptoData Coin/BTC Quick Chart [+ic] [link](%s)" % url1)
 
 st.write("Feel free to leave a tip.")
