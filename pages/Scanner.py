@@ -261,9 +261,16 @@ if usdt_btc :
         ax4.set_xlabel('')
         ax4.set_ylabel('')
         
-        dt['BB'] =np.where(dt['BB.upper'].isna() | dt['BB.lower'].isna() ,
-                           np.nan, np.where((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)) ,
-                           1, np.where((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)) ,-1,0)
+        conditions = [
+        (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
+        ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
+        ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
+        ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
+        ]
+        
+        values = [np.nan, 'UP','LOW','']
+
+        dt['BB'] =np.select(conditions,values)
         
 
         with tab1:
