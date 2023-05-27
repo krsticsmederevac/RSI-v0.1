@@ -81,6 +81,9 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     p.title.align = 'center'
 
     p.sizing_mode='stretch_both'
+    
+    p.xaxis.axis_label = oscilator.upper() 
+    p.yaxis.axis_label = 'Coin'
 
 #     upper = BoxAnnotation(bottom=80, fill_alpha=0.1, fill_color='green')
 #     p.add_layout(upper)
@@ -102,11 +105,10 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     p.hbar(dt[oscilator],right =dt['coin'], height =8, fill_color=color_mapper)
     
-    glyph = HBar(y="y", right="right", left=0, height=0.5, fill_color="#b3de69")
+    glyph = HBar(y="y", right=100, left=0, height=0.5, fill_color="#b3de69")
     p.add_glyph(source, glyph)
     
-    p.xaxis.axis_label = oscilator.upper() 
-    p.yaxis.axis_label = 'Coin'
+     
 
     labels = LabelSet(x=oscilator, y='coin', 
                       text='names',text_alpha = 0.9,text_font_size = '4pt',
@@ -120,12 +122,13 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
     polovina = Span(location=10,
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
+    
     p.x_range = Range1d(15,85,bounds=(0, 100))
     
     prosecan_rsi = dt[oscilator].mean()
     mediana_rsi = dt[oscilator].median()
     
-    prosek_rsi = Label(y=len(dt)- 2, x=10, text='Mean: ' + str(prosecan_rsi)[:4] +'\nMedian: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '10pt' )
+    prosek_rsi = Label(y=len(dt)- 4, x=10, text='Mean: ' + str(prosecan_rsi)[:4] +'\nMedian: ' + str(mediana_rsi)[:4], text_color = 'green' ,text_font_size = '10pt' )
 
     p.add_layout(prosek_rsi)
 
