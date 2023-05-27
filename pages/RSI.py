@@ -100,7 +100,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
                                palette = palette, low = dt[oscilator].max(), 
                                high = dt[oscilator].min())
 
-    p.hbar(rsi,right =oscilator, height =8, source=source, fill_color=color_mapper)
+    p.hbar(dt[oscilator],right =dt[oscilator], height =8, fill_color=color_mapper)
     p.xaxis.axis_label = oscilator.upper() 
     p.yaxis.axis_label = 'Coin'
 
