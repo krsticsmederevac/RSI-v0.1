@@ -243,7 +243,7 @@ if usdt_btc :
         ema_sma_size = len(interval)/2
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("SMA 10 20 100 200")
-        ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=True)
+        ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center',horizontalalignment="center")
         ax4.set_xlabel('SMA')
 
