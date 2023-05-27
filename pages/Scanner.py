@@ -198,7 +198,7 @@ if usdt_btc :
         fig_high = len(dt.index ) / 20
         sns.set(font_scale=0.4)
         
-        fig1, ax1 = plt.subplots(figsize = (1,fig_high))
+        fig1, ax1 = plt.subplots(figsize = (1.5,fig_high*2))
         sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
         ax1.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax1.set_xticklabels(ax1.get_xticklabels(), rotation=90, ha='center')
