@@ -201,10 +201,14 @@ if usdt_btc :
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
         ax1.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        ax1.set_xlabel('')
+        ax1.set_ylabel('')
         
         fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
         ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        ax2.set_xlabel('')
+        ax2.set_ylabel('')
         
         dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
         dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
@@ -220,11 +224,13 @@ if usdt_btc :
         
         dt_ema = pd.concat(data_frames,axis=1)
         
-        ema_sma_size = len(interval)+1
+        ema_sma_size = len(interval)/2
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA 10 20 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-        
+        ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
+        ax4.set_xlabel('')
+        ax4.set_ylabel('')
         
         dt['10'] =np.where((dt['SMA10']<=dt.close), 10, -10)
         dt['20'] =np.where((dt['SMA20']<=dt.close), 20, -20)
