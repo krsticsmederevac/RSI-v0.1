@@ -214,9 +214,9 @@ if usdt_btc :
         ax2.set_xlabel('')
         ax2.set_ylabel('')
         
-        dt['10'] =np.where((dt['EMA10']<=dt.close), 10, -10)
-        dt['20'] =np.where((dt['EMA20']<=dt.close), 20, -20)
-        dt['100'] =np.where((dt['EMA100']<=dt.close), 100, -100)
+        dt['10'] =np.where(dt['EMA10'].isna() , np.nan, np.where((dt['EMA10']<=dt.close) , 10, -10))
+        dt['20'] =np.where(dt['EMA20'].isna() , np.nan, np.where((dt['EMA20']<=dt.close) , 10, -10))
+        dt['100'] =np.where(dt['EMA100'].isna() , np.nan, np.where((dt['EMA100']<=dt.close) , 10, -10))
         dt['200'] =np.where(dt['EMA200'].isna() , np.nan, np.where((dt['EMA200']<=dt.close) , 10, -10))
         
         data_frames = []
@@ -237,10 +237,10 @@ if usdt_btc :
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         
-        dt['10'] =np.where((dt['SMA10']<=dt.close), 10, -10)
-        dt['20'] =np.where((dt['SMA20']<=dt.close), 20, -20)
-        dt['100'] =np.where((dt['SMA100']<=dt.close), 100, -100)
-        dt['200'] =np.where((dt['SMA200']<=dt.close), 200, -200)
+        dt['10'] =np.where(dt['SMA10'].isna() , np.nan, np.where((dt['SMA10']<=dt.close) , 10, -10))
+        dt['20'] =np.where(dt['SMA20'].isna() , np.nan, np.where((dt['SMA20']<=dt.close) , 10, -10))
+        dt['100'] =np.where(dt['SMA100'].isna() , np.nan, np.where((dt['SMA100']<=dt.close) , 10, -10))
+        dt['200'] =np.where(dt['SMA200'].isna() , np.nan, np.where((dt['SMA200']<=dt.close) , 10, -10))
         
         data_frames = []
         for time_int in interval:
