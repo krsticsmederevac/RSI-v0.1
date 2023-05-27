@@ -192,11 +192,12 @@ if usdt_btc :
         dt2 = dt.pivot(index='coin', columns='timeframe', values='change')
 
         if len(interval) == 1:
-            fig_high = len(dt.index ) / 5
+            fig_high = len(dt.index ) / 10
         else:
             fig_high = len(dt.index ) / 20
             
         sns.set(font_scale=0.4)
+        plt.tight_layout()
         
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt1, cmap ='RdYlGn',vmin=0, vmax=100,  linewidths = 0.30, annot = True, cbar=False).set_title("RSI")
@@ -206,7 +207,7 @@ if usdt_btc :
         ax1.set_xlabel('')
         ax1.set_ylabel('')
         
-        plt.tight_layout()
+        
         
         fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
         sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
