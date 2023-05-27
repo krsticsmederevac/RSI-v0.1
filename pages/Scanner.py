@@ -263,6 +263,8 @@ if usdt_btc :
         ax4.set_xlabel('')
         ax4.set_ylabel('')
         
+        
+        
         conditions = [
         (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
         ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
@@ -270,11 +272,20 @@ if usdt_btc :
         ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
         ]
         
-        values = [np.nan, 'UP','LOW','']
+        values = [np.nan, 1,-1,0]
 
         dt['BB'] =np.select(conditions,values)
         
-
+        dt5 = dt.pivot(index='coin', columns='timeframe', values='BB')
+        
+        fig5, ax5 = plt.subplots(figsize = (ema_sma_size,fig_high))
+        sns.heatmap(dt5, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("Bollinger Bands Hit")
+        ax5.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        ax5.set_xticklabels(ax5.get_xticklabels(), rotation=90, ha='center')
+        ax5.set_yticklabels(ax5.get_yticklabels(), rotation=0, ha='center')
+        ax5.set_xlabel('')
+        ax5.set_ylabel('')
+        
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
 
@@ -286,6 +297,9 @@ if usdt_btc :
             
         with tab4:
             tab4.pyplot(fig4,use_container_width= False)
+            
+        with tab4:
+            tab5.pyplot(fig5,use_container_width= False)
     except:
         st.write('Check again your data!')
     
