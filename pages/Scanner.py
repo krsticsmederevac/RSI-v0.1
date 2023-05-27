@@ -61,10 +61,9 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
    
 
 
-
     dt = pd.DataFrame(recnik) 
 
-#     dt.sort_values(by=kolona_sortiranja, inplace=True)
+
     dt.sort_values(by = 'timeframe', 
                    key= lambda x: x.map({"1m":1, "5m":2, "15m":3, "30m":4, "1h":5, "2h":6,
                                          "4h":7, "1d":8,"1W":9, "1M":10})
@@ -73,9 +72,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     if len(dt.index) == 0:
         dt = pd.DataFrame({'coin': ["No Data"], oscilator : [0]})
     
-#     dt['Change'] = round(dt['change'],2).astype(str) + '%'
-#     dt.RSI = round(dt[['RSI']],1)
-#     dt.change = round(dt[['change']],2)
+
     return dt
   
   
@@ -111,7 +108,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2, tab3, tab4 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ]) 
+tab1, tab2, tab3, tab4, tab5 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ,"📋 Bollinger Up/Down" ]) 
 
 
 
@@ -181,7 +178,7 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc :
     try:
         dt = data_frame_maker(simboli, interval, 
-                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200"], 
+                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200",'low','high','BB.upper','BB.lower'], 
                               usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
@@ -263,6 +260,11 @@ if usdt_btc :
         ax4.set_yticklabels(ax4.get_yticklabels(), rotation=0, ha='center')
         ax4.set_xlabel('')
         ax4.set_ylabel('')
+        
+        dt['BB'] =np.where(dt['BB.upper'].isna() | dt['BB.lower'].isna() ,
+                           np.nan, np.where((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)) ,
+                           1, np.where((dt[BB.lower']>= dt.low) | (dt[BB.lower']>=dt.close)) ,-1,0)
+        
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
