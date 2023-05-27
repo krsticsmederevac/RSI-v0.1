@@ -244,6 +244,7 @@ if usdt_btc :
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        ax4.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
