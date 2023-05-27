@@ -114,7 +114,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 #     p.xaxis.major_label_orientation = 1.2
 
 
-    polovina = Span(location=50,
+    polovina = Span(location=50,dimension=oscilator,
                      line_color='orange',line_dash='dashed', line_width=1)
     p.add_layout(polovina)
     p.x_range = Range1d(15,85,bounds=(0, 100))
