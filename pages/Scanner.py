@@ -228,9 +228,9 @@ if usdt_btc :
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
         sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-1, vmax=1,  linewidths = 0.30, annot = False, cbar=False).set_title("EMA 10 20 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
-        ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
-        ax4.set_xlabel('')
-        ax4.set_ylabel('')
+        ax3.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
+        ax3.set_xlabel('')
+        ax3.set_ylabel('')
         
         dt['10'] =np.where((dt['SMA10']<=dt.close), 10, -10)
         dt['20'] =np.where((dt['SMA20']<=dt.close), 20, -20)
