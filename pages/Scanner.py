@@ -195,7 +195,7 @@ if usdt_btc :
         dt2 = dt.pivot(index='coin', columns='timeframe', values='change')
 
         
-        fig_high = 1+len(dt.index ) / 20
+        fig_high = 2+len(dt.index ) / 20
         sns.set(font_scale=0.4)
         
         fig1, ax1 = plt.subplots(figsize = (1.5,fig_high))
