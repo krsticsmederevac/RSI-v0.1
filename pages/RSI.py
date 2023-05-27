@@ -76,7 +76,7 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
-    p = figure(x_range=group, y_range=(0,101),#height=600,width=1200,  
+    p = figure(x_range=(0,101), y_range=group,#height=600,width=1200,  
                title = ime_grafika, toolbar_location="above")
 
     p.title.align = 'center'
