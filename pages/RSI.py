@@ -71,11 +71,11 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
         names=dt['coin']))
 
 
-    group = dt['coin']
+    y = dt['coin']
 
     ime_grafika = oscilator.upper() + ' ' + interval + " " + usdt_btc
 
-    p = figure(x_range=(0,101), y_range=group,height=1200,width=600,  
+    p = figure(x_range=(0,101), y_range=y,height=1200,width=600,  
                title = ime_grafika, toolbar_location=None)
 
     p.title.align = 'center'
