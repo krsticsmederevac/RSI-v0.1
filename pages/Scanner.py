@@ -274,7 +274,7 @@ if usdt_btc :
 #         ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
         ]
         
-        values = [np.nan, 1,-1, 0.5, -0.9]
+        values = [np.nan, 1,-1, 0.5, -0.6]
 
         dt['BB'] =np.select(conditions,values)
         
