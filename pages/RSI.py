@@ -131,6 +131,8 @@ def grafik_oscilator_interval(dt,interval,oscilator,usdt_btc):
 
     p.add_layout(labels)
     
+    p.toolbar_location = None
+    
     return p
   
   
