@@ -278,10 +278,14 @@ if usdt_btc :
 
         dt['BB'] =np.select(conditions,values)
         
-        dt5 = dt.pivot(index='coin', columns='timeframe', values='BB')
+        dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
+        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
+        dt['BB.Position'] = round((dt['close'] - dt['BB.SMA']) / dt['BB.STD'],2)
+        
+        dt5 = dt.pivot(index='coin', columns='timeframe', values='BB.Position')
         
         fig5, ax5 = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt5, cmap ='RdYlGn',vmin=-1.1, vmax=1.4,  linewidths = 0.30, annot = False, cbar=False).set_title("Bollinger Bands Hit")
+        sns.heatmap(dt5, cmap ='RdYlGn',vmin=-2, vmax=2,  linewidths = 0.30, annot = False, cbar=False).set_title("Bollinger Bands STD")
         ax5.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax5.set_xticklabels(ax5.get_xticklabels(), rotation=90, ha='center')
         ax5.set_yticklabels(ax5.get_yticklabels(), rotation=0, ha='center')
