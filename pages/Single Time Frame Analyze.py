@@ -389,11 +389,11 @@ if usdt_btc and kolona_sortiranja:
             if kolona_sortiranja == 'coin':
                 sortiranje = False
             p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje)
-            tab1.bokeh_chart(p)
+            tab1.bokeh_chart(p_rsi_sp)
         
         with tab2:
             p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje)
-            tab2.bokeh_chart(p)
+            tab2.bokeh_chart(p_rsi_pc)
             
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
