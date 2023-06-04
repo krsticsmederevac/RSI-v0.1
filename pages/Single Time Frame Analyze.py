@@ -365,37 +365,38 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc and kolona_sortiranja:
 
-    for izbor_usdt_btc in usdt_btc:
-      
-        dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change'], izbor_usdt_btc, ['timeframe'])
-        
-        conditions = [
-        (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
-        ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
-        ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
-        ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
-        ]
-        
-        values = [np.nan, 'UP','LOW','']
+    
 
-        dt['BB'] =np.select(conditions,values)
-        
-        dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
-        dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
-        
-        if kolona_sortiranja == 'coin':
-            sortiranje_po_value = False
-        else:
-            sortiranje_po_value = True
-        with tab1:
-            
-            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_rsi_sp)
-        
-        with tab2:
-            p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_rsi_pc)
+      
+    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change'], izbor_usdt_btc, ['timeframe'])
+
+    conditions = [
+    (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
+    ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
+    ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
+    ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
+    ]
+
+    values = [np.nan, 'UP','LOW','']
+
+    dt['BB'] =np.select(conditions,values)
+
+    dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
+    dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
+    dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
+
+    if kolona_sortiranja == 'coin':
+        sortiranje_po_value = False
+    else:
+        sortiranje_po_value = True
+    with tab1:
+
+        p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
+        tab1.bokeh_chart(p_rsi_sp)
+
+    with tab2:
+        p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
+        tab2.bokeh_chart(p_rsi_pc)
             
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
