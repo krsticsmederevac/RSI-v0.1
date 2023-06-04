@@ -111,7 +111,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     else:
         x2 = max(dt[oscilator])*1.05
  
-    p = figure(y_range=dt['coin'],x_range =(x1,x2),#height=600,width=1200,  
+    p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location=None)
 
     p.title.align = 'center'
