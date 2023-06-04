@@ -192,7 +192,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.title.align = 'center'
 
-    p.sizing_mode = 'scale_both'
+    p.sizing_mode = 'scale_width'
 #     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
     
     
