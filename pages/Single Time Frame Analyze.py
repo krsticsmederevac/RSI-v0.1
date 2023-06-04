@@ -195,7 +195,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     p.sizing_mode = 'stretch_width'
 #     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
     
-    p.xaxis_label_text_font_size = '5px'
+    p.xaxis.axis_label_text_font_size = '5px'
+#     p.yaxis. = "1vh"
 
 
     palette = RdYlGn[10]
@@ -216,7 +217,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
                       source=source)
 
     p.add_layout(labels)
-    p.yaxis.axis_label_text_font_size = "1vh"
+    
 
     
     if oscilator == 'BB.Position':
