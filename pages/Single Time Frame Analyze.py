@@ -368,7 +368,7 @@ if usdt_btc and kolona_sortiranja:
     
 
       
-    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change'], izbor_usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change'], usdt_btc, ['timeframe'])
 
     conditions = [
     (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
