@@ -206,8 +206,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.scatter(y='coin', x='indikator', size=7, source=source, fill_color=color_mapper)
     
-    p.xaxis.axis_label = oscilator.upper() 
-    p.yaxis.axis_label = 'Coin'
+#     p.xaxis.axis_label = oscilator.upper() 
+#     p.yaxis.axis_label = 'Coin'
 
     labels = LabelSet(y='coin', x='indikator', 
                       text='names',text_alpha = 0.9,text_font_size = '5pt',
