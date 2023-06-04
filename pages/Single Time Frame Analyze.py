@@ -384,15 +384,17 @@ if usdt_btc and kolona_sortiranja:
         dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
         dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
         
-        
+        if kolona_sortiranja == 'coin':
+            sortiranje_po_value = False
+        else:
+            sortiranje_po_value = True
         with tab1:
-            if kolona_sortiranja == 'coin':
-                sortiranje = False
-            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje)
+            
+            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_rsi_sp)
         
         with tab2:
-            p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje)
+            p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',izbor_usdt_btc,sortiranje_po_value)
             tab2.bokeh_chart(p_rsi_pc)
             
         
