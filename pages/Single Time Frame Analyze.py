@@ -216,7 +216,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
                       source=source)
 
     p.add_layout(labels)
-#     p.xaxis.major_label_orientation = 1.2
+#     p..yaxis.axis_label_text_font_size = "2vh"
 
     
     if oscilator == 'BB.Position':
