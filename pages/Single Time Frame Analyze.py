@@ -195,7 +195,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     p.sizing_mode = 'stretch_width'
 #     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
     
-    p.xaxis.major_label_text_font_size = “4px”
+    p.xaxis.major_label_text_font_size = '4px'
 #     p.yaxis. = "1vh"
 
 
