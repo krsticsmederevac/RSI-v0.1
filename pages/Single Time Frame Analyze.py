@@ -100,8 +100,18 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika_osnovno = oscilator.upper() + ' ' + interval + ' ' + usdt_btc 
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
-   
-    p = figure(x_range=dt['coin'], y_range=(min(dt[oscilator])*1.05,max(dt[oscilator])*1.05),#height=600,width=1200,  
+    
+    if min(dt[oscilator]) < 0:
+       x1 = min(dt[oscilator])*1.05
+    else:
+       x1 = min(dt[oscilator])*0.95
+        
+    if max(dt[oscilator]) < 0:
+       x2 = max(dt[oscilator])*0.95
+    else:
+       x2 = max(dt[oscilator])*1.05
+ 
+    p = figure(y_range=dt['coin'],x_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location=None)
 
     p.title.align = 'center'
