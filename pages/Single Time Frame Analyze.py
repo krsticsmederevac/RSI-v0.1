@@ -233,10 +233,10 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 #     p.yaxis.axis_label = 'Coin'
 
     labels = LabelSet(y='coin', x='indikator', 
-                      text='names',text_alpha = 0.9,text_font_size = '5pt',
+                      text='names',text_alpha = 0.9,text_font_size = '4pt',
                       text_align = 'left',
                       level='glyph',
-                      x_offset = 6, y_offset = -3,
+                      x_offset = 6, y_offset = -4,
                       source=source)
 
     p.add_layout(labels)
