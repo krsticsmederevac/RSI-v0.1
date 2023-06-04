@@ -187,12 +187,12 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
  
-    p = figure(y_range=dt['coin'],x_range =(min(dt[oscilator])*1.05,max(dt[oscilator])*1.05),#height=600,width=1200,  
+    p = figure(y_range=dt['coin'],x_range =(min(dt[oscilator])*1.05,max(dt[oscilator])*1.05),width=700,height=350,  
                title = ime_grafika, toolbar_location=None)
 
     p.title.align = 'center'
 
-    p.sizing_mode = 'scale_width'
+#     p.sizing_mode = 'scale_width'
 #     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
     
     
