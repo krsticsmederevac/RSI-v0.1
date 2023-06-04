@@ -382,7 +382,7 @@ if usdt_btc and kolona_sortiranja:
         
         dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
         dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
-        dt['BB.Position'] = round((dt['close'] - dt['BB.SMA']) / dt['BB.STD'],2)
+        dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
         
         
         with tab1:
