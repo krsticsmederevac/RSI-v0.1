@@ -112,14 +112,17 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
     if min(dt[oscilator]) < 0:
-        x1 = min(dt[oscilator])*1.05
+        x1 = min(dt[oscilator])*1.1
     else:
-        x1 = min(dt[oscilator])*0.95
+        x1 = min(dt[oscilator])*0.90
         
     if max(dt[oscilator]) < 0:
-        x2 = max(dt[oscilator])*0.95
+        x2 = max(dt[oscilator])*0.80
     else:
-        x2 = max(dt[oscilator])*1.05
+        x2 = max(dt[oscilator])*1.2
+    
+    if oscilator == 'RSI':
+        x2 =  max(dt[oscilator]) * 1.05
  
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location=None)
@@ -143,7 +146,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     p.yaxis.axis_label = oscilator.upper() 
 
     labels = LabelSet(x='coin', y='indikator', 
-                      text='names',text_alpha = 0.9,text_font_size = '4pt',
+                      text='names',text_alpha = 0.9,text_font_size = '5pt',
                       text_align = 'center',
                       level='glyph',
                       x_offset = 0, y_offset = 6,
