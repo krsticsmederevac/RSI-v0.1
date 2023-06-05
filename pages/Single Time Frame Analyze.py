@@ -357,7 +357,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(polovina)
         
         rsi70 = Span(location=70,dimension='height',
-                         line_color='palegreen',line_dash='dashed', line_width=2)
+                         line_color='olive',line_dash='dashed', line_width=2)
         p.add_layout(rsi70)
         
         rsi30 = Span(location=30,dimension='height',
