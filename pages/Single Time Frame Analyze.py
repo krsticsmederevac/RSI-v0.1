@@ -274,6 +274,28 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         bb_down = Span(location=-2,dimension='height',
                          line_color='dodgerblue',line_dash='dashed', line_width=2)
         p.add_layout(bb_down)
+        
+    if oscilator == 'RSI':
+
+        upper1 = BoxAnnotation(left=80, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+        upper2 = BoxAnnotation(left=70, fill_alpha=0.1, fill_color='palegreen')
+        p.add_layout(upper2)
+
+       
+
+        lower2 = BoxAnnotation(right=30, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        lower3 = BoxAnnotation(right=20, fill_alpha=0.1, fill_color='cornsilk')
+        p.add_layout(lower3)
+
+        polovina = Span(location=50,dimension='height',
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
+
+        
 
     return p  
   
