@@ -261,10 +261,10 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x2 =  max(dt[oscilator]) + 0.5
     
     if oscilator == 'RSI':
-        x2 =  max(dt[oscilator]) + 6
+        x2 =  max(dt[oscilator]) + 5
         
     if oscilator == 'change':
-        x2 =  max(dt[oscilator]) + 0.5
+        x2 =  max(max(dt[oscilator]) + 0.5, 100)
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location=None)
