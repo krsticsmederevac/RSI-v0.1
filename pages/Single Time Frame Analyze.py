@@ -341,20 +341,28 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         upper1 = BoxAnnotation(left=80, fill_alpha=0.2, fill_color='olive')
         p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(left=70, fill_alpha=0.1, fill_color='palegreen')
+        upper2 = BoxAnnotation(left=70, fill_alpha=0.15, fill_color='palegreen')
         p.add_layout(upper2)
 
        
 
-        lower2 = BoxAnnotation(right=30, fill_alpha=0.2, fill_color='red')
+        lower2 = BoxAnnotation(right=30, fill_alpha=0.15, fill_color='red')
         p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(right=20, fill_alpha=0.1, fill_color='cornsilk')
+        lower3 = BoxAnnotation(right=20, fill_alpha=0.2, fill_color='cornsilk')
         p.add_layout(lower3)
 
         polovina = Span(location=50,dimension='height',
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
+        
+        rsi70 = Span(location=70,dimension='height',
+                         line_color='palegreen',line_dash='dashed', line_width=2)
+        p.add_layout(rsi70)
+        
+        rsi30 = Span(location=30,dimension='height',
+                         line_color='cornsilk',line_dash='dashed', line_width=2)
+        p.add_layout(rsi30)
 
         
     if oscilator == 'change':
