@@ -344,13 +344,13 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         upper2 = BoxAnnotation(left=70, fill_alpha=0.15, fill_color='palegreen')
         p.add_layout(upper2)
 
-       
 
-        lower2 = BoxAnnotation(right=30, fill_alpha=0.15, fill_color='red')
+        lower2 = BoxAnnotation(right=30, fill_alpha=0.1, fill_color='cornsilk')
         p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(right=20, fill_alpha=0.2, fill_color='cornsilk')
+        lower3 = BoxAnnotation(right=20, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower3)
+        
 
         polovina = Span(location=50,dimension='height',
                          line_color='orange',line_dash='dashed', line_width=2)
