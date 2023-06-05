@@ -291,7 +291,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator])-0.5, -1)
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
-               title = ime_grafika, toolbar_location=None)
+               title = ime_grafika, toolbar_location='above',tools ='save')
 
     p.title.align = 'center'
 
