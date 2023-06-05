@@ -102,14 +102,14 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
     if min(dt[oscilator]) < 0:
-        x1 = min(dt[oscilator])*1.06
+        x1 = min(dt[oscilator])*1.05
     else:
-        x1 = min(dt[oscilator])*0.94
+        x1 = min(dt[oscilator])*0.95
         
     if max(dt[oscilator]) < 0:
-        x2 = max(dt[oscilator])*0.94
+        x2 = max(dt[oscilator])*0.95
     else:
-        x2 = max(dt[oscilator])*1.06
+        x2 = max(dt[oscilator])*1.05
  
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location=None)
@@ -192,10 +192,10 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     prosecan_oscilator = round(dt[oscilator].mean(),2)
     mediana_oscilator = round(dt[oscilator].median(),2)
-    std_oscilator = round(dt[oscilator].std(),2)
+#     std_oscilator = round(dt[oscilator].std(),2)
 
     ime_grafika_osnovno = oscilator.upper() + ' ' + interval + ' ' + usdt_btc 
-    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator)
+    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
     if min(dt[oscilator]) < 0:
@@ -204,9 +204,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(dt[oscilator])*0.95
         
     if max(dt[oscilator]) < 0:
-        x2 = max(dt[oscilator])*0.95
+        x2 = max(dt[oscilator])*0.94
     else:
-        x2 = max(dt[oscilator])*1.05
+        x2 = max(dt[oscilator])*1.06
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location=None)
@@ -309,6 +309,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         polovina = Span(location=0,dimension='height',
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
+        
+        
+        
     return p  
   
   
@@ -459,6 +462,10 @@ if usdt_btc and kolona_sortiranja:
     with tab2:
         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
         tab2.bokeh_chart(p_rsi_pc)
+        p_bb_pc = grafik_oscilator_interval_pc(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
+        tab2.bokeh_chart(p_bb_pc)
+        p_ch_pc = grafik_oscilator_interval_pc(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
+        tab2.bokeh_chart(p_ch_pc)
             
         
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
