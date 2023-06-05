@@ -296,7 +296,19 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(polovina)
 
         
+    if oscilator == 'change':
 
+        upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+
+
+        lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        polovina = Span(location=0,dimension='height',
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
     return p  
   
   
