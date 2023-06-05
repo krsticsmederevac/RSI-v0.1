@@ -108,7 +108,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
           
 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
-    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min:' + str(min_oscilatro) + ' Max:' + str(max_oscilatro)
+    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
     if min(dt[oscilator]) < 0:
@@ -185,6 +185,40 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                          line_color='dodgerblue',line_dash='dashed', line_width=2)
         p.add_layout(bb_down)
         
+    if oscilator == 'RSI':
+
+        upper1 = BoxAnnotation(bottom=80, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+        upper2 = BoxAnnotation(bottom=70, fill_alpha=0.1, fill_color='palegreen')
+        p.add_layout(upper2)
+
+       
+
+        lower2 = BoxAnnotation(top=30, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        lower3 = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='cornsilk')
+        p.add_layout(lower3)
+
+        polovina = Span(location=50,
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
+
+        
+    if oscilator == 'change':
+
+        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+
+
+        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        polovina = Span(location=0,
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
     
     return p
   
@@ -211,7 +245,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
 
-    ime_grafika_osnovno = oscilator.upper() + ' ' + interval + ' ' + usdt_btc 
+    ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
