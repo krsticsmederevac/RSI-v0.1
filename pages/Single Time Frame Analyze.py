@@ -111,18 +111,30 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
-    if min(dt[oscilator]) < 0:
-        x1 = min(dt[oscilator])*1.1
-    else:
-        x1 = min(dt[oscilator])*0.90
+#     if min(dt[oscilator]) < 0:
+#         x1 = min(dt[oscilator])*1.1
+#     else:
+#         x1 = min(dt[oscilator])*0.90
         
-    if max(dt[oscilator]) < 0:
-        x2 = max(dt[oscilator])*0.75
-    else:
-        x2 = max(dt[oscilator])*1.25
+#     if max(dt[oscilator]) < 0:
+#         x2 = max(dt[oscilator])*0.75
+#     else:
+#         x2 = max(dt[oscilator])*1.25
+    
+#     if oscilator == 'RSI':
+#         x2 =  max(dt[oscilator]) * 1.05
+
+    if oscilator == 'BB.Position':
+        x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
+        x1 = min(min(dt[oscilator]) - 0.5, -2.5)
     
     if oscilator == 'RSI':
-        x2 =  max(dt[oscilator]) * 1.05
+        x2 =  max(max(dt[oscilator]) + 5,85)
+        x1 = min(min(dt[oscilator])-5, 15)
+        
+    if oscilator == 'change':
+        x2 =  max(max(dt[oscilator]) + 0.5, 1)
+        x1 = min(min(dt[oscilator])-0.5, -1)
  
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location=None)
@@ -196,17 +208,26 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
         upper2 = BoxAnnotation(bottom=70, fill_alpha=0.1, fill_color='palegreen')
         p.add_layout(upper2)
 
-       
 
-        lower2 = BoxAnnotation(top=30, fill_alpha=0.2, fill_color='red')
+        lower2 = BoxAnnotation(top=30, fill_alpha=0.1, fill_color='salmon')
         p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(top=20, fill_alpha=0.1, fill_color='cornsilk')
+        lower3 = BoxAnnotation(top=20, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower3)
+        
 
         polovina = Span(location=50,
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
+      
+        rsi70 = Span(location=70,
+                         line_color='olive',line_dash='dashed', line_width=2)
+        p.add_layout(rsi70)
+        
+        rsi30 = Span(location=30,
+                         line_color='salmon',line_dash='dashed', line_width=2)
+        p.add_layout(rsi30)
+
 
         
     if oscilator == 'change':
