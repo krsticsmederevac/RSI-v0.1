@@ -81,7 +81,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     return dt
   
   
-  
+############################################################################################################################################
 
 def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
@@ -137,7 +137,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator])-0.5, -1)
  
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
-               title = ime_grafika, toolbar_location='top')
+               title = ime_grafika, toolbar_location='above')
 
     p.title.align = 'center'
 
@@ -246,7 +246,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     return p
   
-  
+#############################################################################################################################################################
 
 def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
