@@ -345,7 +345,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(upper2)
 
 
-        lower2 = BoxAnnotation(right=30, fill_alpha=0.1, fill_color='cornsilk')
+        lower2 = BoxAnnotation(right=30, fill_alpha=0.1, fill_color='salmon')
         p.add_layout(lower2)
 
         lower3 = BoxAnnotation(right=20, fill_alpha=0.2, fill_color='red')
@@ -361,7 +361,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(rsi70)
         
         rsi30 = Span(location=30,dimension='height',
-                         line_color='cornsilk',line_dash='dashed', line_width=2)
+                         line_color='red',line_dash='dashed', line_width=2)
         p.add_layout(rsi30)
 
         
