@@ -133,7 +133,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     p.yaxis.axis_label = oscilator.upper() 
 
     labels = LabelSet(x='coin', y='indikator', 
-                      text='names',text_alpha = 0.9,text_font_size = '5pt',
+                      text='names',text_alpha = 0.9,text_font_size = '4pt',
                       text_align = 'center',
                       level='glyph',
                       x_offset = 0, y_offset = 6,
