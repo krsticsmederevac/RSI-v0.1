@@ -96,8 +96,13 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     prosecan_oscilator = round(dt[oscilator].mean(),2)
     mediana_oscilator = round(dt[oscilator].median(),2)
     std_oscilator = round(dt[oscilator].std(),2)
+    
+    if oscilator == 'change':
+        ime_za_naslov = 'Price Change %'
+    elif oscilator == 'BB.Position':
+         ime_za_naslov = 'Bollinger Bands STD'
 
-    ime_grafika_osnovno = oscilator.upper() + ' ' + interval + ' ' + usdt_btc 
+    ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
@@ -199,9 +204,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
     if min(dt[oscilator]) < 0:
-        x1 = min(dt[oscilator])*1.05
+        x1 = min(dt[oscilator])*1.1
     else:
-        x1 = min(dt[oscilator])*0.95
+        x1 = min(dt[oscilator])*0.90
         
     if max(dt[oscilator]) < 0:
         x2 = max(dt[oscilator])*0.80
