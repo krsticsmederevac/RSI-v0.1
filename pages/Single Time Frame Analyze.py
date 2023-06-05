@@ -252,20 +252,22 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
-    if min(dt[oscilator]) < 0:
-        x1 = min(dt[oscilator])*1.1
-    else:
-        x1 = min(dt[oscilator])*0.90
+#     if min(dt[oscilator]) < 0:
+#         x1 = min(dt[oscilator])*1.1
+#     else:
+#         x1 = min(dt[oscilator])*0.90
         
     if oscilator == 'BB.Position':
         x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
         x1 = min(min(dt[oscilator]) - 0.5, -2.5)
     
     if oscilator == 'RSI':
-        x2 =  max(dt[oscilator]) + 5
+        x2 =  max(max(dt[oscilator]) + 5,100)
+        x1 = min(min(dt[oscilator])-5, 0)
         
     if oscilator == 'change':
-        x2 =  max(dt[oscilator]) + 0.5
+        x2 =  max(max(dt[oscilator]) + 0.5, 1)
+        x1 = min(min(dt[oscilator])-0.5, -1)
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location=None)
