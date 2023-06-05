@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "Scanner", page_icon = "📊",layout="centered",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+st.set_page_config( page_title = "Multiple Time Frame Analyze", page_icon = "📊",layout="centered",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
 
@@ -108,7 +108,7 @@ ponudjeni_parovi = ["USDT", "BTC"]
 
 container = st.container()
 
-tab1, tab2, tab3, tab4, tab5 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ,"📋 Bollinger Up/Down" ]) 
+tab1, tab2, tab3, tab4, tab5 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ,"📋 Bollinger Bands STD" ]) 
 
 
 
@@ -153,7 +153,7 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form1'):
     
     
-    st.header('Scanner `version 1`')
+    st.header('`Multiple Time Frame Analyze`')
     
     st.form_submit_button(label = "Submit")
     
