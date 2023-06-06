@@ -269,7 +269,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
     elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-         ime_za_naslov = oscilator + ' Distance %'
+         ime_za_naslov = oscilator[:-2] + ' Distance %'
             
 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
