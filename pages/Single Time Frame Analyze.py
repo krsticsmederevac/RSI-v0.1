@@ -27,8 +27,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
 
-    gate = []
-    okx = ['OKB']
+    gate = ['OKB']
+   
     recnik = {'coin': [], 'timeframe' : []}
     
     for analitika in analitike:
@@ -38,8 +38,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     for coin in usdt_ili_btc_lista:
         
         for interval in intervali:
-            if coin in okx:
-                menjacnica = 'okx'
+            if coin in gate:
+                menjacnica = 'GATEIO'
 
             handler = TA_Handler(
                 symbol = coin,
