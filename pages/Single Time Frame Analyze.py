@@ -52,6 +52,15 @@ ponudjeni_simboli =  [ '1INCH',
 
 ponudjeni_simboli.sort()
 
+ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
+
+ponudjeni_parovi = ["USDT", "BTC"]
+
+sortiranje_ponuda = ['value','coin']
+
+
+
+
 def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja):                        
     
     #ako je izabran par sa BTC ili USDT da dodaje na simbole nastavak
@@ -504,49 +513,13 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         
       
     return p  
+
   
   
   
 
-ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 
-                      'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT',
-                      'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 'AXS', 
-                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 'BURGER', 
-                      'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX','CRO',
-                      'DASH', 'DATA', 'DCR', 'DEGO', 'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 
-                      'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH',
-                      'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLR','FLOW', 'FTM', 'FUN', 'FXS',
-                      'GALA','GBP', 'GMX', 'GRT', 
-                      'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT',
-                      'ICP','ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 
-                      'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM', 'KCS' ,
-                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC','LEO',
-                      'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 
-                      'NEAR', 'NEO', 'NEXO','NKN', 'NMR', 
-                      'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'OKB'
-                      'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG',
-                      'QTUM', 'QNT',
-                      'RDNT', 'REEF', 'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 
-                      'SAND', 'SC', 'SFP','SHIB', 'SKL', 'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUI','SUN', 'SUPER', 
-                      'SUSHI', 'SXP', 
-                      'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'TON',
-                      'UMA', 'UNFI', 'UNI', 'UTK', 
-                      'VET', 'VITE', 'VTHO', 
-                      'WAN', 'WAVES', 'WIN', 'WING', 'WOO','WNXM', 'WRX', 'WTC', 
-                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 
-                      'YFI', 
-                      'ZEC', 'ZEN', 'ZIL',
-                     ]
 
-ponudjeni_simboli.sort()
 
-ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
-
-ponudjeni_parovi = ["USDT", "BTC"]
-
-sortiranje_ponuda = ['value','coin']
-
-# oscilator = 'rsi'
 
 
 
