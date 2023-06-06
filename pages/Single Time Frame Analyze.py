@@ -449,7 +449,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(polovina)
         
         
-     dt = dt.fillna('')   
+    dt = dt.fillna('')   
     return p  
   
   
