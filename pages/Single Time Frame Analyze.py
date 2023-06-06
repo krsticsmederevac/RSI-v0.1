@@ -585,7 +585,7 @@ if usdt_btc and kolona_sortiranja:
         
       
     with tab1:
-        tab_rsi_bb_change, tab_ema_sma = container.tabs(["📈 RSI, BB, Price", "📋 EMA/SMA"])
+        tab_rsi_bb_change, tab_ema_sma = st.tabs(["📈 RSI, BB, Price", "📋 EMA/SMA"])
         with tab_rsi_bb_change:
               
 
