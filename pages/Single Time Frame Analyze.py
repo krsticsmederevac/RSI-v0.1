@@ -556,13 +556,13 @@ if usdt_btc and kolona_sortiranja:
     dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
     
     
-    dt['EMA200 %'] = (dt['EMA200'] - dt['close'])/dt['close'] * 100
-    dt['EMA100 %'] = (dt['EMA100'] - dt['close'])/dt['close'] * 100
-    dt['EMA50 %'] = (dt['EMA50'] - dt['close'])/dt['close'] * 100
+    dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
+    dt['EMA100 %'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
+    dt['EMA50 %'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
 
-    dt['SMA200 %'] = (dt['SMA200'] - dt['close'])/dt['close'] * 100
-    dt['SMA100 %'] = (dt['SMA100'] - dt['close'])/dt['close'] * 100
-    dt['SMA50 %'] = (dt['SMA50'] - dt['close'])/dt['close'] * 100
+    dt['SMA200 %'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
+    dt['SMA100 %'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
+    dt['SMA50 %'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
     
 
     if kolona_sortiranja == 'coin':
