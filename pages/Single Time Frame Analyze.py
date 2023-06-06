@@ -287,15 +287,15 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     if oscilator == 'RSI':
         x2 =  max(max(dt[oscilator]) + 5,85)
-        x1 = min(min(dt[oscilator])-5, 15)
+        x1 = min(min(dt[oscilator]) - 5, 15)
         
     if oscilator == 'change':
-        x2 =  max(max(dt[oscilator]) + 0.7, 1)
-        x1 = min(min(dt[oscilator])-0.7, -1)
+        x2 =  max(max(dt[oscilator]) + 3, 1)
+        x1 = min(min(dt[oscilator]) - 3, -1)
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-        x2 =  max(max(dt[oscilator]) + 2, 1)
-        x1 = min(min(dt[oscilator]) - 2, -1)
+        x2 =  max(max(dt[oscilator]) + 5, 1)
+        x1 = min(min(dt[oscilator]) - 5, -1)
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location='above',tools ='save')
