@@ -105,24 +105,14 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
          ime_za_naslov = 'Bollinger Bands STD'
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
+    elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+         ime_za_naslov = oscilator[:-2] + ' Distance %'
           
 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
-#     if min(dt[oscilator]) < 0:
-#         x1 = min(dt[oscilator])*1.1
-#     else:
-#         x1 = min(dt[oscilator])*0.90
-        
-#     if max(dt[oscilator]) < 0:
-#         x2 = max(dt[oscilator])*0.75
-#     else:
-#         x2 = max(dt[oscilator])*1.25
-    
-#     if oscilator == 'RSI':
-#         x2 =  max(dt[oscilator]) * 1.05
 
     if oscilator == 'BB.Position':
         x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
@@ -133,9 +123,26 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator])-5, 15)
         
     if oscilator == 'change':
-        x2 =  max(max(dt[oscilator]) + 0.5, 1)
-        x1 = min(min(dt[oscilator])-0.5, -1)
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+        
+        
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1)
+        
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1)
  
+
+
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location='above')
 
@@ -244,6 +251,19 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
     
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        
+        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        polovina = Span(location=0,
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
+    
+    
     return p
   
 #############################################################################################################################################################
@@ -276,10 +296,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
-#     if min(dt[oscilator]) < 0:
-#         x1 = min(dt[oscilator])*1.1
-#     else:
-#         x1 = min(dt[oscilator])*0.90
+
         
     if oscilator == 'BB.Position':
         x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
@@ -301,15 +318,14 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
         else:
             distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
         
         x2 = max(max(dt[oscilator]) + distanca, 1)
         x1 = min(min(dt[oscilator]) - distanca, -1)
-#         x2 =  max(max(dt[oscilator])*1.1, 1)
-#         x1 = min(min(dt[oscilator])*1.1 , -1)
+
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location='above',tools ='save')
