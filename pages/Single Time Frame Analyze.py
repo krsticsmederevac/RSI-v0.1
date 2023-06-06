@@ -38,10 +38,10 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     for coin in usdt_ili_btc_lista:
         
         for interval in intervali:
-            if coin in gate:
-                menjacnica = 'gateio'
-            else:
-                menjacnica = 'binance'
+#             if coin in gate:
+#                 menjacnica = 'gateio'
+#             else:
+#                 menjacnica = 'binance'
 
             handler = TA_Handler(
                 symbol = coin,
