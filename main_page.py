@@ -3,7 +3,6 @@ st.set_page_config( page_title = "Crypto Data", page_icon = "📊",layout="wide"
 
 import extra_streamlit_components as stx
 
-
 url1 = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
 url2 = 'https://www.tradingview.com/script/T1z24zxb-CryptoData-Oscillators-ic/'
 url3 = 'https://www.tradingview.com/script/fGl81yI5-CryptoData-ic/'
