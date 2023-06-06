@@ -310,7 +310,6 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     p.toolbar.active_scroll = None
     p.toolbar.active_tap = None
 
-
     palette = RdYlGn[10]
     color_mapper = linear_cmap(field_name = 'indikator', 
                                palette = palette, low = dt[oscilator].max(), 
