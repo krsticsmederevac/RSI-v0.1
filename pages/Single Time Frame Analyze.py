@@ -583,16 +583,19 @@ if usdt_btc and kolona_sortiranja:
     else:
         sortiranje_po_value = True
     with tab1:
-        tab_rsi_bb_change, tab_ema_sma = st.tabs()
+        tab_rsi_bb_change, tab_ema_sma = st.tabs(["📈 RSI, BB, Price", "📋 EMA/SMA"])
+        with tab_rsi_bb_change:
 
-        p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
-        tab1.bokeh_chart(p_rsi_sp)
-        p_bb_sp = grafik_oscilator_interval_sp(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
-        tab1.bokeh_chart(p_bb_sp)
-        p_ch_sp = grafik_oscilator_interval_sp(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
-        tab1.bokeh_chart(p_ch_sp)
-        p_ch_ema200 = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
-        tab1.bokeh_chart(p_ch_ema200)
+            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_rsi_sp)
+            p_bb_sp = grafik_oscilator_interval_sp(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_bb_sp)
+            p_ch_sp = grafik_oscilator_interval_sp(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_ch_sp)
+            
+        with tab_ema_sma:
+            p_ch_ema200 = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_ch_ema200)
 
     with tab2:
         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
