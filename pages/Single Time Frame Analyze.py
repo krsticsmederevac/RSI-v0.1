@@ -290,14 +290,20 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]) - 5, 15)
         
     if oscilator == 'change':
-        x2 =  max(max(dt[oscilator]) + max(1,max(dt[oscilator]) * 0.1), 1)
-        x1 = min(min(dt[oscilator]), -1)
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.2 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.2 , 2)
+        
+        
+        x2 = max(dt[oscilator]) + distanca
+        x1 = min(dt[oscilator]) - distanca
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.2
+            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.2 , 2)
         else:
-            distanca = abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.2
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.2 , 2)
         
         
         x2 = max(dt[oscilator]) + distanca
