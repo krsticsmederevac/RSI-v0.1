@@ -18,6 +18,39 @@ from bokeh.plotting import figure
 from bokeh.transform import linear_cmap
 from bokeh.palettes import  RdYlGn
 
+ponudjeni_simboli =  [ '1INCH', 
+                      'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT', 'AKT',
+                      'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 'AXS', 'ABBC', 'AR','ASTR', 'ACH', 'API3',
+                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 'BURGER', 'BTTC',
+                      'BLUR', 'BTG', 'BICO','BONE','BORA', 'BNX','BRISE', 'BTRST',
+                      'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX','CRO','CSPR', 'CORE',
+                      'DASH', 'DATA', 'DCR', 'DEGO', 'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 'DAO', 'DAR',
+                      'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 'ELF', 'EDU','ETHW','ELON','ERG',
+                      'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLR','FLOW','FLUX', 'FTM', 'FUN', 'FXS', 'FLOKI',
+                      'GALA','GBP', 'GMX', 'GRT', 'GT', 'GNO', 'GMT', 'GLM', 'GLMR',
+                      'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT', 'HT','HNT',
+                      'ICP','ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'ID', 'ILV',
+                      'JOE', 'JASMY', 'JST',
+                      'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM', 'KCS' , 'KDA','KAS',
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC','LEO', 'LUNA', 'LPT','LOOKS',
+                      'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 'MX', 'MAGIC', 'MOB', 'METIS',
+                      'NEAR', 'NEO', 'NEXO','NKN', 'NMR', 'NYM',
+                      'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'OKB'
+                      'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG','PEPE', 'PHA',
+                      'QTUM', 'QNT',
+                      'RDNT', 'REEF', 'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 'RLC',
+                      'SAND', 'SC', 'SFP','SHIB', 'SKL', 'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUI','SUN', 'SUPER', 
+                      'SUSHI', 'SXP', 'SSV', 'STG', 'SYS', 'SLP', 'SCRT',
+                      'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'T',
+                      'UMA', 'UNFI', 'UNI', 'UTK', 'USTC',
+                      'VET', 'VITE', 'VTHO', 'VRA',
+                      'WAN', 'WAVES', 'WIN', 'WING', 'WOO','WNXM', 'WRX', 'WTC', 'WAX', 'WAXL', 'WILD',
+                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'XDC', 'XCH', 'XRD',
+                      'YFI', 
+                      'ZEC', 'ZEN', 'ZIL',
+                     ]
+
+ponudjeni_simboli.sort()
 
 def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja):                        
     
@@ -27,13 +60,16 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
 
-    gate = ['OKB']
+    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG']
     gate_usdt_btc = [i + usdt_btc for i in gate] 
     
-    okx = ['OKB']
+    mexc = ['MX','KAS',]
+    mexc_usdt_btc = [i + usdt_btc for i in mexc] 
+    
+    okx = ['OKB','LEO','CRO','CSPR','XCH','ETHW','BONE','BORA','CORE','NYM','LOOKS',]
     okx_usdt_btc = [i + usdt_btc for i in okx] 
     
-    kucoin = ['FLR']
+    kucoin = ['KCS','FLR','TON','XDC','ABBC','BLUR','WILD','ELON','METIS','AKT','VRA',]
     kucoin_usdt_btc = [i + usdt_btc for i in kucoin] 
     
     recnik = {'coin': [], 'timeframe' : []}
@@ -51,6 +87,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
                 menjacnica = 'kucoin'
             elif coin in okx_usdt_btc:
                 menjacnica = 'okx'
+            elif coin in mexc_usdt_btc:
+                menjacnica = 'mexc'
             else:
                 menjacnica = 'binance'
 
@@ -470,25 +508,35 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
   
   
 
-ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT',
+ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 
+                      'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 'AXS', 
-                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 
-                      'BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 
-                      'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO',
-                      'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 'EGLD',
-                      'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLR','FLOW', 'FTM', 
-                      'FUN', 'FXS', 'GALA','GBP', 'GMX', 'GRT', 'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT','ICP',
-                      'ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM',
-                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC', 'MANA', 'MASK',
-                      'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 'NEAR', 'NEO', 'NEXO',
-                      'NKN', 'NMR', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 
-                      'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RDNT', 'REEF', 
-                      'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 'QNT', 'SAND', 'SC', 'SFP','SHIB', 'SKL', 
-                      'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUI','SUN', 'SUPER', 
-                      'SUSHI', 'SXP', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 
-                      'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WOO',
-                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'YFI', 'ZEC', 'ZEN', 'ZIL',
-                     'OKB']
+                      'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 'BURGER', 
+                      'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX','CRO',
+                      'DASH', 'DATA', 'DCR', 'DEGO', 'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 
+                      'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH',
+                      'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLR','FLOW', 'FTM', 'FUN', 'FXS',
+                      'GALA','GBP', 'GMX', 'GRT', 
+                      'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT',
+                      'ICP','ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 
+                      'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM', 'KCS' ,
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC','LEO',
+                      'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 
+                      'NEAR', 'NEO', 'NEXO','NKN', 'NMR', 
+                      'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'OKB'
+                      'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG',
+                      'QTUM', 'QNT',
+                      'RDNT', 'REEF', 'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 
+                      'SAND', 'SC', 'SFP','SHIB', 'SKL', 'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUI','SUN', 'SUPER', 
+                      'SUSHI', 'SXP', 
+                      'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'TON',
+                      'UMA', 'UNFI', 'UNI', 'UTK', 
+                      'VET', 'VITE', 'VTHO', 
+                      'WAN', 'WAVES', 'WIN', 'WING', 'WOO','WNXM', 'WRX', 'WTC', 
+                      'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 
+                      'YFI', 
+                      'ZEC', 'ZEN', 'ZIL',
+                     ]
 
 ponudjeni_simboli.sort()
 
