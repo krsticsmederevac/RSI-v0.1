@@ -294,7 +294,12 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]), -1)
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-        distanca = ((max(dt[oscilator])**2)**0.5 - (min(dt[oscilator])**2)**0.5) *0.05
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = (max(dt[oscilator]) + min(dt[oscilator])) * 0.05
+        else:
+            distanca = ((max(dt[oscilator])**2)**0.5 + (min(dt[oscilator])**2)**0.5) *0.05
+        
+        
         x2 = max(dt[oscilator]) + distanca
         x1 = min(dt[oscilator]) - distanca
 #         x2 =  max(max(dt[oscilator])*1.1, 1)
