@@ -291,11 +291,11 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         
     if oscilator == 'change':
         x2 =  max(max(dt[oscilator]) + max(1,max(dt[oscilator]) * 0.05), 1)
-        x1 = min(min(dt[oscilator]) - 1, -2)
+        x1 = min(min(dt[oscilator]) - 1, -1)
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         x2 =  max(max(dt[oscilator]) + max(1,max(dt[oscilator]) * 0.05), 1)
-        x1 = min(min(dt[oscilator]) - 1, -2)
+        x1 = min(min(dt[oscilator]) - 1, -1)
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
                title = ime_grafika, toolbar_location='above',tools ='save')
