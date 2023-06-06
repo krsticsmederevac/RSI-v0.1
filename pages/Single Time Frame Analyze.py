@@ -296,8 +296,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
             distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.2 , 2)
         
         
-        x2 = max(dt[oscilator]) + distanca
-        x1 = min(dt[oscilator]) - distanca
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1)
         
     if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
@@ -306,8 +306,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
             distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.2 , 2)
         
         
-        x2 = max(dt[oscilator]) + distanca
-        x1 = min(dt[oscilator]) - distanca
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1)
 #         x2 =  max(max(dt[oscilator])*1.1, 1)
 #         x1 = min(min(dt[oscilator])*1.1 , -1)
  
@@ -583,6 +583,7 @@ if usdt_btc and kolona_sortiranja:
     else:
         sortiranje_po_value = True
     with tab1:
+        tab_rsi_bb_change, tab_ema_sma = st.tabs()
 
         p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
         tab1.bokeh_chart(p_rsi_sp)
