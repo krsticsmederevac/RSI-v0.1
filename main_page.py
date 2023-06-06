@@ -12,7 +12,6 @@ url6 = 'https://www.tradingview.com/script/EsVAnvc5-CryptoData-Spot-vs-Futurese-
 url7 = 'https://www.tradingview.com/script/ng0APBVp-CryptoData-RSI-ic/'
 url8 = 'https://www.tradingview.com/script/mobbjHHQ-CryptoData-Bollinger-Keltner-RSI-ic/'
 
-CryptoData Bollinger, Keltner & RSI [+ic]
 st.write("Check out my TradingView indicators")
 
 st.write("[CryptoData Coin/BTC Quick Chart [+ic]](%s)" % url1)
