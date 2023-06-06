@@ -28,7 +28,14 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     duzina_usdt_ili_btc = len(usdt_btc)
 
     gate = ['OKB']
-   
+    gate_usdt_btc = [i + usdt_btc for i in gate] 
+    
+    okx = ['OKB']
+    okx_usdt_btc = [i + usdt_btc for i in okx] 
+    
+    kucoin = ['FLR']
+    kucoin_usdt_btc = [i + usdt_btc for i in kucoin] 
+    
     recnik = {'coin': [], 'timeframe' : []}
     
     for analitika in analitike:
@@ -38,10 +45,14 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     for coin in usdt_ili_btc_lista:
         
         for interval in intervali:
-#             if coin in gate:
-#                 menjacnica = 'gateio'
-#             else:
-#                 menjacnica = 'binance'
+            if coin in gate_usdt_btc:
+                menjacnica = 'gateio'
+            elif coin in kucoin_usdt_btc:
+                menjacnica = 'kucoin'
+            elif coin in okx_usdt_btc:
+                menjacnica = 'okx'
+            else:
+                menjacnica = 'binance'
 
             handler = TA_Handler(
                 symbol = coin,
@@ -465,7 +476,7 @@ ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', '
                       'BURGER', 'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 
                       'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO',
                       'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 'DREP', 'DUSK', 'DYDX', 'EGLD',
-                      'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLOW', 'FTM', 
+                      'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 'FLM','FLR','FLOW', 'FTM', 
                       'FUN', 'FXS', 'GALA','GBP', 'GMX', 'GRT', 'HARD', 'HBAR', 'HIVE', 'HOOK', 'HOT','ICP',
                       'ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM',
                       'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC', 'MANA', 'MASK',
