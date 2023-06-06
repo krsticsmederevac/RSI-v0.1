@@ -268,6 +268,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
          ime_za_naslov = 'Bollinger Bands STD'
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
+    elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+         ime_za_naslov = oscilator + ' Distance %'
+            
 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc 
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
@@ -287,6 +290,10 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator])-5, 15)
         
     if oscilator == 'change':
+        x2 =  max(max(dt[oscilator]) + 0.5, 1)
+        x1 = min(min(dt[oscilator])-0.5, -1)
+        
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         x2 =  max(max(dt[oscilator]) + 0.5, 1)
         x1 = min(min(dt[oscilator])-0.5, -1)
  
@@ -392,6 +399,18 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(upper1)
 
 
+
+        lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower2)
+
+        polovina = Span(location=0,dimension='height',
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
+        
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        
+        upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
 
         lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower2)
@@ -519,7 +538,7 @@ if usdt_btc and kolona_sortiranja:
     
 
       
-    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change'], usdt_btc, ['timeframe'])
+    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200'], usdt_btc, ['timeframe'])
 
     conditions = [
     (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
@@ -535,6 +554,16 @@ if usdt_btc and kolona_sortiranja:
     dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
     dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
     dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
+    
+    
+    dt['EMA200 %'] = (dt['EMA200'] - dt['close'])/dt['close'] * 100
+    dt['EMA100 %'] = (dt['EMA100'] - dt['close'])/dt['close'] * 100
+    dt['EMA50 %'] = (dt['EMA50'] - dt['close'])/dt['close'] * 100
+
+    dt['SMA200 %'] = (dt['SMA200'] - dt['close'])/dt['close'] * 100
+    dt['SMA100 %'] = (dt['SMA100'] - dt['close'])/dt['close'] * 100
+    dt['SMA50 %'] = (dt['SMA50'] - dt['close'])/dt['close'] * 100
+    
 
     if kolona_sortiranja == 'coin':
         sortiranje_po_value = False
@@ -548,6 +577,8 @@ if usdt_btc and kolona_sortiranja:
         tab1.bokeh_chart(p_bb_sp)
         p_ch_sp = grafik_oscilator_interval_sp(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
         tab1.bokeh_chart(p_ch_sp)
+        p_ch_ema200 = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+        tab1.bokeh_chart(p_ch_ema200)
 
     with tab2:
         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
