@@ -36,10 +36,10 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
         
 
     for coin in usdt_ili_btc_lista:
-        if coin in okx:
-            menjacnica = 'okx'
+        
         for interval in intervali:
-            
+            if coin in okx:
+            menjacnica = 'okx'
 
             handler = TA_Handler(
                 symbol = coin,
