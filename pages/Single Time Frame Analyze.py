@@ -297,7 +297,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
             distanca = (max(dt[oscilator]) + min(dt[oscilator])) * 0.05
         else:
-            distanca = (max(dt[oscilator] - min(dt[oscilator])**2 **0.5 *0.05
+            distanca = (max(dt[oscilator]) - min(dt[oscilator]))**2 **0.5 *0.05
         
         
         x2 = max(dt[oscilator]) + distanca
