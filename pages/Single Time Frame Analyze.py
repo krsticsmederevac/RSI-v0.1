@@ -582,9 +582,12 @@ if usdt_btc and kolona_sortiranja:
         sortiranje_po_value = False
     else:
         sortiranje_po_value = True
+        
+      
     with tab1:
-        tab_rsi_bb_change, tab_ema_sma = st.tabs(["📈 RSI, BB, Price", "📋 EMA/SMA"])
+        
         with tab_rsi_bb_change:
+            tab_rsi_bb_change, tab_ema_sma = container.tabs(["📈 RSI, BB, Price", "📋 EMA/SMA"])  
 
             p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_rsi_sp)
