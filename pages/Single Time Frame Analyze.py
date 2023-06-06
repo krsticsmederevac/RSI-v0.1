@@ -632,7 +632,8 @@ if usdt_btc and kolona_sortiranja:
         tab2.bokeh_chart(p_ch_pc)
             
         p_ema200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
-        tab2.bokeh_chart(p_ema200_pc)
+        if p_ema200_pc:
+            tab2.bokeh_chart(p_ema200_pc)
         p_ema100_pc = grafik_oscilator_interval_pc(dt[['coin','EMA100 %']],interval,'EMA100 %',usdt_btc,sortiranje_po_value)
         tab2.bokeh_chart(p_ema100_pc)
         p_ema50_pc = grafik_oscilator_interval_pc(dt[['coin','EMA50 %']],interval,'EMA50 %',usdt_btc,sortiranje_po_value)
