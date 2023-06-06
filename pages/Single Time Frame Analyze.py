@@ -27,8 +27,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
 
-
-
+    gate = []
+    okx = ['OKB']
     recnik = {'coin': [], 'timeframe' : []}
     
     for analitika in analitike:
@@ -36,6 +36,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
         
 
     for coin in usdt_ili_btc_lista:
+        if coin in okx:
+            menjacnica = 'OKX'
         for interval in intervali:
             
 
@@ -469,10 +471,11 @@ ponudjeni_simboli =  ['RLC', 'PEPE','ID','JOE', '1INCH', 'AAVE', 'ACM', 'ADA', '
                       'NKN', 'NMR', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 
                       'PAXG', 'PERL', 'PERP', 'PNT', 'POND', 'PSG', 'QTUM', 'RDNT', 'REEF', 
                       'REN', 'RNDR', 'RIF', 'RLC', 'ROSE', 'RPL', 'RSR', 'RUNE', 'RVN', 'QNT', 'SAND', 'SC', 'SFP','SHIB', 'SKL', 
-                      'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUN', 'SUPER', 
+                      'SNX', 'SOL', 'STMX', 'STORJ', 'STPT', 'STRAX', 'STX', 'SUI','SUN', 'SUPER', 
                       'SUSHI', 'SXP', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 
                       'UMA', 'UNFI', 'UNI', 'UTK', 'VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WOO',
-                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'YFI', 'ZEC', 'ZEN', 'ZIL']
+                      'WNXM', 'WRX', 'WTC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'YFI', 'ZEC', 'ZEN', 'ZIL',
+                     'OKB']
 
 ponudjeni_simboli.sort()
 
