@@ -642,5 +642,6 @@ if usdt_btc and kolona_sortiranja:
             tab2.bokeh_chart(p_sma100_pc)
             p_sma50_pc = grafik_oscilator_interval_pc(dt[['coin','SMA50 %']],interval,'SMA50 %',usdt_btc,sortiranje_po_value)
             tab2.bokeh_chart(p_sma50_pc)
-        
+        except: 
+            
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
