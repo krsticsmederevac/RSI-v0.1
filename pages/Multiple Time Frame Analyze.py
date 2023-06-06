@@ -47,8 +47,13 @@ ponudjeni_simboli =  [ '1INCH',
 
 ponudjeni_simboli.sort()
 
+ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
 
-def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja, menjacnica = 'binance'):                        
+ponudjeni_parovi = ["USDT", "BTC"]
+
+
+
+def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja):                        
     
     #ako je izabran par sa BTC ili USDT da dodaje na simbole nastavak
     usdt_ili_btc_lista =  [i + usdt_btc for i in simboli]  
@@ -56,8 +61,18 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
 
-
-
+    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG']
+    gate_usdt_btc = [i + usdt_btc for i in gate] 
+    
+    mexc = ['MX','KAS',]
+    mexc_usdt_btc = [i + usdt_btc for i in mexc] 
+    
+    okx = ['OKB','LEO','CRO','CSPR','XCH','ETHW','BONE','BORA','CORE','NYM','LOOKS',]
+    okx_usdt_btc = [i + usdt_btc for i in okx] 
+    
+    kucoin = ['KCS','FLR','TON','XDC','ABBC','BLUR','WILD','ELON','METIS','AKT','VRA',]
+    kucoin_usdt_btc = [i + usdt_btc for i in kucoin] 
+    
     recnik = {'coin': [], 'timeframe' : []}
     
     for analitika in analitike:
@@ -65,7 +80,18 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
         
 
     for coin in usdt_ili_btc_lista:
+        
         for interval in intervali:
+            if coin in gate_usdt_btc:
+                menjacnica = 'gateio'
+            elif coin in kucoin_usdt_btc:
+                menjacnica = 'kucoin'
+            elif coin in okx_usdt_btc:
+                menjacnica = 'okx'
+            elif coin in mexc_usdt_btc:
+                menjacnica = 'mexc'
+            else:
+                menjacnica = 'binance'
             
 
             handler = TA_Handler(
@@ -110,32 +136,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
     return dt
   
   
-  
-
-
-
-ponudjeni_simboli =  ['1INCH', 'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA', 'ANKR', 
-                      'ANT', 'APE', 'APT', 'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 
-                      'AXS', 'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB', 'BTC', 'BURGER', 'CAKE',
-                      'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COCOS', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 
-                      'CVC', 'CVX', 'DASH', 'DATA', 'DCR', 'DEGO', 'DENT', 'DGB', 'DIA', 'DOCK', 'DODO', 'DOGE', 'DOT', 
-                      'DREP', 'DUSK', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 'FET', 'FIL', 'FIO', 'FIRO', 'FIS', 
-                      'FLM', 'FLOW', 'FTM', 'FUN', 'FXS', 'GALA', 'GBP', 'GMX', 'GRT', 'HARD', 'HBAR', 'HIVE', 'HOOK',
-                      'HOT', 'ICP', 'ICX', 'ID', 'IMX', 'INJ', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'JOE', 'KAVA', 'KEY', 
-                      'KLAY', 'KMD', 'KNC', 'KSM', 'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 
-                      'LUNC', 'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MINA', 'MKR', 'MTL', 'NEAR', 'NEO', 'NEXO', 'NKN', 
-                      'NMR', 'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'PAXG', 'PEPE', 'PERL', 
-                      'PERP', 'PNT', 'POND', 'PSG', 'QNT', 'QTUM', 'RDNT', 'REEF', 'REN', 'RIF', 'RLC', 'RLC', 'RNDR', 'ROSE',
-                      'RPL', 'RSR', 'RUNE', 'RVN', 'SAND', 'SC', 'SFP', 'SHIB', 'SKL', 'SNX', 'SOL', 'STMX', 'STORJ', 'STPT',
-                      'STRAX', 'STX', 'SUN', 'SUPER', 'SUSHI', 'SXP', 'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 
-                      'TWT', 'UMA', 'UNFI', 'UNI', 'UTK','VET', 'VITE', 'VTHO', 'WAN', 'WAVES', 'WIN', 'WING', 'WNXM', 'WOO', 
-                      'WRX', 'WTC', 'XEC', 'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'YFI', 'ZEC', 'ZEN', 'ZIL']
-
-ponudjeni_simboli.sort()
-
-ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
-
-ponudjeni_parovi = ["USDT", "BTC"]
+ 
 
 
 
