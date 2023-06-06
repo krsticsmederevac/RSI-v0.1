@@ -19,8 +19,8 @@ from bokeh.transform import linear_cmap
 from bokeh.palettes import  RdYlGn
 
 
-def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja, menjacnica = 'binance'):                        
-    
+def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja):                        
+    menjacnica = 'binance'
     #ako je izabran par sa BTC ili USDT da dodaje na simbole nastavak
     usdt_ili_btc_lista =  [i + usdt_btc for i in simboli]  
     
