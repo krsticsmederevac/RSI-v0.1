@@ -84,7 +84,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja,
 ############################################################################################################################################
 
 def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
-    dt = dt.fillna('')
+    
     if sort:
         dt = dt.sort_values(by=[oscilator])
 
@@ -263,13 +263,13 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
     
-    
+    dt = dt.fillna('')
     return p
   
 #############################################################################################################################################################
 
 def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
-    dt = dt.fillna('')
+    
     if sort:
         dt = dt.sort_values(by=[oscilator])
 
@@ -449,7 +449,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(polovina)
         
         
-        
+     dt = dt.fillna('')   
     return p  
   
   
