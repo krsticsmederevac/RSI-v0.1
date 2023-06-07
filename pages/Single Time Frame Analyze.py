@@ -584,15 +584,16 @@ with st.sidebar.form(key ='Form1'):
     json_podesavanja = json.dumps(podesavanja)
     
     
-
+#############################################################################################################################################################################
     
 if usdt_btc and kolona_sortiranja:
 
     
 
-      
-    dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200'], usdt_btc, ['timeframe'])
-
+    try: 
+        dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200'], usdt_btc, ['timeframe'])
+    except: 
+        st.write('No Data')
     conditions = [
     (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
     ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
