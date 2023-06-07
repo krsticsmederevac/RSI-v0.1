@@ -592,38 +592,40 @@ if usdt_btc and kolona_sortiranja:
 
     try: 
         dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200'], usdt_btc, ['timeframe'])
-    except: 
-        st.write('No Data')
-    conditions = [
-    (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
-    ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
-    ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
-    ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
-    ]
+    
+        conditions = [
+        (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
+        ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
+        ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
+        ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
+        ]
 
-    values = [np.nan, 'UP','LOW','']
+        values = [np.nan, 'UP','LOW','']
 
-    dt['BB'] =np.select(conditions,values)
+        dt['BB'] =np.select(conditions,values)
 
-    dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-    dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
-    dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
+        dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
+        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
+        dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
+
+
+        dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
+        dt['EMA100 %'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
+        dt['EMA50 %'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
+
+        dt['SMA200 %'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
+        dt['SMA100 %'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
+        dt['SMA50 %'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
     
     
-    dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
-    dt['EMA100 %'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
-    dt['EMA50 %'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
-
-    dt['SMA200 %'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
-    dt['SMA100 %'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
-    dt['SMA50 %'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
-    
-
-    if kolona_sortiranja == 'coin':
-        sortiranje_po_value = False
-    else:
-        sortiranje_po_value = True
         
+        
+        if kolona_sortiranja == 'coin':
+            sortiranje_po_value = False
+        else:
+            sortiranje_po_value = True
+    except: 
+        st.write('No Data')    
       
     with tab1:
 
