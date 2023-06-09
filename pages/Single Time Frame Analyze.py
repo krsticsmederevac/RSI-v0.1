@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import json 
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 import matplotlib.pyplot
 from bokeh.io import curdoc, show
@@ -172,7 +172,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
           
     
     now = datetime.now()
-    datum_vreme = now.strftime("%H:%M %d/%m/%y")
+    datum_vreme = now.strftime("%H:%M %d/%m/%y") + timedelta(hours=2)
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
@@ -356,7 +356,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
          ime_za_naslov = oscilator[:-2] + ' Distance %'
             
     now = datetime.now()
-    datum_vreme = now.strftime("%H:%M %d/%m/%y")
+    datum_vreme = now.strftime("%H:%M %d/%m/%y") + timedelta(hours=2)
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
     
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
