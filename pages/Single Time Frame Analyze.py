@@ -171,8 +171,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
          ime_za_naslov = oscilator[:-2] + ' Distance %'
           
     
-    now = datetime.now()
-    datum_vreme = now.strftime("%H:%M %d/%m/%y") + timedelta(hours=2)
+    now = datetime.now() + timedelta(hours=2)
+    datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
@@ -355,8 +355,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
          ime_za_naslov = oscilator[:-2] + ' Distance %'
             
-    now = datetime.now()
-    datum_vreme = now.strftime("%H:%M %d/%m/%y") + timedelta(hours=2)
+    now = datetime.now() + timedelta(hours=2)
+    datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
     
     ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) #+ '  STD: ' + str(std_oscilator)
