@@ -182,9 +182,9 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval +  '     ' + datum_vreme
-    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + \
-    '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator) + \
-    '     ' + usdt_btc + '>' + manjih + '   ' + usdt_btc + '<' + vecih
+    ime_nastavak = '\n' + usdt_btc + '>' + manjih + '   ' + usdt_btc + '<' + vecih  +  \
+    '     ' + 'Mean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + \
+    '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
 
