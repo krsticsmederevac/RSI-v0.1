@@ -333,7 +333,7 @@ if usdt_btc :
         dt6 = dt.pivot(index='coin', columns='timeframe', values='CCI')
         
         fig6, ax6 = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt6, cmap ='RdYlGn',vmin=-100, vmax=100,  linewidths = 0.30, annot = True, fmt=".0f",cbar=False).set_title("CCI")
+        sns.heatmap(dt6, cmap ='RdYlGn',vmin=-150, vmax=150,  linewidths = 0.30, annot = True, fmt=".0f",cbar=False).set_title("CCI")
         ax6.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax6.set_xticklabels(ax6.get_xticklabels(), rotation=90, ha='center')
         ax6.set_yticklabels(ax6.get_yticklabels(), rotation=0, ha='center')
@@ -346,17 +346,19 @@ if usdt_btc :
         with tab2:
             tab2.pyplot(fig2,use_container_width= False)
             
+        with tab5:
+            tab5.pyplot(fig5,use_container_width= False)
+            
+        with tab6:
+            tab6.pyplot(fig6,use_container_width= False)
+            
         with tab3:
             tab3.pyplot(fig3,use_container_width= False)
             
         with tab4:
             tab4.pyplot(fig4,use_container_width= False)
             
-        with tab5:
-            tab5.pyplot(fig5,use_container_width= False)
-            
-        with tab6:
-            tab6.pyplot(fig6,use_container_width= False)
+        
     except:
         st.write('Check again your data!')
     
