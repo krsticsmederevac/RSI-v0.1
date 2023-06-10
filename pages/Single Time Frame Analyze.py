@@ -44,7 +44,7 @@ ponudjeni_simboli =  [ '1INCH',
                       'TFUEL', 'THETA', 'TOMO', 'TRB', 'TROY', 'TRU', 'TRX', 'TWT', 'T',
                       'UMA', 'UNFI', 'UNI', 'UTK', 'USTC',
                       'VET', 'VITE', 'VTHO', 'VRA',
-                      'WAN', 'WAVES', 'WIN', 'WING', 'WOO','WNXM', 'WRX', 'WTC', 'WAX', 'WAXL', 'WILD',
+                      'WAN', 'WAVES', 'WIN', 'WING', 'WOO','WNXM', 'WRX', 'WTC', 'WAX', 'WAXL', 'WILD','WBT',
                       'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS', 'XEC', 'XDC', 'XCH', 'XRD', 'XOR',
                       'YFI', 
                       'ZEC', 'ZEN', 'ZIL',
@@ -69,7 +69,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
 
-    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG','XOR',]
+    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG','XOR','WBT',]
     gate_usdt_btc = [i + usdt_btc for i in gate] 
     
     mexc = ['MX','KAS',]
