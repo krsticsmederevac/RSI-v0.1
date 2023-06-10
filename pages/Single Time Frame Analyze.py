@@ -158,8 +158,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     prosecan_oscilator = round(dt[oscilator].mean(),2)
     mediana_oscilator = round(dt[oscilator].median(),2)
     std_oscilator = round(dt[oscilator].std(),2)
-    min_oscilatro = round(dt[oscilator].min(),2)
-    max_oscilatro = round(dt[oscilator].max(),2)
+    min_oscilator = round(dt[oscilator].min(),2)
+    max_oscilator = round(dt[oscilator].max(),2)
     
     if oscilator == 'change':
         ime_za_naslov = 'Price Change %'
@@ -176,7 +176,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
-    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilatro) + ' Max: ' + str(max_oscilatro)
+    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator)
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
 
@@ -484,7 +484,16 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.add_layout(labels)
     
-
+    
+    
+    try:
+        btc_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],dimension='height',
+                             line_color='darkviolet',line_dash='dashed', line_width=1.5)
+        p.add_layout(btc_location)
+    except:
+        print()
+        
+        
     
     if oscilator == 'BB.Position':
 
