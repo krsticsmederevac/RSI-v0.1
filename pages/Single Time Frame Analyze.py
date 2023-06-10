@@ -735,7 +735,7 @@ if usdt_btc and kolona_sortiranja:
     with tab1:
             
         try:
-            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
+            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,kolona_sortiranja)
             tab1.bokeh_chart(p_rsi_sp)
         except: 
             print()  
