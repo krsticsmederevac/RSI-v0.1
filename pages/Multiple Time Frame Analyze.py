@@ -143,7 +143,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
 container = st.container()
 
-tab1, tab2, tab3, tab4, tab5 = container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ,"📋 Bollinger Bands STD" ]) 
+tab1, tab2, tab3, tab4, tab5, tab6= container.tabs(["📋 RSI","📋 Price Change %","📋 EMAs","📋 SMAs" ,"📋 Bollinger Bands STD","📋 CCI" ]) 
 
 
 
@@ -213,11 +213,12 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc :
     try:
         dt = data_frame_maker(simboli, interval, 
-                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200",'low','high','BB.upper','BB.lower'], 
+                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200",'low','high','BB.upper','BB.lower','CCI20'], 
                               usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
         dt.change = round(dt['change'],1)
+        dt['CCI'] = dt ['CCI20']
         
         time_type = pd.CategoricalDtype(categories=["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"], ordered=True)
         dt.timeframe = dt.timeframe.astype(time_type)
@@ -327,6 +328,17 @@ if usdt_btc :
         ax5.set_xlabel('')
         ax5.set_ylabel('')
         
+        
+        dt6 = dt.pivot(index='coin', columns='timeframe', values='CCI')
+        
+        fig6, ax6 = plt.subplots(figsize = (1.5,fig_high))
+        sns.heatmap(dt6, cmap ='RdYlGn',vmin=-300, vmax=300,  linewidths = 0.30, annot = True, cbar=False).set_title("CCI")
+        ax6.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
+        ax6.set_xticklabels(ax6.get_xticklabels(), rotation=90, ha='center')
+        ax6.set_yticklabels(ax6.get_yticklabels(), rotation=0, ha='center')
+        ax6.set_xlabel('')
+        ax6.set_ylabel('')
+        
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
 
@@ -339,8 +351,11 @@ if usdt_btc :
         with tab4:
             tab4.pyplot(fig4,use_container_width= False)
             
-        with tab4:
+        with tab5:
             tab5.pyplot(fig5,use_container_width= False)
+            
+        with tab6:
+            tab6.pyplot(fig6,use_container_width= False)
     except:
         st.write('Check again your data!')
     
