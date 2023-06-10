@@ -143,7 +143,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
 container = st.container()
 
-tab1, tab5, tab6, tab3, tab4, tab2= container.tabs(["📋 RSI", "📋 Bollinger Bands STD", "📋 CCI", "📋 Price Change %", "📋 EMAs", "📋 SMAs"]) 
+tab1, tab5, tab6, tab2, tab3, tab4= container.tabs(["📋 RSI", "📋 Bollinger Bands STD", "📋 CCI", "📋 Price Change %", "📋 EMAs", "📋 SMAs"]) 
 
 
 
