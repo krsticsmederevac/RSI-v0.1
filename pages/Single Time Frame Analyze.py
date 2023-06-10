@@ -253,7 +253,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     try:
         btc_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
-                             line_color='blueviolet',line_dash='solid', line_width=1)
+                             line_color='black',line_dash='dotted', line_width=1)
         p.add_layout(btc_location)
     except:
         print()
