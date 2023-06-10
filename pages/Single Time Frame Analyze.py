@@ -250,9 +250,13 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     p.xaxis.major_label_orientation = 1.2
     
     
+    
+    
     btc_location = Span(location= dt[dt.coin == 'BTC'][oscilator].values[0],
-                         line_color='salmon',line_dash='dashed', line_width=1)
+                         line_color='aqua',line_dash='dashed', line_width=1)
     p.add_layout(btc_location)
+    
+    
     
     if oscilator == 'BB.Position':
 
