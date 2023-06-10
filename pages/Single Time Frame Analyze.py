@@ -161,6 +161,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     min_oscilator = round(dt[oscilator].min(),2)
     max_oscilator = round(dt[oscilator].max(),2)
     
+    
+    
     if oscilator == 'change':
         ime_za_naslov = 'Price Change %'
     elif oscilator == 'BB.Position':
@@ -172,11 +174,17 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
          ime_za_naslov = oscilator[:-2] + ' Distance %'
           
+  
+    vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
+    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/len(dt.index) *100,2)) + '%'
+    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/len(dt.index) *100,2)) + '%'
     
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval + ' ' + usdt_btc + '     ' + datum_vreme
-    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator)
+    ime_nastavak = '\nMean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) +
+    '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator) +
+    '   ' + vecih + '>' + usdt_btc + '   ' + manjih + '<' + usdt_btc
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
 
