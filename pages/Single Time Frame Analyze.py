@@ -176,8 +176,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
           
   
     vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
-    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/len(dt.index) *100,1)) + '%'
-    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/len(dt.index) *100,1)) + '%'
+    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
+    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
     
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
@@ -418,8 +418,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         
         
     vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
-    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/len(dt.index) *100,1)) + '%'
-    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/len(dt.index) *100,1)) + '%'
+    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
+    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
    
             
     now = datetime.now() + timedelta(hours=2)
