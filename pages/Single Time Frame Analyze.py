@@ -167,6 +167,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
          ime_za_naslov = 'Bollinger Bands STD'
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
+    elif oscilator == 'CCI20':
+         ime_za_naslov = 'CCI'
     elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
          ime_za_naslov = oscilator[:-2] + ' Distance %'
           
@@ -205,7 +207,16 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
         x2 = max(max(dt[oscilator]) + distanca, 1)
         x1 = min(min(dt[oscilator]) - distanca, -1)
  
-
+  
+    if oscilator == 'CCI20' :
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+        
+        x2 = max(max(dt[oscilator]) + distanca, 150)
+        x1 = min(min(dt[oscilator]) - distanca, -150)
+    
 
     p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location='above')
@@ -327,6 +338,34 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
     
+    
+    if oscilator == 'CCI20':
+
+        upper1 = BoxAnnotation(bottom=100, fill_alpha=0.2, fill_color='olive')
+        p.add_layout(upper1)
+
+        upper2 = BoxAnnotation(bottom=0, fill_alpha=0.15, fill_color='palegreen')
+        p.add_layout(upper2)
+
+
+        lower2 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='salmon')
+        p.add_layout(lower2)
+
+        lower3 = BoxAnnotation(top=-100, fill_alpha=0.2, fill_color='red')
+        p.add_layout(lower3)
+        
+
+        polovina = Span(location=0,
+                         line_color='orange',line_dash='dashed', line_width=2)
+        p.add_layout(polovina)
+        
+        rsi70 = Span(location=100,
+                         line_color='olive',line_dash='dashed', line_width=2)
+        p.add_layout(rsi70)
+        
+        rsi30 = Span(location=-100,
+                         line_color='salmon',line_dash='dashed', line_width=2)
+        p.add_layout(rsi30)
    
     return p
   
