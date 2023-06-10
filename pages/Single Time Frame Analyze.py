@@ -384,7 +384,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     if sort:
         dt = dt.sort_values(by=[oscilator])
-
+    else:
+        dt = dt.sort_values(by=['coin'], ascending = False)
+        
     source = ColumnDataSource(data=dict(
         coin=dt['coin'], 
         indikator = dt[oscilator],
