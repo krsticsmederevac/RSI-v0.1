@@ -251,11 +251,12 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     
     
-    
-    btc_location = Span(location= dt[dt.coin == 'BTC'][oscilator].values[0],
-                         line_color='darkviolet',line_dash='dashed', line_width=1.5)
-    p.add_layout(btc_location)
-    
+    try:
+        btc_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
+                             line_color='darkviolet',line_dash='dashed', line_width=1.5)
+        p.add_layout(btc_location)
+    except:
+        print()
     
     
     if oscilator == 'BB.Position':
@@ -671,7 +672,7 @@ with st.sidebar.form(key ='Form1'):
     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda,sortiranje_ponuda_pocetni)
     
     
-    usdt_btc = st.selectbox('USDT or BTC',ponudjeni_parovi,ponudjeni_parovi_pocetni)
+    usdt_btc = st.selectbox('Coin Line',ponudjeni_simboli,['BTC'])
     
 
     podesavanja = simboli
@@ -686,7 +687,7 @@ if usdt_btc and kolona_sortiranja:
     
 
     try: 
-        dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200','CCI20'], usdt_btc, ['timeframe'])
+        dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200','CCI20'], 'USDT', ['timeframe'])
     
         conditions = [
         (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
