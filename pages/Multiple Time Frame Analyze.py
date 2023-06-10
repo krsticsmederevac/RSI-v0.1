@@ -333,7 +333,7 @@ if usdt_btc :
         dt6 = dt.pivot(index='coin', columns='timeframe', values='CCI')
         
         fig6, ax6 = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt6, cmap ='RdYlGn',vmin=-300, vmax=300,  linewidths = 0.30, annot = True, fmt=".1f",cbar=False).set_title("CCI")
+        sns.heatmap(dt6, cmap ='RdYlGn',vmin=-300, vmax=300,  linewidths = 0.30, annot = True, fmt=".0f",cbar=False).set_title("CCI")
         ax6.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax6.set_xticklabels(ax6.get_xticklabels(), rotation=90, ha='center')
         ax6.set_yticklabels(ax6.get_yticklabels(), rotation=0, ha='center')
