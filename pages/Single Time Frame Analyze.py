@@ -715,14 +715,6 @@ if usdt_btc and kolona_sortiranja:
         st.write('No Data')    
       
     with tab1:
-
-      
-        try:
-            p_cci_sp = grafik_oscilator_interval_sp(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_cci_sp)
-        except: 
-            print()
-            
             
         try:
             p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
@@ -739,6 +731,11 @@ if usdt_btc and kolona_sortiranja:
             tab1.bokeh_chart(p_ch_sp)
         except: 
             print()  
+        try:
+            p_cci_sp = grafik_oscilator_interval_sp(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_cci_sp)
+        except: 
+            print()
             
 
         try:
@@ -786,6 +783,12 @@ if usdt_btc and kolona_sortiranja:
         try:
             p_ch_pc = grafik_oscilator_interval_pc(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
             tab2.bokeh_chart(p_ch_pc)
+        except: 
+            print()
+            
+        try:
+            p_cci_pc = grafik_oscilator_interval_pc(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
+            tab2.bokeh_chart(p_cci_pc)
         except: 
             print()
             
