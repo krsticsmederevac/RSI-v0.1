@@ -131,11 +131,11 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
     dt = pd.DataFrame(recnik) 
 
-#     dt.sort_values(by=kolona_sortiranja, inplace=True)
-    dt.sort_values(by = 'timeframe', 
-                   key= lambda x: x.map({"1m":1, "5m":2, "15m":3, "30m":4, "1h":5, "2h":6,
-                                         "4h":7, "1d":8,"1W":9, "1M":10})
-                   ,inplace = True)
+    dt.sort_values(by='coin', inplace=True)
+#     dt.sort_values(by = 'timeframe', 
+#                    key= lambda x: x.map({"1m":1, "5m":2, "15m":3, "30m":4, "1h":5, "2h":6,
+#                                          "4h":7, "1d":8,"1W":9, "1M":10})
+#                    ,inplace = True)
 
     if len(dt.index) == 0:
         dt = pd.DataFrame({'coin': ["No Data"], oscilator : [0]})
@@ -735,12 +735,7 @@ if usdt_btc and kolona_sortiranja:
     with tab1:
             
         try:
-            if kolona_sortiranja == 'value':
-                izbor_sortiranja = 'RSI'
-            else:
-                izbor_sortiranja = 'coin'
-                
-            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,izbor_sortiranja)
+            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_rsi_sp)
         except: 
             print()  
