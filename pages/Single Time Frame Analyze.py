@@ -418,8 +418,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         
         
     vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
-    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/len(dt.index) *100,0)) + '%'
-    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/len(dt.index) *100,0)) + '%'
+    vecih = str(int(dt[dt[oscilator]> vrednost][oscilator].count()/len(dt.index) *100)) + '%'
+    manjih = str(int(dt[dt[oscilator]< vrednost][oscilator].count()/len(dt.index) *100)) + '%'
    
             
     now = datetime.now() + timedelta(hours=2)
