@@ -63,17 +63,22 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
-
-    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG','XOR','WBT',]
+    
+    huobi = ['CHSB','MRS','ORBS','ALI',]
+    huobi_usdt_btc = [i + usdt_btc for i in huobi]
+    
+    gate = ['HT','GT','BTG','HNT','DAO', 'WAXL','BRISE','BTRST','XRD','ERG','XOR','WBT','BDX','WEMIX',
+            'PENDLE','XPLA','RBN','DESO','DKA','MED',]
     gate_usdt_btc = [i + usdt_btc for i in gate] 
     
-    mexc = ['MX','KAS',]
+    mexc = ['MX','KAS','TRIBE','ASTRAFER','VVS',]
     mexc_usdt_btc = [i + usdt_btc for i in mexc] 
     
-    okx = ['OKB','LEO','CRO','CSPR','XCH','ETHW','BONE','BORA','CORE','NYM','LOOKS',]
+    okx = ['OKB','LEO','CRO','CSPR','XCH','ETHW','BONE','BORA','CORE','NYM','LOOKS','BABYDOGE','RON','ORDI',]
     okx_usdt_btc = [i + usdt_btc for i in okx] 
     
-    kucoin = ['KCS','FLR','TON','XDC','ABBC','BLUR','WILD','ELON','METIS','AKT','VRA','DAG',]
+    kucoin = ['KCS','FLR','TON','XDC','ABBC','BLUR','WILD','ELON','METIS','AKT','VRA','DAG','DFI',
+              'TOMI','XYM','LYXE','TEL','LOCUS','CQT','CFG','DERO','TRAC','EWT',]
     kucoin_usdt_btc = [i + usdt_btc for i in kucoin] 
     
     recnik = {'coin': [], 'timeframe' : []}
@@ -93,6 +98,8 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
                 menjacnica = 'okx'
             elif coin in mexc_usdt_btc:
                 menjacnica = 'mexc'
+            elif coin in huobi_usdt_btc:
+                menjacnica = 'huobi'
             else:
                 menjacnica = 'binance'
             
