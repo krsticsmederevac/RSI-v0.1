@@ -30,7 +30,7 @@ ponudjeni_simboli =  [ '1INCH',
                       'ICP','ICX', 'INJ', 'IMX', 'IOST', 'IOTA', 'IOTX', 'IRIS', 'ID', 'ILV','IDEX',
                       'JOE', 'JASMY', 'JST',
                       'KAVA', 'KEY', 'KLAY', 'KMD', 'KNC', 'KSM', 'KCS' , 'KDA','KAS',
-                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC','LEO', 'LUNA', 'LPT','LOOKS','LYXE', 'LOCUS', 'LEVER','LAZIO','LCX',
+                      'LDO', 'LINA', 'LINK', 'LIT', 'LQTY', 'LRC', 'LSK', 'LTC', 'LTO', 'LUNC','LEO', 'LUNA', 'LPT','LOOKS','LYXE', 'LOCUS', 'LEVER','LAZIO',
                       'MANA', 'MASK', 'MATIC', 'MBL', 'MDT', 'MKR', 'MTL', 'MINA', 'MX', 'MAGIC', 'MOB', 'METIS','MRS','MC','MED','MULTI','MOVR','MBOX',
                       'NEAR', 'NEO', 'NEXO','NKN', 'NMR', 'NYM','NULS',
                       'OCEAN', 'OGN', 'OMG', 'ONE', 'ONG', 'ONT', 'OP', 'ORN', 'OSMO', 'OXT', 'OKB','ORDI','ORBS','OG','OAX','OM',
@@ -64,7 +64,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     #u slucaju da ne pronadje par da isece nastavak u obavestenju
     duzina_usdt_ili_btc = len(usdt_btc)
     
-    kraken = ['LCX',]
+    kraken = []
     kraken_usdt_btc = [i + usdt_btc for i in kraken]
     
     huobi = ['CHSB','MRS','ORBS','ALI',]
