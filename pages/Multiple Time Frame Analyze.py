@@ -103,7 +103,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
                 menjacnica = 'mexc'
             elif coin in huobi_usdt_btc:
                 menjacnica = 'huobi'
-             elif coin in kraken_usdt_btc:
+            elif coin in kraken_usdt_btc:
                 menjacnica = 'kraken'   
                 
             else:
