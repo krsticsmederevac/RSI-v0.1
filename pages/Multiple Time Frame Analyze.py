@@ -202,15 +202,15 @@ container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
 
 
-# if podesavanja_korisnika:
+if podesavanja_korisnika:
   
-#     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
+    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-#     pocetni_simboli = podesavanja_korisnika_lista
+    pocetni_simboli = podesavanja_korisnika_lista
     
-#     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-#        pocetni_simboli = ['BTC']
-#        st.write('Bad input file, please try again.') 
+    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+       pocetni_simboli = ['BTC']
+       st.write('Bad input file, please try again.') 
       
     
 else:
@@ -250,15 +250,7 @@ with st.sidebar.form(key ='Form1'):
     else:
         simboli = st.multiselect('Coins',ponudjeni_simboli, [])
     
-    
-    if podesavanja_korisnika:
-  
-        podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-        simboli = podesavanja_korisnika_lista
-    
-    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-       simboli = ['BTC']
        
     
     usdt_btc = 'USDT' #st.selectbox('USDT or BTC',ponudjeni_parovi,0)
