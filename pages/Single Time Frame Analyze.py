@@ -319,7 +319,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     else:
         polozaj = -1000
         
-    coin_location = Span(location= ,polozaj
+    coin_location = Span(location= polozaj,
                          line_color='magenta',line_dash='solid', line_width=1)
     p.add_layout(coin_location)
      
