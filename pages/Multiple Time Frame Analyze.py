@@ -251,6 +251,16 @@ with st.sidebar.form(key ='Form1'):
         simboli = st.multiselect('Coins',ponudjeni_simboli, [])
     
     
+    if podesavanja_korisnika:
+  
+    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
+
+    simboli = podesavanja_korisnika_lista
+    
+    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+       simboli = ['BTC']
+       
+    
     usdt_btc = 'USDT' #st.selectbox('USDT or BTC',ponudjeni_parovi,0)
     
 
