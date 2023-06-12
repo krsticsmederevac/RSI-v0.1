@@ -253,9 +253,9 @@ with st.sidebar.form(key ='Form1'):
     
     if podesavanja_korisnika:
   
-    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
+        podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-    simboli = podesavanja_korisnika_lista
+        simboli = podesavanja_korisnika_lista
     
     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
        simboli = ['BTC']
