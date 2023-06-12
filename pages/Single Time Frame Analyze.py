@@ -515,13 +515,13 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]) - distanca, -150)
 
  
-    p = figure(y_range=dt['coin'],x_range =(x1,x2),#width=350,height=600,  
+    p = figure(y_range=dt['coin'],x_range =(x1,x2),height=800,#width=350,  
                title = ime_grafika, toolbar_location='above',tools ='save')
 
     p.title.align = 'center'
 
-    p.sizing_mode = 'stretch_both'
-#     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
+    p.sizing_mode = "stretch_width"
+#     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both","stretch_width","stretch_height"
     
     p.yaxis.major_label_text_font_size = '6px'
     p.toolbar.active_drag = None
