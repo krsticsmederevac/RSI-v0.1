@@ -243,8 +243,7 @@ with st.sidebar.form(key ='Form1'):
     
     if st.button('Binance Futurese'):
         simboli = binance_futurese_list
-    elif:
-        st.button('Top Coins'):
+    elif st.button('Top Coins'):
         simboli = pocetni_simboli
     else:
         simboli = st.multiselect('Coins',ponudjeni_simboli, [])
