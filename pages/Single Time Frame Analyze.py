@@ -749,7 +749,7 @@ with st.sidebar.form(key ='Form1'):
         elif izbor_liste_coina == 'Top MC':
             simboli = pocetni_simboli
     else:
-        simboli = st.multiselect('Coins',ponudjeni_simboli, simboli)
+        simboli = st.multiselect('Coins',ponudjeni_simboli, [])
 
     
 
