@@ -743,13 +743,13 @@ with st.sidebar.form(key ='Form1'):
    
     izbor_liste_coina = st.selectbox('Coin List',['Binance Futurese', 'Top MC','Custom'],0)
     
-    if not(podesavanja_korisnika):
-        if izbor_liste_coina == 'Binance Futurese': 
-            simboli = binance_futurese_list
-        elif izbor_liste_coina == 'Top MC':
-            simboli = top_100
-        else:
-            simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
+    
+    if izbor_liste_coina == 'Binance Futurese': 
+        simboli = binance_futurese_list
+    elif izbor_liste_coina == 'Top MC':
+        simboli = top_100
+    else:
+        simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
 
     
