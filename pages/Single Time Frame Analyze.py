@@ -305,12 +305,11 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     
     
-    try:
-        btc_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
+    if usdt_btc in dt.coin:
+        coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
                              line_color='magenta',line_dash='solid', line_width=1)
-        p.add_layout(btc_location)
-    except:
-        pass  
+        p.add_layout(coin_location)
+     
     
     
     if oscilator == 'BB.Position':
@@ -549,12 +548,10 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     
     
-    try:
-        btc_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],dimension='height',
-                             line_color='blueviolet',line_dash='solid', line_width=1)
-        p.add_layout(btc_location)
-    except:
-        pass
+    if usdt_btc in dt.coin:
+        coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
+                             line_color='magenta',line_dash='solid', line_width=1)
+        p.add_layout(coin_location)
         
         
     
