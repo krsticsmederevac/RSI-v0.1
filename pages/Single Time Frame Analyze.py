@@ -314,11 +314,15 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     
     if usdt_btc in list(dt['coin']):
-        coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
-                             line_color='magenta',line_dash='solid', line_width=1)
-        p.add_layout(coin_location)
-    else: 
-        pass 
+        polozaj = dt[dt.coin == usdt_btc][oscilator].values[0]
+        
+    else:
+        polozaj = -1000
+        
+    coin_location = Span(location= ,polozaj
+                         line_color='magenta',line_dash='solid', line_width=1)
+    p.add_layout(coin_location)
+     
     
     
     if oscilator == 'BB.Position':
