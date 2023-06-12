@@ -748,6 +748,8 @@ with st.sidebar.form(key ='Form1'):
             simboli = binance_futurese_list
         elif izbor_liste_coina == 'Top MC':
             simboli = pocetni_simboli
+        else:
+            simboli = st.multiselect('Coins',ponudjeni_simboli, [])
     else:
         simboli = st.multiselect('Coins',ponudjeni_simboli, [])
 
