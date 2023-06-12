@@ -208,8 +208,9 @@ if podesavanja_korisnika:
 
 #     pocetni_simboli = podesavanja_korisnika_lista
     simboli = podesavanja_korisnika_lista
-  
-    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+    
+    if any( x not in ponudjeni_simboli for x in simboli):
+#     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
 #        pocetni_simboli = ['BTC']
        simboli = ['BTC']
        st.write('Bad input file, please try again.') 
