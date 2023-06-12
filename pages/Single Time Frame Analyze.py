@@ -83,6 +83,14 @@ binance_futurese_list = ['1INCH',
                          'YFI',
                          'ZEC', 'ZEN', 'ZIL', 'ZRX']
 
+top_100 =  [ 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'AXS','BCH', 'BNB', 'BTC','CRO',
+                       'CAKE', 'CFX', 'CHZ', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
+                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
+                       'KLAY', 'LDO','LEO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'NEAR', 'NEO', 'NEXO', 
+                       'OCEAN', 'OP', 'OSMO', 'PEPE', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
+                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
+
+
 ponudjeni_simboli.sort()
 
 ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
@@ -712,12 +720,7 @@ if podesavanja_korisnika:
       
     
 else:
-    pocetni_simboli = [ 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'AXS','BCH', 'BNB', 'BTC','CRO',
-                       'CAKE', 'CFX', 'CHZ', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
-                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
-                       'KLAY', 'LDO','LEO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'NEAR', 'NEO', 'NEXO', 
-                       'OCEAN', 'OP', 'OSMO', 'PEPE', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
-                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
+    pocetni_simboli = [ 'ADA', 'AVAX', 'BNB', 'BTC', 'DOT',  'ETH', 'LINK', 'LTC',  'XRP', ]
   
 
 ponudjeni_intervali_pocetni = 6
@@ -744,7 +747,7 @@ with st.sidebar.form(key ='Form1'):
         if izbor_liste_coina == 'Binance Futurese': 
             simboli = binance_futurese_list
         elif izbor_liste_coina == 'Top MC':
-            simboli = pocetni_simboli
+            simboli = top_100
         else:
             simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
 
