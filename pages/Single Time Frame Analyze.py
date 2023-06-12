@@ -704,10 +704,10 @@ if podesavanja_korisnika:
   
     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-    pocetni_simboli = podesavanja_korisnika_lista
+    simboli = podesavanja_korisnika_lista
     
     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-       pocetni_simboli = ['BTC']
+       simboli = ['BTC']
        st.write('Bad input file, please try again.') 
       
     
@@ -738,7 +738,7 @@ with st.sidebar.form(key ='Form1'):
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
    
-    izbor_liste_coina = st.selectbox('Coin  List',['Binance Futurese', 'Top MC','Custom'],0)
+    izbor_liste_coina = st.selectbox('Coin List',['Binance Futurese', 'Top MC','Custom'],0)
     
     if izbor_liste_coina == 'Binance Futurese': 
         simboli = binance_futurese_list
