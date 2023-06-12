@@ -750,8 +750,7 @@ with st.sidebar.form(key ='Form1'):
             simboli = pocetni_simboli
         else:
             simboli = st.multiselect('Coins',ponudjeni_simboli, [])
-    else:
-        simboli = st.multiselect('Coins',ponudjeni_simboli, [])
+
 
     
 
