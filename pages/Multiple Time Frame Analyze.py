@@ -206,10 +206,12 @@ if podesavanja_korisnika:
   
     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-    pocetni_simboli = podesavanja_korisnika_lista
-    
+#     pocetni_simboli = podesavanja_korisnika_lista
+    simboli = podesavanja_korisnika_lista
+  
     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-       pocetni_simboli = ['BTC']
+#        pocetni_simboli = ['BTC']
+       simboli = ['BTC']
        st.write('Bad input file, please try again.') 
       
     
