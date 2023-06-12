@@ -549,7 +549,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     
     if usdt_btc in list(dt.coin):
-        coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
+        coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],dimension='height',
                              line_color='magenta',line_dash='solid', line_width=1)
         p.add_layout(coin_location)
         
