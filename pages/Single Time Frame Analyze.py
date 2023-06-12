@@ -515,7 +515,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]) - distanca, -150)
 
  
-    p = figure(y_range=dt['coin'],x_range =(x1,x2),height=800,#width=350,  
+    p = figure(y_range=dt['coin'],x_range =(x1,x2),height=900,#width=350,  
                title = ime_grafika, toolbar_location='above',tools ='save')
 
     p.title.align = 'center'
