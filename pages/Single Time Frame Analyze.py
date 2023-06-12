@@ -310,7 +310,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                              line_color='magenta',line_dash='solid', line_width=1)
         p.add_layout(btc_location)
     except:
-        print()
+        continue
     
     
     if oscilator == 'BB.Position':
@@ -554,7 +554,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
                              line_color='blueviolet',line_dash='solid', line_width=1)
         p.add_layout(btc_location)
     except:
-        print()
+        continue
         
         
     
