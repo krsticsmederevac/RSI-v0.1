@@ -762,8 +762,12 @@ with st.sidebar.form(key ='Form1'):
 
     kolona_sortiranja = st.selectbox('Sort by', sortiranje_ponuda,sortiranje_ponuda_pocetni)
     
-    
-    usdt_btc = st.selectbox('Coin Line',simboli,simboli.index('BTC'))
+    if 'BTC' in simboli:
+        pocetni_coin_za_liniju = simboli.index('BTC')
+    else:
+         pocetni_coin_za_liniju = simboli[0]
+        
+    usdt_btc = st.selectbox('Coin Line',simboli,pocetni_coin_za_liniju)
     
 
     podesavanja = simboli
