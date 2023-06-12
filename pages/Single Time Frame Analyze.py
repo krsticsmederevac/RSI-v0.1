@@ -277,7 +277,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.title.align = 'center'
 
-    p.sizing_mode = 'stretch_both'
+    p.sizing_mode = 'scale_width'
     
     
     
@@ -520,7 +520,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.title.align = 'center'
 
-    p.sizing_mode = 'stretch_width'
+    p.sizing_mode = 'scale_width'
 #     "fixed", "stretch_both", "scale_width", "scale_height", "scale_both"
     
     p.yaxis.major_label_text_font_size = '6px'
