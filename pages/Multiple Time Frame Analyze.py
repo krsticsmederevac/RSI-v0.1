@@ -48,6 +48,36 @@ ponudjeni_simboli =  [ '1INCH',
                       'ZEC', 'ZEN', 'ZIL','ZRX',
                      ]
 
+binance_futurese_list = ['1INCH',
+                         'AAVE','ACH','ADA','AGIX','ALGO','ALICE', 'ALPHA', 'AMB', 'ANKR', 'ANT', 'APE',
+                         'API3', 'APT', 'AR', 'ARB', 'ARPA', 'ASTR', 'ATA', 'ATOM', 'AUDIO','AVAX','AXS',
+                         'BAKE', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLUR', 'BLZ', 'BNB', 'BNX', 'BTC',
+                         'C98', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMBO', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CVX',
+                         'DAR', 'DASH', 'DEFI', 'DENT', 'DGB', 'DODO', 'DOGE', 'DOT', 'DUSK', 'DYDX',
+                         'EDU', 'EGLD', 'ENJ', 'ENS', 'EOS', 'ETC', 'ETH',
+                         'FET', 'FIL', 'FLM', 'FLOKI', 'FLOW', 'FTM', 'FXS',
+                         'GALA', 'GMT', 'GMX', 'GRT', 'GTC',
+                         'HBAR', 'HFT', 'HIGH', 'HOOK', 'HOT',
+                         'ICP', 'ICX', 'ID', 'IMX', 'INJ', 'IOST', 'IOTA', 'IOTX',
+                         'JASMY','JOE',
+                         'KAVA', 'KEY', 'KLAY', 'KNC', 'KSM',
+                         'LDO', 'LEVER', 'LINA', 'LINK', 'LIT', 'LPT', 'LQTY', 'LRC', 'LTC', 'LUNA', 'LUNC',
+                         'MAGIC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'MTL',
+                         'NEAR', 'NEO', 'NKN',
+                         'OCEAN', 'OGN', 'OMG', 'ONE', 'ONT', 'OP',
+                         'PEOPLE','PEPE', 'PERP', 'PHB',
+                         'QNT', 'QTUM',
+                         'RAD', 'RDNT', 'REEF', 'REN', 'RLC', 'RNDR', 'ROSE', 'RSR', 'RUNE', 'RVN',
+                         'SAND', 'SFP', 'SHIB', 'SKL', 'SNX', 'SOL', 'SPELL', 'SSV', 'STG', 'STMX', 
+                         'STORJ', 'STX', 'SUI', 'SUSHI','SXP',
+                         'T', 'THETA', 'TLM', 'TOMO', 'TRB', 'TRU', 'TRX',
+                         'UMA', 'UNFI', 'UNI',
+                         'VET',
+                         'WAVES', 'WOO',
+                         'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS',
+                         'YFI',
+                         'ZEC', 'ZEN', 'ZIL', 'ZRX']
+
 ponudjeni_simboli.sort()
 
 ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
@@ -211,8 +241,12 @@ with st.sidebar.form(key ='Form1'):
     
     interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
-   
-    simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
+    if st.button('Binance Futurese'):
+        simboli = binance_futurese_list
+    elseif st.button('Top Coins'):
+        simboli = pocetni_simboli
+    else:
+        simboli = st.multiselect('Coins',ponudjeni_simboli, [])
     
     
     usdt_btc = st.selectbox('USDT or BTC',ponudjeni_parovi,0)
