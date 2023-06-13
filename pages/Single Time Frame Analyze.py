@@ -280,7 +280,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]) - distanca, -150)
     
 
-    p = figure(x_range=len(dt['coin']),y_range =(x1,x2),#height=600,width=1200,  
+    p = figure(x_range=dt['coin'],y_range =(x1,x2),#height=600,width=1200,  
                title = ime_grafika, toolbar_location='above')
 
     p.title.align = 'center'
@@ -311,12 +311,9 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     p.add_layout(labels)
     p.xaxis.major_label_orientation = 1.2
     
-    
- 
-        
-    coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
-                         line_color='magenta',line_dash='solid', line_width=1)
-    p.add_layout(coin_location)
+#     coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],
+#                          line_color='magenta',line_dash='solid', line_width=1)
+#     p.add_layout(coin_location)
      
     
     
