@@ -78,6 +78,14 @@ binance_futurese_list = ['1INCH',
                          'YFI',
                          'ZEC', 'ZEN', 'ZIL', 'ZRX']
 
+top_100 =  [ 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'AXS','BCH', 'BNB', 'BTC','CRO',
+                       'CAKE', 'CFX', 'CHZ', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
+                       'FET', 'FIL', 'FLOW', 'FTM', 'FXS', 'GALA', 'GMX', 'GRT', 'HBAR', 'HOOK', 'HOT', 'ICP', 'ID', 'IMX', 'INJ', 'IOTA', 'KAVA', 
+                       'KLAY', 'LDO','LEO', 'LINK', 'LQTY', 'LTC', 'LUNC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'NEAR', 'NEO', 'NEXO', 
+                       'OCEAN', 'OP', 'OSMO', 'PEPE', 'QNT', 'RNDR', 'ROSE', 'RPL', 'RUNE', 'RVN', 'SAND', 
+                       'SHIB', 'SNX', 'SOL', 'STX', 'THETA', 'TRX', 'TWT', 'UNI', 'VET', 'WOO', 'XLM', 'XMR', 'XRP', 'XTZ', 'ZEC', 'ZEN', 'ZIL']
+
+
 ponudjeni_simboli.sort()
 
 ponudjeni_intervali = ["1m", "5m", "15m", "30m", "1h", "2h", "4h", "1d","1W", "1M"]
@@ -206,13 +214,13 @@ if podesavanja_korisnika:
   
     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-#     pocetni_simboli = podesavanja_korisnika_lista
-    simboli = podesavanja_korisnika_lista
+    pocetni_simboli = podesavanja_korisnika_lista
+#     simboli = podesavanja_korisnika_lista
     
-    if any( x not in ponudjeni_simboli for x in simboli):
-#     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-#        pocetni_simboli = ['BTC']
-       simboli = ['BTC']
+#     if any( x not in ponudjeni_simboli for x in simboli):
+    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+       pocetni_simboli = ['BTC']
+#        simboli = ['BTC']
        st.write('Bad input file, please try again.') 
       
     
@@ -246,13 +254,13 @@ with st.sidebar.form(key ='Form1'):
     
     izbor_liste_coina = st.selectbox('Coin  List',['Binance Futurese', 'Top MC','Custom'],0)
     
-    if not(podesavanja_korisnika):
-        if izbor_liste_coina == 'Binance Futurese': 
-            simboli = binance_futurese_list
-        elif izbor_liste_coina == 'Top MC':
-            simboli = pocetni_simboli
-        else:
-            simboli = st.multiselect('Coins',ponudjeni_simboli, [])
+
+    if izbor_liste_coina == 'Binance Futurese': 
+        simboli = binance_futurese_list
+    elif izbor_liste_coina == 'Top MC':
+        simboli = top_100
+    else:
+        simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
     
 
        
