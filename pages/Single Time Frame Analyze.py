@@ -285,7 +285,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
                title = ime_grafika, toolbar_location='above')
     
     if len(dt.index) > 125:
-        p.xaxis.major_label_text_font_size = "6pt"
+        p.xaxis.major_label_text_font_size = "5pt"
         
     p.title.align = 'center'
 
