@@ -287,7 +287,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.sizing_mode = 'stretch_both'
     
-    p.xaxis.major_label_text_font_size = "6pt"
+    p.xaxis.major_label_text_font_size = "7pt"
     
 
 
