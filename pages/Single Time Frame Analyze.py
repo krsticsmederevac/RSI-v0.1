@@ -310,6 +310,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
 
     p.add_layout(labels)
     p.xaxis.major_label_orientation = 1.2
+    
     coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],line_color='magenta',line_dash='solid', line_width=1)
     p.add_layout(coin_location)
      
