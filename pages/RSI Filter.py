@@ -242,42 +242,42 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika = ime_grafika_osnovno + ime_nastavak
     
 
-    if oscilator == 'BB.Position':
-        x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
-        x1 = min(min(dt[oscilator]) - 0.5, -2.5)
+    # if oscilator == 'BB.Position':
+    #     x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
+    #     x1 = min(min(dt[oscilator]) - 0.5, -2.5)
     
     if oscilator == 'RSI':
         x2 =  max(max(dt[oscilator]) + 5,85)
         x1 = min(min(dt[oscilator])-5, 15)
         
-    if oscilator == 'change':
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if oscilator == 'change':
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
         
-        x2 = max(max(dt[oscilator]) + distanca, 1)
-        x1 = min(min(dt[oscilator]) - distanca, -1)
+    #     x2 = max(max(dt[oscilator]) + distanca, 1)
+    #     x1 = min(min(dt[oscilator]) - distanca, -1)
         
-    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
 
-        x2 = max(max(dt[oscilator]) + distanca, 1)
-        x1 = min(min(dt[oscilator]) - distanca, -1)
+    #     x2 = max(max(dt[oscilator]) + distanca, 1)
+    #     x1 = min(min(dt[oscilator]) - distanca, -1)
  
   
-    if oscilator == 'CCI20' :
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if oscilator == 'CCI20' :
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
-        x2 = max(max(dt[oscilator]) + distanca, 150)
-        x1 = min(min(dt[oscilator]) - distanca, -150)
+    #     x2 = max(max(dt[oscilator]) + distanca, 150)
+    #     x1 = min(min(dt[oscilator]) - distanca, -150)
     
     
         
@@ -320,37 +320,37 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
      
     
     
-    if oscilator == 'BB.Position':
+    # if oscilator == 'BB.Position':
 
-        upper1 = BoxAnnotation(bottom=2, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(bottom=2, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(bottom=1, fill_alpha=0.1, fill_color='palegreen')
-        p.add_layout(upper2)
+    #     upper2 = BoxAnnotation(bottom=1, fill_alpha=0.1, fill_color='palegreen')
+    #     p.add_layout(upper2)
 
-        upper3 = BoxAnnotation(bottom=0, fill_alpha=0.1, fill_color='cornsilk')
-        p.add_layout(upper3)
+    #     upper3 = BoxAnnotation(bottom=0, fill_alpha=0.1, fill_color='cornsilk')
+    #     p.add_layout(upper3)
 
-        lower1 = BoxAnnotation(top=-1, fill_alpha=0.1, fill_color='salmon')
-        p.add_layout(lower1)
+    #     lower1 = BoxAnnotation(top=-1, fill_alpha=0.1, fill_color='salmon')
+    #     p.add_layout(lower1)
 
-        lower2 = BoxAnnotation(top=-2, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(top=-2, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='cornsilk')
-        p.add_layout(lower3)
+    #     lower3 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='cornsilk')
+    #     p.add_layout(lower3)
 
-        polovina = Span(location=0,
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
 
-        bb_up = Span(location=2,
-                         line_color='dodgerblue', line_dash='dashed', line_width=2)
-        p.add_layout(bb_up)
+    #     bb_up = Span(location=2,
+    #                      line_color='dodgerblue', line_dash='dashed', line_width=2)
+    #     p.add_layout(bb_up)
 
-        bb_down = Span(location=-2,
-                         line_color='dodgerblue',line_dash='dashed', line_width=2)
-        p.add_layout(bb_down)
+    #     bb_down = Span(location=-2,
+    #                      line_color='dodgerblue',line_dash='dashed', line_width=2)
+    #     p.add_layout(bb_down)
         
     if oscilator == 'RSI':
 
@@ -382,60 +382,60 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
 
 
         
-    if oscilator == 'change':
+    # if oscilator == 'change':
 
-        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
 
 
-        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        polovina = Span(location=0,
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
     
-    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+    # if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         
-        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        polovina = Span(location=0,
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
     
     
-    if oscilator == 'CCI20':
+    # if oscilator == 'CCI20':
 
-        upper1 = BoxAnnotation(bottom=100, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(bottom=100, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(bottom=0, fill_alpha=0.15, fill_color='palegreen')
-        p.add_layout(upper2)
+    #     upper2 = BoxAnnotation(bottom=0, fill_alpha=0.15, fill_color='palegreen')
+    #     p.add_layout(upper2)
 
 
-        lower2 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='salmon')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(top=0, fill_alpha=0.1, fill_color='salmon')
+    #     p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(top=-100, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower3)
+    #     lower3 = BoxAnnotation(top=-100, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower3)
         
 
-        polovina = Span(location=0,
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
         
-        rsi70 = Span(location=100,
-                         line_color='olive',line_dash='dashed', line_width=2)
-        p.add_layout(rsi70)
+    #     rsi70 = Span(location=100,
+    #                      line_color='olive',line_dash='dashed', line_width=2)
+    #     p.add_layout(rsi70)
         
-        rsi30 = Span(location=-100,
-                         line_color='salmon',line_dash='dashed', line_width=2)
-        p.add_layout(rsi30)
+    #     rsi30 = Span(location=-100,
+    #                      line_color='salmon',line_dash='dashed', line_width=2)
+    #     p.add_layout(rsi30)
    
     return p
   
@@ -484,42 +484,42 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
 
         
-    if oscilator == 'BB.Position':
-        x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
-        x1 = min(min(dt[oscilator]) - 0.5, -2.5)
+    # if oscilator == 'BB.Position':
+    #     x2 =  max(max(dt[oscilator]) + 0.5, 2.5)
+    #     x1 = min(min(dt[oscilator]) - 0.5, -2.5)
     
     if oscilator == 'RSI':
         x2 =  max(max(dt[oscilator]) + 5,85)
         x1 = min(min(dt[oscilator]) - 5, 15)
         
-    if oscilator == 'change':
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if oscilator == 'change':
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max (abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
         
-        x2 = max(max(dt[oscilator]) + distanca, 1)
-        x1 = min(min(dt[oscilator]) - distanca, -1)
+    #     x2 = max(max(dt[oscilator]) + distanca, 1)
+    #     x1 = min(min(dt[oscilator]) - distanca, -1)
         
-    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
         
-        x2 = max(max(dt[oscilator]) + distanca, 1)
-        x1 = min(min(dt[oscilator]) - distanca, -1)
+    #     x2 = max(max(dt[oscilator]) + distanca, 1)
+    #     x1 = min(min(dt[oscilator]) - distanca, -1)
         
-    if oscilator == 'CCI20' :
-        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
-            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
-        else:
-            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+    # if oscilator == 'CCI20' :
+    #     if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+    #         distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+    #     else:
+    #         distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
         
-        x2 = max(max(dt[oscilator]) + distanca, 150)
-        x1 = min(min(dt[oscilator]) - distanca, -150)
+    #     x2 = max(max(dt[oscilator]) + distanca, 150)
+    #     x1 = min(min(dt[oscilator]) - distanca, -150)
 
  
     p = figure(y_range=dt['coin'],x_range =(x1,x2),height=900,#width=350,  
@@ -563,37 +563,37 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
    
         
     
-    if oscilator == 'BB.Position':
+    # if oscilator == 'BB.Position':
 
-        upper1 = BoxAnnotation(left=2, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(left=2, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(left=1, fill_alpha=0.1, fill_color='palegreen')
-        p.add_layout(upper2)
+    #     upper2 = BoxAnnotation(left=1, fill_alpha=0.1, fill_color='palegreen')
+    #     p.add_layout(upper2)
 
-        upper3 = BoxAnnotation(left=0, fill_alpha=0.1, fill_color='cornsilk')
-        p.add_layout(upper3)
+    #     upper3 = BoxAnnotation(left=0, fill_alpha=0.1, fill_color='cornsilk')
+    #     p.add_layout(upper3)
 
-        lower1 = BoxAnnotation(right=-1, fill_alpha=0.1, fill_color='salmon')
-        p.add_layout(lower1)
+    #     lower1 = BoxAnnotation(right=-1, fill_alpha=0.1, fill_color='salmon')
+    #     p.add_layout(lower1)
 
-        lower2 = BoxAnnotation(right=-2, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(right=-2, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(right=0, fill_alpha=0.1, fill_color='cornsilk')
-        p.add_layout(lower3)
+    #     lower3 = BoxAnnotation(right=0, fill_alpha=0.1, fill_color='cornsilk')
+    #     p.add_layout(lower3)
 
-        polovina = Span(location=0,dimension='height',
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,dimension='height',
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
 
-        bb_up = Span(location=2, dimension='height',
-                         line_color='dodgerblue', line_dash='dashed', line_width=2)
-        p.add_layout(bb_up)
+    #     bb_up = Span(location=2, dimension='height',
+    #                      line_color='dodgerblue', line_dash='dashed', line_width=2)
+    #     p.add_layout(bb_up)
 
-        bb_down = Span(location=-2,dimension='height',
-                         line_color='dodgerblue',line_dash='dashed', line_width=2)
-        p.add_layout(bb_down)
+    #     bb_down = Span(location=-2,dimension='height',
+    #                      line_color='dodgerblue',line_dash='dashed', line_width=2)
+    #     p.add_layout(bb_down)
         
     if oscilator == 'RSI':
 
@@ -624,61 +624,61 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         p.add_layout(rsi30)
 
         
-    if oscilator == 'change':
+    # if oscilator == 'change':
 
-        upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
 
 
-        lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        polovina = Span(location=0,dimension='height',
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,dimension='height',
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
         
-    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+    # if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
         
-        upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(left=0, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(right=0, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower2)
 
-        polovina = Span(location=0,dimension='height',
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,dimension='height',
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
         
         
     
-    if oscilator == 'CCI20':
+    # if oscilator == 'CCI20':
 
-        upper1 = BoxAnnotation(left=100, fill_alpha=0.2, fill_color='olive')
-        p.add_layout(upper1)
+    #     upper1 = BoxAnnotation(left=100, fill_alpha=0.2, fill_color='olive')
+    #     p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(left=0, fill_alpha=0.15, fill_color='palegreen')
-        p.add_layout(upper2)
+    #     upper2 = BoxAnnotation(left=0, fill_alpha=0.15, fill_color='palegreen')
+    #     p.add_layout(upper2)
 
 
-        lower2 = BoxAnnotation(right=0, fill_alpha=0.1, fill_color='salmon')
-        p.add_layout(lower2)
+    #     lower2 = BoxAnnotation(right=0, fill_alpha=0.1, fill_color='salmon')
+    #     p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(right=-100, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower3)
+    #     lower3 = BoxAnnotation(right=-100, fill_alpha=0.2, fill_color='red')
+    #     p.add_layout(lower3)
         
 
-        polovina = Span(location=0,dimension='height',
-                         line_color='orange',line_dash='dashed', line_width=2)
-        p.add_layout(polovina)
+    #     polovina = Span(location=0,dimension='height',
+    #                      line_color='orange',line_dash='dashed', line_width=2)
+    #     p.add_layout(polovina)
         
-        rsi70 = Span(location=100,dimension='height',
-                         line_color='olive',line_dash='dashed', line_width=2)
-        p.add_layout(rsi70)
+    #     rsi70 = Span(location=100,dimension='height',
+    #                      line_color='olive',line_dash='dashed', line_width=2)
+    #     p.add_layout(rsi70)
         
-        rsi30 = Span(location=-100,dimension='height',
-                         line_color='salmon',line_dash='dashed', line_width=2)
-        p.add_layout(rsi30)
+    #     rsi30 = Span(location=-100,dimension='height',
+    #                      line_color='salmon',line_dash='dashed', line_width=2)
+    #     p.add_layout(rsi30)
     
     
     
@@ -776,34 +776,8 @@ if usdt_btc and kolona_sortiranja:
     
 
     try: 
-        dt = data_frame_maker(simboli, [interval], [ 'close','low','high','BB.upper','BB.lower','RSI','change',"EMA200",'EMA50',"EMA100",'SMA50',"SMA100",'SMA200','CCI20'], 'USDT', ['timeframe'])
-    
-        conditions = [
-        (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
-        ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
-        ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
-        ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
-        ]
+        dt = data_frame_maker(simboli, [interval], [ 'RSI'], 'USDT', ['timeframe'])
 
-        values = [np.nan, 'UP','LOW','']
-
-        dt['BB'] =np.select(conditions,values)
-
-        dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
-        dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
-
-
-        dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
-        dt['EMA100 %'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
-        dt['EMA50 %'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
-
-        dt['SMA200 %'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
-        dt['SMA100 %'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
-        dt['SMA50 %'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
-    
-    
-        
         
         if kolona_sortiranja == 'coin':
             sortiranje_po_value = False
@@ -819,53 +793,7 @@ if usdt_btc and kolona_sortiranja:
             tab1.bokeh_chart(p_rsi_sp)
         except: 
             print()  
-        try:
-            p_bb_sp = grafik_oscilator_interval_sp(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_bb_sp)
-        except: 
-            print()  
-        try:
-            p_ch_sp = grafik_oscilator_interval_sp(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_ch_sp)
-        except: 
-            print()  
-        try:
-            p_cci_sp = grafik_oscilator_interval_sp(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_cci_sp)
-        except: 
-            print()
-            
-
-        try:
-            p_ema200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_ema200_sp)
-        except: 
-            print()    
-        try:
-            p_ema100_sp = grafik_oscilator_interval_sp(dt[['coin','EMA100 %']],interval,'EMA100 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_ema100_sp)
-        except: 
-            print()    
-        try:
-            p_ema50_sp = grafik_oscilator_interval_sp(dt[['coin','EMA50 %']],interval,'EMA50 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_ema50_sp)
-        except: 
-            print()
-        try:
-            p_sma200_sp = grafik_oscilator_interval_sp(dt[['coin','SMA200 %']],interval,'SMA200 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_sma200_sp)
-        except: 
-            print()
-        try:
-            p_sma100_sp = grafik_oscilator_interval_sp(dt[['coin','SMA100 %']],interval,'SMA100 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_sma100_sp)
-        except: 
-            print()
-        try:
-            p_sma50_sp = grafik_oscilator_interval_sp(dt[['coin','SMA50 %']],interval,'SMA50 %',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_sma50_sp)
-        except: 
-            print()
+       
 
     with tab2:
         try:
@@ -873,52 +801,5 @@ if usdt_btc and kolona_sortiranja:
             tab2.bokeh_chart(p_rsi_pc)
         except: 
             print()    
-        try:
-            p_bb_pc = grafik_oscilator_interval_pc(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_bb_pc)
-        except: 
-            print()
-        try:
-            p_ch_pc = grafik_oscilator_interval_pc(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_ch_pc)
-        except: 
-            print()
-            
-        try:
-            p_cci_pc = grafik_oscilator_interval_pc(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_cci_pc)
-        except: 
-            print()
-            
-        try:
-            p_ema200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_ema200_pc)
-        except: 
-            print()
-        try:
-            p_ema100_pc = grafik_oscilator_interval_pc(dt[['coin','EMA100 %']],interval,'EMA100 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_ema100_pc)
-        except: 
-            print()
-        try:
-            p_ema50_pc = grafik_oscilator_interval_pc(dt[['coin','EMA50 %']],interval,'EMA50 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_ema50_pc)
-        except: 
-            print()
-        try:   
-            p_sma200_pc = grafik_oscilator_interval_pc(dt[['coin','SMA200 %']],interval,'SMA200 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_sma200_pc)
-        except: 
-            print()
-        try:
-            p_sma100_pc = grafik_oscilator_interval_pc(dt[['coin','SMA100 %']],interval,'SMA100 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_sma100_pc)
-        except: 
-            print()
-        try:
-            p_sma50_pc = grafik_oscilator_interval_pc(dt[['coin','SMA50 %']],interval,'SMA50 %',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_sma50_pc)
-        except: 
-            print()
-            
+       
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
