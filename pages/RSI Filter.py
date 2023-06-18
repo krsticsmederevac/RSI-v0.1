@@ -737,7 +737,8 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    rsi_min_1 = st.slider('RSI Value', min_value=1, max_value=100, value=(30,70), step=1)
+    rsi_range = st.slider('RSI Value', min_value=1, max_value=100, value=(30,70), step=1)
+    rsi_inverse = st.checkbox('Inverse Range',value = True)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
@@ -779,6 +780,14 @@ if usdt_btc and kolona_sortiranja:
     try: 
         dt = data_frame_maker(simboli, [interval], [ 'RSI'], 'USDT', ['timeframe'])
 
+        rsi_min = min(rsi_range)
+        rsi_max = max(rsi_range)
+        
+        if rsi_inverse:
+            dt = dt[(dt.RSI <= rsi_min) | (dt.RSI >= rsi_max)]
+        else:
+            dt = dt[(dt.RSI >= rsi_min) & (dt.RSI <= rsi_max)]
+          
         
         if kolona_sortiranja == 'coin':
             sortiranje_po_value = False
