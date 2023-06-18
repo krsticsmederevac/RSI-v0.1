@@ -764,7 +764,7 @@ with st.sidebar.form(key ='Form1'):
          pocetni_coin_za_liniju = 0
         
     # usdt_btc = st.selectbox('Coin Line',simboli,pocetni_coin_za_liniju)
-    
+    usdt_btc = None
 
     podesavanja = simboli
 
