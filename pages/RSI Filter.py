@@ -315,8 +315,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     p.add_layout(labels)
     p.xaxis.major_label_orientation = 1.2
     
-    coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],line_color='magenta',line_dash='solid', line_width=1)
-    p.add_layout(coin_location)
+    # coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],line_color='magenta',line_dash='solid', line_width=1)
+    # p.add_layout(coin_location)
      
     
     
@@ -557,9 +557,9 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     
     
 
-    coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],dimension='height',
-                             line_color='magenta',line_dash='solid', line_width=1)
-    p.add_layout(coin_location)
+    # coin_location = Span(location= dt[dt.coin == usdt_btc][oscilator].values[0],dimension='height',
+    #                          line_color='magenta',line_dash='solid', line_width=1)
+    # p.add_layout(coin_location)
    
         
     
@@ -763,7 +763,7 @@ with st.sidebar.form(key ='Form1'):
     else:
          pocetni_coin_za_liniju = 0
         
-    usdt_btc = st.selectbox('Coin Line',simboli,pocetni_coin_za_liniju)
+    # usdt_btc = st.selectbox('Coin Line',simboli,pocetni_coin_za_liniju)
     
 
     podesavanja = simboli
