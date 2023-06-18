@@ -223,7 +223,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval +  '     ' + datum_vreme
 
     if rsi_inverse:
-        ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' and RSI >= '+ str(rsi_max)
+        ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' or RSI >= '+ str(rsi_max)
     else:
         ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI <=' + str(rsi_max)
     ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
@@ -440,34 +440,25 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         indikator = dt[oscilator],
         names=dt['coin']))
     
-    prosecan_oscilator = round(dt[oscilator].mean(),2)
-    mediana_oscilator = round(dt[oscilator].median(),2)
-#     std_oscilator = round(dt[oscilator].std(),2)
 
-    if oscilator == 'change':
-        ime_za_naslov = 'Price Change %'
-    elif oscilator == 'BB.Position':
-         ime_za_naslov = 'Bollinger Bands STD'
+
+
     elif oscilator == 'RSI':
          ime_za_naslov = 'RSI'
-    elif oscilator == 'CCI20':
-         ime_za_naslov = 'CCI'
-    elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
-         ime_za_naslov = oscilator[:-2] + ' Distance %'
+  
         
         
-        
-    vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
-    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
-    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
-   
             
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval  + '     ' + datum_vreme
     
-    ime_nastavak = '\n' + usdt_btc + '>' + manjih + '  ' + usdt_btc + '<' + vecih +  '  Mean: ' + str(prosecan_oscilator) 
-    ime_grafika = ime_grafika_osnovno + ime_nastavak
+    if rsi_inverse:
+        ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' or RSI >= '+ str(rsi_max)
+    else:
+        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI <=' + str(rsi_max)
+    ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
+  
     
 
         
