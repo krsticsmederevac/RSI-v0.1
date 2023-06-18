@@ -737,7 +737,7 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    rsi_range = st.slider('RSI Value', min_value=1, max_value=100, value=(30,70), step=1)
+    rsi_range = st.slider('RSI Value Between', min_value=1, max_value=100, value=(40,60), step=1)
     rsi_inverse = st.checkbox('Inverse Range',value = True)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
