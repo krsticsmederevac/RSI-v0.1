@@ -225,7 +225,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     if rsi_inverse:
         ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' and RSI >= '+ str(rsi_max)
     else:
-        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI >=' + str(rsi_max)
+        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI <=' + str(rsi_max)
     ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
     
 
