@@ -786,7 +786,7 @@ if usdt_btc and kolona_sortiranja:
         if rsi_inverse:
             dt = dt[(dt.RSI <= rsi_min) | (dt.RSI >= rsi_max)]
         else:
-            dt = dt[(dt.RSI >= rsi_min) & (dt.RSI <= rsi_max)]
+            dt = dt[(dt.RSI >= rsi_min) | (dt.RSI <= rsi_max)]
           
         
         if kolona_sortiranja == 'coin':
