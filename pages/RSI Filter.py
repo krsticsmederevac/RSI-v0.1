@@ -737,7 +737,8 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    
+    rsi_min_1 = st.slider('RSI Value', min_value=1, max_value=100, value=(30,70), step=1)
+  
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
    
