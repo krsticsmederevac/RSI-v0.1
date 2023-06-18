@@ -778,7 +778,7 @@ if usdt_btc and kolona_sortiranja:
     
 
     try: 
-        dt = data_frame_maker(simboli, [interval], [ 'RSI','close'], 'USDT', ['timeframe'])
+        dt = data_frame_maker(simboli, [interval], [ 'RSI'], 'USDT', ['timeframe'])
 
         rsi_min = min(rsi_range)
         rsi_max = max(rsi_range)
