@@ -228,18 +228,13 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     elif (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
          ime_za_naslov = oscilator[:-2] + ' Distance %'
           
-  
-    vrednost = dt[dt.coin == usdt_btc][oscilator].values[0]
-    vecih = str(round(dt[dt[oscilator]> vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
-    manjih = str(round(dt[dt[oscilator]< vrednost][oscilator].count()/(len(dt.index)-1) *100,1)) + '%'
+
     
     now = datetime.now() + timedelta(hours=2)
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval +  '     ' + datum_vreme
-    ime_nastavak = '\n' + usdt_btc + '>' + manjih + '   ' + usdt_btc + '<' + vecih  +  \
-    '     ' + 'Mean: ' + str(prosecan_oscilator) + '  Median: ' + str(mediana_oscilator) + \
-    '  STD: ' + str(std_oscilator) + ' Min: ' + str(min_oscilator) + ' Max: ' + str(max_oscilator)
-    ime_grafika = ime_grafika_osnovno + ime_nastavak
+  
+    ime_grafika = ime_grafika_osnovno 
     
 
     # if oscilator == 'BB.Position':
