@@ -2,6 +2,8 @@ import streamlit as st
 st.set_page_config( page_title = "Crypto Data", page_icon = "📊",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
+from streamlit_extras.app_logo import add_logo
+
 
 url1 = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
 url2 = 'https://www.tradingview.com/script/T1z24zxb-CryptoData-Oscillators-ic/'
