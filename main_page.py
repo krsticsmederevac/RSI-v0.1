@@ -5,7 +5,7 @@ import extra_streamlit_components as stx
 
 from streamlit_extras.app_logo import add_logo
 
-add_logo('https://media.sproutsocial.com/uploads/2017/02/10x-featured-social-media-image-size.png')
+add_logo('https://github.com/krsticsmederevac/RSI-v0.1/blob/15d47b94c3d31b84b13c6fee2bc61829a4dfb211/images/logo_black.jpg')
 
 
 url1 = "https://www.tradingview.com/script/48BzLTIt-CryptoData-Coin-BTC-Quick-Chart-ic/"
