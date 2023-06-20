@@ -384,7 +384,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower2)
 
-        polovina = Span(location=0,dimension = 'hight'
+        polovina = Span(location=0,dimension = 'hight',
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
         
