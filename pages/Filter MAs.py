@@ -438,7 +438,7 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form2'):
     
     
-    st.header('`Single TF Analyze`')
+    st.header('`MAs Filter`')
     
     st.form_submit_button(label = "Submit")
     
