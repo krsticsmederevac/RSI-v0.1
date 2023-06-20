@@ -223,9 +223,9 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval +  '     ' + datum_vreme
 
     if ma_inverse:
-        ime_grafika_dodatak = '\n'+oscilator[:3]+' <= ' + str(rsi_min) + ' or '+oscilator[:3]+' >= '+ str(rsi_max)
+        ime_grafika_dodatak = '\n'+oscilator[:3]+' <= ' + str(ma_min) + ' or '+oscilator[:3]+' >= '+ str(ma_max)
     else:
-        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= '+oscilator[:3]+' <=' + str(rsi_max)
+        ime_grafika_dodatak = '\n'+ str(ma_min) + ' <= '+oscilator[:3]+' <=' + str(ma_max)
     ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
     
     
