@@ -212,8 +212,8 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
 
     
 
-    if oscilator == 'RSI':
-         ime_za_naslov = 'RSI'
+    if oscilator == (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+         ime_za_naslov = oscilator[:-2] + ' Distance %'
 
           
 
@@ -222,16 +222,21 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval +  '     ' + datum_vreme
 
-    if rsi_inverse:
-        ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' or RSI >= '+ str(rsi_max)
+    if ma_inverse:
+        ime_grafika_dodatak = '\n'+oscilator[:3]+' <= ' + str(rsi_min) + ' or '+oscilator[:3]+' >= '+ str(rsi_max)
     else:
-        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI <=' + str(rsi_max)
+        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= '+oscilator[:3]+' <=' + str(rsi_max)
     ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
     
     
-    if oscilator == 'RSI':
-        x2 =  max(max(dt[oscilator]) + 5,85)
-        x1 = min(min(dt[oscilator])-5, 15)
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1))
         
   
     
@@ -273,33 +278,17 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
 
         
-    if oscilator == 'RSI':
-
-        upper1 = BoxAnnotation(bottom=80, fill_alpha=0.2, fill_color='olive')
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        
+        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
         p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(bottom=70, fill_alpha=0.1, fill_color='palegreen')
-        p.add_layout(upper2)
-
-
-        lower2 = BoxAnnotation(top=30, fill_alpha=0.1, fill_color='salmon')
+        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(top=20, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower3)
-        
-
-        polovina = Span(location=50,
+        polovina = Span(location=0,
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
-      
-        rsi70 = Span(location=70,
-                         line_color='olive',line_dash='dashed', line_width=2)
-        p.add_layout(rsi70)
-        
-        rsi30 = Span(location=30,
-                         line_color='salmon',line_dash='dashed', line_width=2)
-        p.add_layout(rsi30)
 
 
    
@@ -322,9 +311,8 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
 
 
-    if oscilator == 'RSI':
-         ime_za_naslov = 'RSI'
-  
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+         ime_za_naslov = oscilator[:-2] + ' Distance %'
         
         
             
@@ -332,18 +320,23 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
     datum_vreme = now.strftime("%H:%M %d/%m/%y") 
     ime_grafika_osnovno = ime_za_naslov + ' ' + interval  + '     ' + datum_vreme
     
-    if rsi_inverse:
-        ime_grafika_dodatak = '\nRSI <= ' + str(rsi_min) + ' or RSI >= '+ str(rsi_max)
+    if ma_inverse:
+        ime_grafika_dodatak = '\n'+oscilator[:3]+' <= ' + str(rsi_min) + ' or '+oscilator[:3]+' >= '+ str(rsi_max)
     else:
-        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= RSI <=' + str(rsi_max)
+        ime_grafika_dodatak = '\n'+ str(rsi_min) + ' <= '+oscilator[:3]+' <=' + str(rsi_max)
     ime_grafika = ime_grafika_osnovno + ime_grafika_dodatak
   
     
 
     
-    if oscilator == 'RSI':
-        x2 =  max(max(dt[oscilator]) + 5,85)
-        x1 = min(min(dt[oscilator]) - 5, 15)
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        if (max(dt[oscilator]) >= 0 and  min(dt[oscilator]) < 0) :
+            distanca = max(abs((max(dt[oscilator]) + min(dt[oscilator]))) * 0.3 , 2)
+        else:
+            distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
+
+        x2 = max(max(dt[oscilator]) + distanca, 1)
+        x1 = min(min(dt[oscilator]) - distanca, -1)
         
 
 
@@ -383,34 +376,17 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
 
    
         
-    if oscilator == 'RSI':
-
-        upper1 = BoxAnnotation(left=80, fill_alpha=0.2, fill_color='olive')
+    if (oscilator[:3] == 'EMA') or (oscilator[:3] == 'SMA') :
+        
+        upper1 = BoxAnnotation(bottom=0, fill_alpha=0.2, fill_color='olive')
         p.add_layout(upper1)
 
-        upper2 = BoxAnnotation(left=70, fill_alpha=0.15, fill_color='palegreen')
-        p.add_layout(upper2)
-
-
-        lower2 = BoxAnnotation(right=30, fill_alpha=0.1, fill_color='salmon')
+        lower2 = BoxAnnotation(top=0, fill_alpha=0.2, fill_color='red')
         p.add_layout(lower2)
 
-        lower3 = BoxAnnotation(right=20, fill_alpha=0.2, fill_color='red')
-        p.add_layout(lower3)
-        
-
-        polovina = Span(location=50,dimension='height',
+        polovina = Span(location=0,dimension = 'hight'
                          line_color='orange',line_dash='dashed', line_width=2)
         p.add_layout(polovina)
-        
-        rsi70 = Span(location=70,dimension='height',
-                         line_color='olive',line_dash='dashed', line_width=2)
-        p.add_layout(rsi70)
-        
-        rsi30 = Span(location=30,dimension='height',
-                         line_color='salmon',line_dash='dashed', line_width=2)
-        p.add_layout(rsi30)
-
         
 
     
@@ -466,8 +442,8 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    rsi_range = st.slider('RSI Value Between', min_value=0, max_value=100, value=(40,60), step=1)
-    rsi_inverse = st.checkbox('Inverse Range',value = True)
+    ma_range = st.slider('MA % Between', min_value=-100, max_value=100, value=(40,60), step=1)
+    ma_inverse = st.checkbox('Inverse Range',value = True)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
@@ -507,15 +483,23 @@ if kolona_sortiranja:
     
 
     try: 
-        dt = data_frame_maker(simboli, [interval], [ 'RSI'], 'USDT', ['timeframe'])
+        dt = data_frame_maker(simboli, [interval], ["EMA200",'EMA100',"EMA50",'SMA200',"SMA100",'SMA500','close'], 'USDT', ['timeframe'])
 
-        rsi_min = min(rsi_range)
-        rsi_max = max(rsi_range)
+        dt['EMA200'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
+        dt['EMA100'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
+        dt['EMA50'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
         
-        if rsi_inverse:
-            dt = dt[(dt.RSI <= rsi_min) | (dt.RSI >= rsi_max)]
+        dt['SMA200'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
+        dt['SMA100'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
+        dt['SMA50'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
+
+        ma_min = min(ma_range)
+        ma_max = max(ma_range)
+        
+        if ma_inverse:
+            dtEMA200 = dt[(dt.EMA200 <= rsi_min) | (dt.EMA200 >= rsi_max)]
         else:
-            dt = dt[(dt.RSI >= rsi_min) & (dt.RSI <= rsi_max)]
+            dtEMA200 = dt[(dt.EMA200 >= rsi_min) & (dt.EMA200 <= rsi_max)]
           
         
         if kolona_sortiranja == 'coin':
@@ -528,16 +512,16 @@ if kolona_sortiranja:
     with tab1:
             
         try:
-            p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
-            tab1.bokeh_chart(p_rsi_sp)
+            p_EMA200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200']],interval,'EMA200',usdt_btc,sortiranje_po_value)
+            tab1.bokeh_chart(p_EMA200_sp)
         except: 
             print()  
        
 
     with tab2:
         try:
-            p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
-            tab2.bokeh_chart(p_rsi_pc)
+            p_EMA200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200']],interval,'EMA200',usdt_btc,sortiranje_po_value)
+            tab2.bokeh_chart(p_EMA200_pc)
         except: 
             print()    
        
