@@ -442,7 +442,7 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    ma_range = st.slider('MA % Between', min_value=-200, max_value=200, value=(-20,20), step=1)
+    ma_range = st.slider('MA % Between', min_value=-100, max_value=100, value=(-20,20), step=1)
     ma_inverse = st.checkbox('Inverse Range',value = False)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
