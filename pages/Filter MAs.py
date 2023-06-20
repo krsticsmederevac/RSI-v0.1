@@ -236,7 +236,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
             distanca = max(abs((max(dt[oscilator]) - min(dt[oscilator]))) *0.3 , 2)
 
         x2 = max(max(dt[oscilator]) + distanca, 1)
-        x1 = min(min(dt[oscilator]) - distanca, -1))
+        x1 = min(min(dt[oscilator]) - distanca, -1)
         
   
     
