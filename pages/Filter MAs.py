@@ -512,7 +512,7 @@ if kolona_sortiranja:
     with tab1:
             
         try:
-            p_EMA200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+            p_EMA200_sp = grafik_oscilator_interval_sp(dtEMA200[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_EMA200_sp)
         except: 
             print()  
@@ -520,7 +520,7 @@ if kolona_sortiranja:
 
     with tab2:
         try:
-            p_EMA200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+            p_EMA200_pc = grafik_oscilator_interval_pc(dtEMA200[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
             tab2.bokeh_chart(p_EMA200_pc)
         except: 
             print()    
