@@ -442,7 +442,7 @@ with st.sidebar.form(key ='Form2'):
     
     st.form_submit_button(label = "Submit")
     
-    ma_range = st.slider('MA % Between', min_value=-100, max_value=100, value=(-20,20), step=1)
+    ma_range = st.slider('MA % Between', min_value=-200, max_value=200, value=(-20,20), step=1)
     ma_inverse = st.checkbox('Inverse Range',value = False)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
@@ -512,7 +512,7 @@ if kolona_sortiranja:
     with tab1:
             
         try:
-            p_EMA200_sp = grafik_oscilator_interval_sp(dtEMA200[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+            p_EMA200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_EMA200_sp)
         except: 
             print()  
