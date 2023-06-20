@@ -483,15 +483,15 @@ if kolona_sortiranja:
     
 
     try: 
-        dt = data_frame_maker(simboli, [interval], ["EMA200",'EMA100',"EMA50",'SMA200',"SMA100",'SMA500','close'], 'USDT', ['timeframe'])
+        dt = data_frame_maker(simboli, [interval], ["EMA200",'EMA100',"EMA50",'SMA200',"SMA100",'SMA50','close'], 'USDT', ['timeframe'])
 
         dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
-        dt['EMA100'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
-        dt['EMA50'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
-        
-        dt['SMA200'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
-        dt['SMA100'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
-        dt['SMA50'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
+        dt['EMA100 %'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
+        dt['EMA50 %'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
+
+        dt['SMA200 %'] = -(dt['SMA200'] - dt['close'])/dt['close'] * 100
+        dt['SMA100 %'] = -(dt['SMA100'] - dt['close'])/dt['close'] * 100
+        dt['SMA50 %'] = -(dt['SMA50'] - dt['close'])/dt['close'] * 100
 
         ma_min = min(ma_range)
         ma_max = max(ma_range)
