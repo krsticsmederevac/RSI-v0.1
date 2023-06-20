@@ -435,7 +435,7 @@ sortiranje_ponuda_pocetni = 0
 
 
 
-with st.sidebar.form(key ='Form1'):
+with st.sidebar.form(key ='Form2'):
     
     
     st.header('`Single TF Analyze`')
