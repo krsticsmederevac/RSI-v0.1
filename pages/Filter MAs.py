@@ -485,7 +485,7 @@ if kolona_sortiranja:
     try: 
         dt = data_frame_maker(simboli, [interval], ["EMA200",'EMA100',"EMA50",'SMA200',"SMA100",'SMA500','close'], 'USDT', ['timeframe'])
 
-        dt['EMA200'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
+        dt['EMA200 %'] = -(dt['EMA200'] - dt['close'])/dt['close'] * 100
         dt['EMA100'] = -(dt['EMA100'] - dt['close'])/dt['close'] * 100
         dt['EMA50'] = -(dt['EMA50'] - dt['close'])/dt['close'] * 100
         
@@ -497,9 +497,9 @@ if kolona_sortiranja:
         ma_max = max(ma_range)
         
         if ma_inverse:
-            dtEMA200 = dt[(dt.EMA200 <= ma_min) | (dt.EMA200 >= ma_max)]
+            dtEMA200 = dt[( dt['EMA200 %'] <= ma_min) | ( dt['EMA200 %']>= ma_max)]
         else:
-            dtEMA200 = dt[(dt.EMA200 >= ma_min) & (dt.EMA200 <= ma_max)]
+            dtEMA200 = dt[( dt['EMA200 %'] >= ma_min) & ( dt['EMA200 %'] <= ma_max)]
           
         
         if kolona_sortiranja == 'coin':
@@ -512,7 +512,7 @@ if kolona_sortiranja:
     with tab1:
             
         try:
-            p_EMA200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200']],interval,'EMA200',usdt_btc,sortiranje_po_value)
+            p_EMA200_sp = grafik_oscilator_interval_sp(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
             tab1.bokeh_chart(p_EMA200_sp)
         except: 
             print()  
@@ -520,7 +520,7 @@ if kolona_sortiranja:
 
     with tab2:
         try:
-            p_EMA200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200']],interval,'EMA200',usdt_btc,sortiranje_po_value)
+            p_EMA200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
             tab2.bokeh_chart(p_EMA200_pc)
         except: 
             print()    
