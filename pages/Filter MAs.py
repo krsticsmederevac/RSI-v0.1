@@ -449,7 +449,7 @@ with st.sidebar.form(key ='Form1'):
     
    
     izbor_liste_coina = st.selectbox('Coin List',['Binance Futurese', 'Top MC','Custom'],0)
-    
+  
     
     if izbor_liste_coina == 'Binance Futurese': 
         simboli = binance_futurese_list
