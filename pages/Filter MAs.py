@@ -442,7 +442,7 @@ with st.sidebar.form(key ='Form1'):
     
     st.form_submit_button(label = "Submit")
     
-    ma_range = st.slider('MA % Between', min_value=-100, max_value=100, value=(40,60), step=1)
+    ma_range = st.slider('MA % Between', min_value=-200, max_value=200, value=(-20,20), step=1)
     ma_inverse = st.checkbox('Inverse Range',value = True)
   
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
@@ -497,9 +497,9 @@ if kolona_sortiranja:
         ma_max = max(ma_range)
         
         if ma_inverse:
-            dtEMA200 = dt[(dt.EMA200 <= rsi_min) | (dt.EMA200 >= rsi_max)]
+            dtEMA200 = dt[(dt.EMA200 <= ma_min) | (dt.EMA200 >= ma_max)]
         else:
-            dtEMA200 = dt[(dt.EMA200 >= rsi_min) & (dt.EMA200 <= rsi_max)]
+            dtEMA200 = dt[(dt.EMA200 >= ma_min) & (dt.EMA200 <= ma_max)]
           
         
         if kolona_sortiranja == 'coin':
