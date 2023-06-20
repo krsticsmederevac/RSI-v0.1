@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config( page_title = "Single Time Frame Analyze", page_icon = "📊",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
+st.set_page_config( page_title = "Filter RSI", page_icon = "📊",layout="wide",initial_sidebar_state="auto", menu_items = {"About": "krsticsmederevac@gmail.com"})
 
 import extra_streamlit_components as stx
 
