@@ -34,7 +34,7 @@ st.write("[CryptoData Bollinger, Keltner & RSI [+ic]](%s)" % url8)
 st.write("[CryptoData RSI [+ic]](%s)" % url7)
 st.write("[CryptoData Bollinger & Keltner [+ic]](%s)" % url5)
 
-
+st.write("Invite only")
 st.write("[CryptoData [+ic]](%s)" % url3)
 st.write("[CryptoData Oscillators [+ic]](%s)" % url2)
 st.write("[CryptoData Pack2 [+ic]](%s)" % url4)
