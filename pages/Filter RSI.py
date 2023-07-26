@@ -78,7 +78,7 @@ binance_futurese_list = ['1INCH',
                          'T', 'THETA', 'TLM', 'TOMO', 'TRB', 'TRU', 'TRX',
                          'UMA', 'UNFI', 'UNI',
                          'VET',
-                         'WAVES', 'WOO',
+                         'WAVES', 'WOO','WLD',
                          'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS',
                          'YFI',
                          'ZEC', 'ZEN', 'ZIL', 'ZRX']
