@@ -219,7 +219,7 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 
-with st.sidebar.form(key ='Form3'):
+with st.sidebar.form(key ='Form1'):
     
     
     st.header('`Single Coin Multiple TF`')
