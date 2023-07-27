@@ -211,9 +211,31 @@ container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 
 
-pocetni_simboli = [ 'ADA', 'AVAX', 'BNB', 'BTC', 'DOT',  'ETH', 'LINK', 'LTC',  'XRP', ]
+pocetni_simboli = [ 'BTC' ]
   
 
 ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
+
+
+with st.sidebar.form(key ='Form3'):
+    
+    
+    st.header('`Single Coin Multiple TF`')
+    
+    st.form_submit_button(label = "Submit")
+    
+    
+    interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
+    
+    simboli = st.selectbox('Coins',ponudjeni_simboli, 42)
+    
+
+       
+    
+    usdt_btc = 'USDT' #st.selectbox('USDT or BTC',ponudjeni_parovi,0)
+    
+
+    podesavanja = simboli
+
