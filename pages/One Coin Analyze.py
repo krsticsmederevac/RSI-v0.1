@@ -237,7 +237,7 @@ sortiranje_ponuda_pocetni = 0
 
 
 
-with st.sidebar.form(key ='Form1'):
+with st.sidebar.form(key ='Form3'):
     
     
     st.header('`One Coin Analyze`')
