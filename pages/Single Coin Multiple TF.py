@@ -229,8 +229,8 @@ with st.sidebar.form(key ='Form1'):
 
        
     
-    usdt_btc = 'USDT' #st.selectbox('USDT or BTC',ponudjeni_parovi,0)
-    
+usdt_btc = 'USDT' #st.selectbox('USDT or BTC',ponudjeni_parovi,0)
 
-    podesavanja = simboli
+
+podesavanja = simboli
 
