@@ -225,7 +225,7 @@ if podesavanja_korisnika:
       
     
 else:
-     pocetni_simboli = [ 'ADA', 'AVAX', 'BNB', 'BTC', 'DOT',  'ETH', 'LINK', 'LTC',  'XRP', ]
+     pocetni_simboli = [ 'BTC' ]
   
 
 ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
@@ -237,7 +237,7 @@ sortiranje_ponuda_pocetni = 0
 
 
 
-with st.sidebar.form(key ='Form1'):
+with st.sidebar.form(key ='Form2'):
     
     
     st.header('`Multiple Time Frame Analyze`')
