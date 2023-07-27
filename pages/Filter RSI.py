@@ -462,7 +462,7 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form1'):
     
     
-    st.header('`Single TF Analyze`')
+    st.header('`Filter RSI`')
     
     st.form_submit_button(label = "Submit")
     
