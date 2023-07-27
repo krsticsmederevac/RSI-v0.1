@@ -16,7 +16,7 @@ import matplotlib.pyplot as plt
 ponudjeni_simboli =  [ '1INCH', 
                       'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT', 'AKT','AMB','ATA','ACA','ADX',
                       'ARB', 'ARDR', 'ARPA', 'ASR', 'ATM', 'ATOM', 'AUDIO', 'AVAX', 'AXS', 'ABBC', 'AR','ASTR', 'ACH', 'API3','ASTRAFER','ALI', 'AMP','ALPINE',
-                      'AGLD','AST','AUTCION',
+                      'AGLD','AST','AUCTION',
                       'BADGER', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLZ', 'BNB',  'BTC', 'BURGER', 'BTTC','BABYDOGE','BOND',
                       'BLUR', 'BTG', 'BICO','BONE','BORA', 'BNX','BRISE', 'BTRST', 'BDX', 'BAKE','BTS', 'BETA','BAR','BSW',
                       'CAKE', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CTXC', 'CVC', 'CVX','CRO','CSPR', 'CORE','COMBO',
