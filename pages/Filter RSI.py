@@ -469,7 +469,6 @@ with st.sidebar.form(key ='Form1'):
     rsi_range = st.slider('RSI', min_value=0, max_value=100, value=(40,60), step=1)
     rsi_inverse = st.checkbox('Inverse Range',value = True)
 
-    cci_range = st.slider('CCI', min_value=-200, max_value=200, value=(-100,100), step=1)
       
     interval = st.selectbox('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
