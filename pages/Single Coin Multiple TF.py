@@ -214,17 +214,14 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 st.sidebar.success("You are currently viewing Page Two Geek")
-with st.sidebar.form(key ='Form1'):
-    
-    
+with st.sidebar.form(key ='Form'):
     st.header('`Single Coin Multiple TF`')
     
-    st.form_submit_button(label = "Submit")
+    # st.form_submit_button(label = "Submit")
     
+    # interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
-    interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
-    
-    simboli = st.selectbox('Coins',ponudjeni_simboli, 42)
+    # simboli = st.selectbox('Coins',ponudjeni_simboli, 42)
     
 
        
