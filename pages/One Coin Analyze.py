@@ -404,15 +404,15 @@ if usdt_btc :
         with tab1:
             tab1.pyplot(fig1,use_container_width= False)
 
-            tab2.pyplot(fig2,use_container_width= False)
+            tab1.pyplot(fig2,use_container_width= False)
             
-            tab3.pyplot(fig3,use_container_width= False)
+            tab1.pyplot(fig3,use_container_width= False)
    
-            tab4.pyplot(fig4,use_container_width= False)
+            tab1.pyplot(fig4,use_container_width= False)
             
-            tab5.pyplot(fig5,use_container_width= False)
+            tab1.pyplot(fig5,use_container_width= False)
             
-            tab6.pyplot(fig6,use_container_width= False)
+            tab1.pyplot(fig6,use_container_width= False)
             
         
     except:
