@@ -247,15 +247,15 @@ with st.sidebar.form(key ='Form1'):
     
     interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
-    izbor_liste_coina = st.selectbox('Coin  List',['Binance Futurese', 'Top MC','Custom'],2)
+    simboli = st.selectbox('Coin',ponudjeni_simboli,46)
     
 
-    if izbor_liste_coina == 'Binance Futurese': 
-        simboli = binance_futurese_list
-    elif izbor_liste_coina == 'Top MC':
-        simboli = top_100
-    else:
-        simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
+    # if izbor_liste_coina == 'Binance Futurese': 
+    #     simboli = binance_futurese_list
+    # elif izbor_liste_coina == 'Top MC':
+    #     simboli = top_100
+    # else:
+    #     simboli = st.multiselect('Coins',ponudjeni_simboli, pocetni_simboli)
     
 
        
