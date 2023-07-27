@@ -214,8 +214,8 @@ ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
 st.sidebar.success("You are currently viewing Page Two Geek")
-with st.sidebar.form(key ='Form'):
-    st.header('`Single Coin Multiple TF`')
+# with st.sidebar.form(key ='Form'):
+#     st.header('`Single Coin Multiple TF`')
     
     # st.form_submit_button(label = "Submit")
     
