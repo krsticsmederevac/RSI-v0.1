@@ -195,17 +195,17 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
 
 
-container = st.container()
+container1 = st.container()
 
 tab1, tab2 = container.tabs(["📋 Analyze",'ss']) 
 
 
 
-container.write("Feel free to leave a tip.")
-container.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
-container.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
-container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
-container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
+container1.write("Feel free to leave a tip.")
+container1.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
+container1.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
+container1.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
+container1.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 
 # podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
 
