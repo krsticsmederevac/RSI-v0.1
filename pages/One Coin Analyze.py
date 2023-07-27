@@ -207,25 +207,25 @@ container.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
 container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
 container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
 
-podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
+# podesavanja_korisnika = container.file_uploader("Upload Coin List",'json') 
 
 
-if podesavanja_korisnika:
+# if podesavanja_korisnika:
   
-    podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
+#     podesavanja_korisnika_lista = json.load(podesavanja_korisnika)
 
-    pocetni_simboli = podesavanja_korisnika_lista
-#     simboli = podesavanja_korisnika_lista
+#     pocetni_simboli = podesavanja_korisnika_lista
+# #     simboli = podesavanja_korisnika_lista
     
-#     if any( x not in ponudjeni_simboli for x in simboli):
-    if any( x not in ponudjeni_simboli for x in pocetni_simboli):
-       pocetni_simboli = ['BTC']
-#        simboli = ['BTC']
-       st.write('Bad input file, please try again.') 
+# #     if any( x not in ponudjeni_simboli for x in simboli):
+#     if any( x not in ponudjeni_simboli for x in pocetni_simboli):
+#        pocetni_simboli = ['BTC']
+# #        simboli = ['BTC']
+#        st.write('Bad input file, please try again.') 
       
     
-else:
-     pocetni_simboli = [ 'BTC' ]
+# else:
+#      pocetni_simboli = [ 'BTC' ]
   
 
 ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
@@ -237,7 +237,7 @@ sortiranje_ponuda_pocetni = 0
 
 
 
-with st.sidebar.form(key ='Form1'):
+with st.sidebar.form(key ='Form2'):
     
     
     st.header('`One Coin Analyze`')
