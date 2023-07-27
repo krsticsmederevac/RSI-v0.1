@@ -195,8 +195,6 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
 container = st.container()
 
-tab1= container.tabs(["📋Coin"]) 
-
 
 
 container.write("Feel free to leave a tip.")
