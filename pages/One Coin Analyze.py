@@ -240,14 +240,14 @@ sortiranje_ponuda_pocetni = 0
 with st.sidebar.form(key ='Form2'):
     
     
-    st.header('`Multiple Time Frame Analyze`')
+    st.header('`One Coin Analyze`')
     
     st.form_submit_button(label = "Submit")
     
     
     interval = st.multiselect('Time Frame', ponudjeni_intervali,ponudjeni_intervali_pocetni)
     
-    izbor_liste_coina = st.selectbox('Coin  List',['Binance Futurese', 'Top MC','Custom'],1)
+    izbor_liste_coina = st.selectbox('Coin  List',['Binance Futurese', 'Top MC','Custom'],2)
     
 
     if izbor_liste_coina == 'Binance Futurese': 
