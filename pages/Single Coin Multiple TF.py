@@ -194,3 +194,26 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
     
 
     return dt
+
+
+
+
+container = st.container()
+
+tab1= container.tabs(["📋Coin"]) 
+
+
+
+container.write("Feel free to leave a tip.")
+container.write("Eth: 0xb77fcef5c13e1a54bdfff9a7e5268743e81325c4")
+container.write("Tron: TVT4GcBP29NoiuHTttfa4QJA837rv9XZ7v")
+container.write("Ltc: LRb7sR5T3L3qqG8Tbvsp8GyvsTfydSmbU8")
+container.write("Btc: 1GDi8CRH6QUFw6UiPVyt7ZtD9BjmsRNAWJ")
+
+
+pocetni_simboli = [ 'ADA', 'AVAX', 'BNB', 'BTC', 'DOT',  'ETH', 'LINK', 'LTC',  'XRP', ]
+  
+
+ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
+ponudjeni_parovi_pocetni = 0
+sortiranje_ponuda_pocetni = 0
