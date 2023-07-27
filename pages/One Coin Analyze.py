@@ -197,7 +197,7 @@ def data_frame_maker(simboli, intervali, analitike, usdt_btc, kolona_sortiranja)
 
 container = st.container()
 
-tab1 = container.tabs(["📋 Analyze",'ss']) 
+tab1, tab2 = container.tabs(["📋 Analyze",'ss']) 
 
 
 
