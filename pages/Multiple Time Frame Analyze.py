@@ -308,7 +308,7 @@ if usdt_btc :
         
         
         fig2, ax2 = plt.subplots(figsize = (1.5,fig_high))
-        sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, cbar=False).set_title("Price Change %")
+        sns.heatmap(dt2, cmap ='RdYlGn',vmin=-3, vmax=3,  linewidths = 0.30, annot = True, fmt='g',cbar=False).set_title("Price Change %")
         ax2.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax2.set_xticklabels(ax2.get_xticklabels(), rotation=90, ha='center')
         ax2.set_yticklabels(ax2.get_yticklabels(), rotation=0, ha='center')
