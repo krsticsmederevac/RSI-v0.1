@@ -20,9 +20,11 @@ url9 = 'https://www.tradingview.com/script/1yvrKxza-CryptoData-Bands-Lines-ic/'
 url10 = 'https://www.tradingview.com/script/Tw8DmRpM-CryptoData-Trend-ATH-ATL-ic/'
 url11 = 'https://www.tradingview.com/script/C706lqlR-CryptoData-Coin-Volume-Spot-ic/'
 url12 = 'https://www.tradingview.com/script/zPyDN1gK-CryptoData-EZ-Bands-Levels-ic/'
+url13 = 'https://www.tradingview.com/script/AdS5zUeT-CryptoData-Session-Range-ic/'
 
 st.write("Check out my TradingView indicators")
 
+st.write("[CryptoData Session Range [+ic]](%s)" % url3)
 st.write("[CryptoData Coin/BTC Quick Chart [+ic]](%s)" % url1)
 st.write("[CryptoData EZ Bands & Levels [+ic]](%s)" % url12)
 st.write("[CryptoData Spot vs Futurese [+ic]](%s)" % url6)
