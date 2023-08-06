@@ -24,7 +24,7 @@ url13 = 'https://www.tradingview.com/script/AdS5zUeT-CryptoData-Session-Range-ic
 
 st.write("Check out my TradingView indicators")
 
-st.write("[CryptoData Session Range [+ic]](%s)" % url3)
+st.write("[CryptoData Session Range [+ic]](%s)" % url13)
 st.write("[CryptoData Coin/BTC Quick Chart [+ic]](%s)" % url1)
 st.write("[CryptoData EZ Bands & Levels [+ic]](%s)" % url12)
 st.write("[CryptoData Spot vs Futurese [+ic]](%s)" % url6)
