@@ -338,10 +338,10 @@ if usdt_btc :
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         
-        dt['20'] =np.where(dt['SMA20'].isna() , np.nan, np.where((dt['SMA20']<=dt.close) , round(dt.close/(dt.close-dt['SMA20']),2)*100, round(1 - dt['SMA20']/dt.close,2)*100))
-        dt['50'] =np.where(dt['SMA50'].isna() , np.nan, np.where((dt['SMA50']<=dt.close) , round(dt.close/(dt.close-dt['SMA50']),2)*100, round(1 - dt['SMA50']/dt.close,2)*100))
-        dt['100'] =np.where(dt['SMA100'].isna() , np.nan, np.where((dt['SMA100']<=dt.close) , round(dt.close/(dt.close-dt['SMA100']),2)*100, round(1 - dt['SMA100']/dt.close,2)*100))
-        dt['200'] =np.where(dt['SMA200'].isna() , np.nan, np.where((dt['SMA200']<=dt.close) , round(dt.close/(dt.close-dt['SMA200']),2)*100, round(1 - dt['SMA200']/dt.close,2)*100))
+        dt['20'] =np.where(dt['SMA20'].isna() , np.nan, np.where((dt['SMA20']<=dt.close) , round((dt.close-dt['SMA20'])/dt.close,2)*100, round(1 - dt['SMA20']/dt.close,2)*100))
+        dt['50'] =np.where(dt['SMA50'].isna() , np.nan, np.where((dt['SMA50']<=dt.close) , round((dt.close-dt['SMA50'])/dt.close,2)*100, round(1 - dt['SMA50']/dt.close,2)*100))
+        dt['100'] =np.where(dt['SMA100'].isna() , np.nan, np.where((dt['SMA100']<=dt.close) , round((dt.close-dt['SMA100'])/dt.close,2)*100, round(1 - dt['SMA100']/dt.close,2)*100))
+        dt['200'] =np.where(dt['SMA200'].isna() , np.nan, np.where((dt['SMA200']<=dt.close) , round((dt.close-dt['SMA200'])/dt.close,2)*100, round(1 - dt['SMA200']/dt.close,2)*100))
         
         data_frames = []
         for time_int in interval:
