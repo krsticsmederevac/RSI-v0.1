@@ -228,7 +228,7 @@ else:
      pocetni_simboli = [ 'ADA', 'AVAX', 'BNB', 'BTC', 'DOT',  'ETH', 'LINK', 'LTC',  'XRP', ]
   
 
-ponudjeni_intervali_pocetni = ['1h', '4h', '1d','1W']
+ponudjeni_intervali_pocetni = [ '4h', '1d','1W']
 ponudjeni_parovi_pocetni = 0
 sortiranje_ponuda_pocetni = 0
 
@@ -274,7 +274,7 @@ with st.sidebar.form(key ='Form1'):
 if usdt_btc :
     try:
         dt = data_frame_maker(simboli, interval, 
-                              [ 'RSI','change','close','EMA10','EMA20',"EMA100","EMA200",'SMA10','SMA20',"SMA100","SMA200",'low','high','BB.upper','BB.lower','CCI20'], 
+                              [ 'RSI','change','close','EMA20','EMA50',"EMA100","EMA200",'SMA20','SMA50',"SMA100","SMA200",'low','high','BB.upper','BB.lower','CCI20'], 
                               usdt_btc, ['timeframe'])
         
         dt.RSI = round(dt['RSI'],1)
@@ -315,8 +315,8 @@ if usdt_btc :
         ax2.set_xlabel('')
         ax2.set_ylabel('')
         
-        dt['10'] =np.where(dt['EMA10'].isna() , np.nan, np.where((dt['EMA10']<=dt.close) , 10, -10))
         dt['20'] =np.where(dt['EMA20'].isna() , np.nan, np.where((dt['EMA20']<=dt.close) , 10, -10))
+        dt['50'] =np.where(dt['EMA50'].isna() , np.nan, np.where((dt['EMA50']<=dt.close) , 10, -10))
         dt['100'] =np.where(dt['EMA100'].isna() , np.nan, np.where((dt['EMA100']<=dt.close) , 10, -10))
         dt['200'] =np.where(dt['EMA200'].isna() , np.nan, np.where((dt['EMA200']<=dt.close) , 10, -10))
         
@@ -324,22 +324,22 @@ if usdt_btc :
         for time_int in interval:
             dt_name = 'dt' + time_int 
             dt_name = dt[dt['timeframe'] == time_int]
-            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
+            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['20','50',"100","200"])
             data_frames.append(dt_name)
         
         dt_ema = pd.concat(data_frames,axis=1)
         
         ema_sma_size = len(interval)/2
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = False, fmt='g', cbar=False).set_title("EMA 10 20 100 200")
+        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = False, fmt='g', cbar=False).set_title("EMA 20 50 100 200")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax3.set_xticklabels(ax3.get_xticklabels(), rotation=90, ha='center')
         ax3.set_yticklabels(ax3.get_yticklabels(), rotation=0, ha='center')
         ax3.set_xlabel('')
         ax3.set_ylabel('')
         
-        dt['10'] =np.where(dt['SMA10'].isna() , np.nan, np.where((dt['SMA10']<=dt.close) , 10, -10))
-        dt['20'] =np.where(dt['SMA20'].isna() , np.nan, np.where((dt['SMA20']<=dt.close) , 10, -10))
+        dt['20'] =np.where(dt['SMA10'].isna() , np.nan, np.where((dt['SMA20']<=dt.close) , 10, -10))
+        dt['50'] =np.where(dt['SMA20'].isna() , np.nan, np.where((dt['SMA50']<=dt.close) , 10, -10))
         dt['100'] =np.where(dt['SMA100'].isna() , np.nan, np.where((dt['SMA100']<=dt.close) , 10, -10))
         dt['200'] =np.where(dt['SMA200'].isna() , np.nan, np.where((dt['SMA200']<=dt.close) , 10, -10))
         
@@ -347,14 +347,14 @@ if usdt_btc :
         for time_int in interval:
             dt_name = 'dt' + time_int 
             dt_name = dt[dt['timeframe'] == time_int]
-            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['10','20',"100","200"])
+            dt_name = dt_name.pivot(index='coin', columns='timeframe', values=['20','50',"100","200"])
             data_frames.append(dt_name)
         
         dt_sma = pd.concat(data_frames,axis=1)
         
         
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = False, fmt='g', cbar=False).set_title("SMA 10 20 100 200")
+        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = False, fmt='g', cbar=False).set_title("SMA 20 50 100 200")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
         ax4.set_yticklabels(ax4.get_yticklabels(), rotation=0, ha='center')
