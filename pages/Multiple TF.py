@@ -315,10 +315,10 @@ if usdt_btc :
         ax2.set_xlabel('')
         ax2.set_ylabel('')
         
-        dt['20'] =np.where(dt['EMA20'].isna() , np.nan, np.where((dt['EMA20']<=dt.close) , 10, -10))
-        dt['50'] =np.where(dt['EMA50'].isna() , np.nan, np.where((dt['EMA50']<=dt.close) , 10, -10))
-        dt['100'] =np.where(dt['EMA100'].isna() , np.nan, np.where((dt['EMA100']<=dt.close) , 10, -10))
-        dt['200'] =np.where(dt['EMA200'].isna() , np.nan, np.where((dt['EMA200']<=dt.close) , 10, -10))
+        dt['20'] =np.where(dt['EMA20'].isna() , np.nan, np.where((dt['EMA20']<=dt.close) ,  round((dt.close-dt['EMA20'])/dt.close,2)*100, round(1 - dt['EMA20']/dt.close,2)*100))
+        dt['50'] =np.where(dt['EMA50'].isna() , np.nan, np.where((dt['EMA50']<=dt.close) , round((dt.close-dt['EMA50'])/dt.close,2)*100, round(1 - dt['EMA50']/dt.close,2)*100))
+        dt['100'] =np.where(dt['EMA100'].isna() , np.nan, np.where((dt['EMA100']<=dt.close) , round((dt.close-dt['EMA100'])/dt.close,2)*100, round(1 - dt['EMA100']/dt.close,2)*100))
+        dt['200'] =np.where(dt['EMA200'].isna() , np.nan, np.where((dt['EMA200']<=dt.close) , round((dt.close-dt['EMA200'])/dt.close,2)*100, round(1 - dt['EMA200']/dt.close,2)*100))
         
         data_frames = []
         for time_int in interval:
@@ -331,7 +331,7 @@ if usdt_btc :
         
         ema_sma_size = len(interval)/2
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = False, fmt='g', cbar=False).set_title("EMA 20 50 100 200 %")
+        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-12, vmax=12,  linewidths = 0.30, annot = True, annot_kws={"fontsize":3}, fmt='g', cbar=False).set_title("EMA 20 50 100 200 %")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax3.set_xticklabels(ax3.get_xticklabels(), rotation=90, ha='center')
         ax3.set_yticklabels(ax3.get_yticklabels(), rotation=0, ha='center')
