@@ -331,7 +331,7 @@ if usdt_btc :
         
         ema_sma_size = len(interval)/2
         fig3, ax3 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-100, vmax=100,  linewidths = 0.30, annot = True, annot_kws={"fontsize":3}, fmt='g', cbar=False).set_title("EMA 20 50 100 200 %")
+        sns.heatmap(dt_ema, cmap ='RdYlGn',vmin=-30, vmax=30,  linewidths = 0.30, annot = True, annot_kws={"fontsize":3}, fmt='g', cbar=False).set_title("EMA 20 50 100 200 %")
         ax3.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax3.set_xticklabels(ax3.get_xticklabels(), rotation=90, ha='center')
         ax3.set_yticklabels(ax3.get_yticklabels(), rotation=0, ha='center')
@@ -354,7 +354,7 @@ if usdt_btc :
         
         
         fig4, ax4 = plt.subplots(figsize = (ema_sma_size,fig_high))
-        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-100, vmax=100,  linewidths = 0.30, annot = True, annot_kws={"fontsize":3}, fmt='g', cbar=False).set_title("SMA 20 50 100 200 %")
+        sns.heatmap(dt_sma, cmap ='RdYlGn',vmin=-30, vmax=30,  linewidths = 0.30, annot = True, annot_kws={"fontsize":3}, fmt='g', cbar=False).set_title("SMA 20 50 100 200 %")
         ax4.tick_params(top=True, labeltop=True, bottom=False, labelbottom=False)
         ax4.set_xticklabels(ax4.get_xticklabels(), rotation=90, ha='center')
         ax4.set_yticklabels(ax4.get_yticklabels(), rotation=0, ha='center')
