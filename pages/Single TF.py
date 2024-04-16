@@ -634,11 +634,11 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     
         
-    p = figure(x_range=dt['coin'],y_range =(x1,x2),width=1600, #height=600,width=1200,  
+    p = figure(x_range=dt['coin'],y_range =(x1,x2),width=2000, #height=600,width=1200,  
                title = ime_grafika, toolbar_location='above')
     
     if len(dt.index) > 125:
-        p.xaxis.major_label_text_font_size = "5pt"
+        p.xaxis.major_label_text_font_size = "4pt"
         
     p.title.align = 'center'
 
@@ -875,7 +875,7 @@ def grafik_oscilator_interval_sp(dt,interval,oscilator,usdt_btc,sort=True):
         x1 = min(min(dt[oscilator]) - distanca, -150)
 
  
-    p = figure(y_range=dt['coin'],x_range =(x1,x2),height=1200,#width=350,  
+    p = figure(y_range=dt['coin'],x_range =(x1,x2),height=1600,#width=350,  
                title = ime_grafika, toolbar_location='above',tools ='save')
 
     p.title.align = 'center'
