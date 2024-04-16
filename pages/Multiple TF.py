@@ -9,9 +9,63 @@ import time
 import pandas as pd
 import numpy as np
 import json 
+import requests
 
 import seaborn as sns
 import matplotlib.pyplot as plt
+
+
+
+remove_list = ['1INCHDOWNUSDT','1INCHUPUSDT','AAVEDOWNUSDT','AAVEUPUSDT', 'ADADOWNUSDT','ADAUPUSDT',
+               'BCHABCUSDT','BCHDOWNUSDT', 'BCHSVUSDT','BCHUPUSDT', 'BNBBEARUSDT', 'BNBBULLUSDT','BNBDOWNUSDT',
+ 'BNBUPUSDT', 'BTCDOWNUSDT','BTCSTUSDT','COCOSUSDT', 'DOTDOWNUSDT',
+ 'DOTUPUSDT', 'EOSBEARUSDT',
+ 'EOSBULLUSDT', 'EOSDOWNUSDT',
+ 'EOSUPUSDT', 'ETHBEARUSDT',
+ 'ETHBULLUSDT','ETHDOWNUSDT',
+ 'ETHUPUSDT', 'FILDOWNUSDT',
+ 'FILUPUSDT','HNTUSDT', 'LINKDOWNUSDT',
+ 'LINKUPUSDT', 'LTCDOWNUSDT',
+ 'LTCUPUSDT', 'PAXGUSDT', 'SUSHIDOWNUSDT',
+ 'SUSHIUPUSDT', 'SXPDOWNUSDT',
+ 'SXPUPUSDT', 'TRXDOWNUSDT',
+ 'TRXUPUSDT', 'UNIDOWNUSDT',
+ 'UNIUPUSDT', 'XLMDOWNUSDT',
+ 'XLMUPUSDT', 'XRPBEARUSDT',
+ 'XRPBULLUSDT', 'XRPDOWNUSDT',
+ 'XRPUPUSDT', 'XTZDOWNUSDT',
+ 'XTZUPUSDT','YFIDOWNUSDT','YFIUPUSDT',
+ 'BTCUPUSDT','WBTCUSDT', 'BUSD','AIONUSDT',
+'ANCUSDT','ANTUSDT','ANYUSDT','AUDUSDT','AUTOUSDT','BCCUSDT','BEAMUSDT','BEARUSDT',
+'BETHUSDT','BKRWUSDT',
+'BTGUSDT','BTSUSDT','BTTUSDT','BULLUSDT','BUSDUSDT','BZRXUSDT','DAIUSDT','DNTUSDT','DREPUSDT',
+'EPSUSDT',
+'ERDUSDT','GBPUSDT','GTOUSDT','GXSUSDT','HCUSDT','KEEPUSDT','LENDUSDT','MCOUSDT','MCUSDT',
+'MFTUSDT','MIRUSDT',
+'MITHUSDT','MOBUSDT','MULTIUSDT','NANOUSDT','NBSUSDT','NBTUSDT','NEBLUSDT','NPXSUSDT','NUUSDT',
+'PAXUSDT','PERLUSDT',
+'PLAUSDT','PNTUSDT','POLYUSDT','RAMPUSDT','REPUSDT','RGTUSDT','SRMUSDT','STORMUSDT','STRATUSDT',
+'SUSDUSDT','TCTUSDT',
+'TOMOUSDT','TORNUSDT','TRIBEUSDT','TVKUSDT','USDSBUSDT','USDSUSDT','USTUSDT','VENUSDT',
+'WTCUSDT','XMRUSDT','XZCUSDT','YFIIUSDT',]
+
+
+url = 'https://api.binance.com/api/v3/ticker/price'
+res = requests.get(url)
+js0=json.loads(res.text)
+df=pd.DataFrame(js0)
+
+lista_simbola_usdt = df['symbol'][df.symbol.str.endswith('USDT')].to_list()
+lista_simbola_usdt = [x for x in lista_simbola_usdt if x not in remove_list]
+lista_simbola_usdt.sort()
+
+binance_futurese_list = lista_simbola_usdt
+
+
+lista_simbola_btc = df['symbol'][df.symbol.str.endswith('BTC')].to_list()
+lista_simbola_btc.sort()
+
+
 
 ponudjeni_simboli =  [ '1INCH', 
                       'AAVE', 'ACM', 'ADA', 'AGIX', 'AKRO', 'ALGO', 'ALICE', 'ALPHA','APT','APE', 'ANKR', 'ANT', 'AKT','AMB','ATA','ACA','ADX',
@@ -48,35 +102,35 @@ ponudjeni_simboli =  [ '1INCH',
                       'ZEC', 'ZEN', 'ZIL','ZRX',
                      ]
 
-binance_futurese_list = ['1INCH',
-                         'AAVE','ACH','ADA','AGIX','ALGO','ALICE', 'ALPHA', 'AMB', 'ANKR', 'ANT', 'APE',
-                         'API3', 'APT', 'AR', 'ARB', 'ARPA', 'ASTR', 'ATA', 'ATOM', 'AUDIO','AVAX','AXS',
-                         'BAKE', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLUR', 'BLZ', 'BNB', 'BNX', 'BTC',
-                         'C98', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMBO', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CVX',
-                         'DAR', 'DASH', 'DEFI', 'DENT', 'DGB', 'DODO', 'DOGE', 'DOT', 'DUSK', 'DYDX',
-                         'EDU', 'EGLD', 'ENJ', 'ENS', 'EOS', 'ETC', 'ETH',
-                         'FET', 'FIL', 'FLM', 'FLOKI', 'FLOW', 'FTM', 'FXS',
-                         'GALA', 'GMT', 'GMX', 'GRT', 'GTC',
-                         'HBAR', 'HFT', 'HIGH', 'HOOK', 'HOT','HIFI',
-                         'ICP', 'ICX', 'ID', 'IMX', 'INJ', 'IOST', 'IOTA', 'IOTX',
-                         'JASMY','JOE',
-                         'KAVA', 'KEY', 'KLAY', 'KNC', 'KSM',
-                         'LDO', 'LEVER', 'LINA', 'LINK', 'LIT', 'LPT', 'LQTY', 'LRC', 'LTC', 'LUNA', 'LUNC',
-                         'MAGIC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'MTL','MAV',
-                         'NEAR', 'NEO', 'NKN',
-                         'OCEAN', 'OGN', 'OMG', 'ONE', 'ONT', 'OP',
-                         'PEOPLE','PEPE', 'PERP', 'PHB',
-                         'QNT', 'QTUM',
-                         'RAD', 'RDNT', 'REEF', 'REN', 'RLC', 'RNDR', 'ROSE', 'RSR', 'RUNE', 'RVN',
-                         'SAND', 'SFP', 'SHIB', 'SKL', 'SNX', 'SOL', 'SPELL', 'SSV', 'STG', 'STMX', 
-                         'STORJ', 'STX', 'SUI', 'SUSHI','SXP',
-                         'T', 'THETA', 'TLM', 'TOMO', 'TRB', 'TRU', 'TRX',
-                         'UMA', 'UNFI', 'UNI',
-                         'VET',
-                         'WAVES', 'WOO','WLD',
-                         'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS',
-                         'YFI',
-                         'ZEC', 'ZEN', 'ZIL', 'ZRX']
+# binance_futurese_list = ['1INCH',
+#                          'AAVE','ACH','ADA','AGIX','ALGO','ALICE', 'ALPHA', 'AMB', 'ANKR', 'ANT', 'APE',
+#                          'API3', 'APT', 'AR', 'ARB', 'ARPA', 'ASTR', 'ATA', 'ATOM', 'AUDIO','AVAX','AXS',
+#                          'BAKE', 'BAL', 'BAND', 'BAT', 'BCH', 'BEL', 'BLUR', 'BLZ', 'BNB', 'BNX', 'BTC',
+#                          'C98', 'CELO', 'CELR', 'CFX', 'CHR', 'CHZ', 'CKB', 'COMBO', 'COMP', 'COTI', 'CRV', 'CTK', 'CTSI', 'CVX',
+#                          'DAR', 'DASH', 'DEFI', 'DENT', 'DGB', 'DODO', 'DOGE', 'DOT', 'DUSK', 'DYDX',
+#                          'EDU', 'EGLD', 'ENJ', 'ENS', 'EOS', 'ETC', 'ETH',
+#                          'FET', 'FIL', 'FLM', 'FLOKI', 'FLOW', 'FTM', 'FXS',
+#                          'GALA', 'GMT', 'GMX', 'GRT', 'GTC',
+#                          'HBAR', 'HFT', 'HIGH', 'HOOK', 'HOT','HIFI',
+#                          'ICP', 'ICX', 'ID', 'IMX', 'INJ', 'IOST', 'IOTA', 'IOTX',
+#                          'JASMY','JOE',
+#                          'KAVA', 'KEY', 'KLAY', 'KNC', 'KSM',
+#                          'LDO', 'LEVER', 'LINA', 'LINK', 'LIT', 'LPT', 'LQTY', 'LRC', 'LTC', 'LUNA', 'LUNC',
+#                          'MAGIC', 'MANA', 'MASK', 'MATIC', 'MINA', 'MKR', 'MTL','MAV',
+#                          'NEAR', 'NEO', 'NKN',
+#                          'OCEAN', 'OGN', 'OMG', 'ONE', 'ONT', 'OP',
+#                          'PEOPLE','PEPE', 'PERP', 'PHB',
+#                          'QNT', 'QTUM',
+#                          'RAD', 'RDNT', 'REEF', 'REN', 'RLC', 'RNDR', 'ROSE', 'RSR', 'RUNE', 'RVN',
+#                          'SAND', 'SFP', 'SHIB', 'SKL', 'SNX', 'SOL', 'SPELL', 'SSV', 'STG', 'STMX', 
+#                          'STORJ', 'STX', 'SUI', 'SUSHI','SXP',
+#                          'T', 'THETA', 'TLM', 'TOMO', 'TRB', 'TRU', 'TRX',
+#                          'UMA', 'UNFI', 'UNI',
+#                          'VET',
+#                          'WAVES', 'WOO','WLD',
+#                          'XEM', 'XLM', 'XMR', 'XRP', 'XTZ', 'XVS',
+#                          'YFI',
+#                          'ZEC', 'ZEN', 'ZIL', 'ZRX']
 
 top_100 =  [ 'AAVE', 'ADA', 'AGIX', 'ALGO', 'ANKR', 'APE', 'APT', 'ARB', 'ATOM', 'AUDIO', 'AVAX', 'AXS','BCH', 'BNB', 'BTC','CRO',
                        'CAKE', 'CFX', 'CHZ', 'CRV', 'CVX', 'DASH', 'DOGE', 'DOT', 'DYDX', 'EGLD', 'ENJ', 'EOS', 'ETC', 'ETH', 
