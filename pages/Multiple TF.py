@@ -56,7 +56,7 @@ js0=json.loads(res.text)
 df=pd.DataFrame(js0)
 
 lista_simbola_usdt = df['symbol'][df.symbol.str.endswith('USDT')].to_list()
-lista_simbola_usdt = [x[:-5] for x in lista_simbola_usdt if x not in remove_list]
+lista_simbola_usdt = [x[:-4] for x in lista_simbola_usdt if x not in remove_list]
 lista_simbola_usdt.sort()
 
 binance_futurese_list = lista_simbola_usdt
@@ -101,6 +101,8 @@ ponudjeni_simboli =  [ '1INCH',
                       'YFI', 'YFII', 'YGG',
                       'ZEC', 'ZEN', 'ZIL','ZRX',
                      ]
+
+ponudjeni_simboli = list(set(ponudjeni_simboli) | set(lista_simbola_usdt))
 
 # binance_futurese_list = ['1INCH',
 #                          'AAVE','ACH','ADA','AGIX','ALGO','ALICE', 'ALPHA', 'AMB', 'ANKR', 'ANT', 'APE',
