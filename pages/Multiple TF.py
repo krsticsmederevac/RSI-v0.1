@@ -431,7 +431,7 @@ ponudjeni_simboli =  [ '1INCH',
                       'ZEC', 'ZEN', 'ZIL','ZRX',
                      ]
 
-ponudjeni_simboli = list(set(ponudjeni_simboli) | set(lista_simbola_usdt))
+ponudjeni_simboli = list(set(ponudjeni_simboli) | set(binance_futurese_list))
 
 
 
