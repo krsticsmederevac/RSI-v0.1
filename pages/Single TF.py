@@ -634,7 +634,7 @@ def grafik_oscilator_interval_pc(dt,interval,oscilator,usdt_btc,sort=True):
     
     
         
-    p = figure(x_range=dt['coin'],y_range =(x1,x2),width=2000, #height=600,width=1200,  
+    p = figure(x_range=dt['coin'],y_range =(x1,x2),width=1800, #height=600,width=1200,  
                title = ime_grafika, toolbar_location='above')
     
     if len(dt.index) > 125:
