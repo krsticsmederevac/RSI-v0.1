@@ -2,6 +2,7 @@ streamlit
 extra_streamlit_components
 bokeh == 2.4.3
 pandas
+requests
 numpy
 tradingview_ta
 matplotlib
