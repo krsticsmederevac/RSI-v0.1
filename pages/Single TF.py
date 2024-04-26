@@ -1163,7 +1163,7 @@ if usdt_btc and kolona_sortiranja:
        except: 
            st.write('No Data')    
         
-       tab1 = st.empty() 
+       
        for i in ['RSI','BB.Position','change','CCI20','EMA200 %','EMA100 %','EMA50 %','SMA200 %','SMA100 %','SMA50 %']: 
            
            with tab1.container():   
@@ -1172,7 +1172,7 @@ if usdt_btc and kolona_sortiranja:
                    tab1.bokeh_chart(grafik)
                except: 
                    print()  
-            
+       tab1 = st.empty()     
        # tab1 = st.empty()
        # with tab1.container():     
        #     try:
@@ -1235,14 +1235,14 @@ if usdt_btc and kolona_sortiranja:
        # tab1.empty()
 
        for i in ['RSI','BB.Position','change','CCI20','EMA200 %','EMA100 %','EMA50 %','SMA200 %','SMA100 %','SMA50 %']: 
-           tab2 = st.empty()
+           
            with tab2.container():   
                try:
                    grafik = grafik_oscilator_interval_pc(dt[['coin',i]],interval,i,usdt_btc,sortiranje_po_value)
                    tab2.bokeh_chart(grafik)
                except: 
                    print()
-   
+       tab2 = st.empty()
        # with tab2:
        #     try:
        #         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
