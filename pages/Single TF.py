@@ -1162,7 +1162,7 @@ if usdt_btc and kolona_sortiranja:
                  sortiranje_po_value = True
          except: 
              st.write('No Data')    
-           
+
          with tab1:
                  
              try:
@@ -1217,6 +1217,12 @@ if usdt_btc and kolona_sortiranja:
                  tab1.bokeh_chart(p_sma50_sp)
              except: 
                  print()
+
+       
+       
+         tab1.empty()
+
+       
      
          with tab2:
              try:
@@ -1272,6 +1278,6 @@ if usdt_btc and kolona_sortiranja:
              except: 
                  print()
      # time.sleep(20)
-      tab1.empty()
+      
 
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
