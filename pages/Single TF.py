@@ -1164,7 +1164,7 @@ if usdt_btc and kolona_sortiranja:
            st.write('No Data')    
         
        for i in ['RSI','BB.Position','change','CCI20','EMA200 %','EMA100 %','EMA50 %','SMA200 %','SMA100 %','SMA50 %']: 
-           tab1 = st.empty()
+           # tab1 = st.empty()
            with tab1.container():   
                try:
                    grafik = grafik_oscilator_interval_sp(dt[['coin',i]],interval,i,usdt_btc,sortiranje_po_value)
@@ -1233,62 +1233,69 @@ if usdt_btc and kolona_sortiranja:
      
        # tab1.empty()
 
-     
+       for i in ['RSI','BB.Position','change','CCI20','EMA200 %','EMA100 %','EMA50 %','SMA200 %','SMA100 %','SMA50 %']: 
+           tab2 = st.empty()
+           with tab2.container():   
+               try:
+                   grafik = grafik_oscilator_interval_pc(dt[['coin',i]],interval,i,usdt_btc,sortiranje_po_value)
+                   tab1.bokeh_chart(grafik)
+               except: 
+                   print()
    
-       with tab2:
-           try:
-               p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_rsi_pc)
-           except: 
-               print()    
-           try:
-               p_bb_pc = grafik_oscilator_interval_pc(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_bb_pc)
-           except: 
-               print()
-           try:
-               p_ch_pc = grafik_oscilator_interval_pc(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_ch_pc)
-           except: 
-               print()
+       # with tab2:
+       #     try:
+       #         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_rsi_pc)
+       #     except: 
+       #         print()    
+       #     try:
+       #         p_bb_pc = grafik_oscilator_interval_pc(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_bb_pc)
+       #     except: 
+       #         print()
+       #     try:
+       #         p_ch_pc = grafik_oscilator_interval_pc(dt[['coin','change']],interval,'change',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_ch_pc)
+       #     except: 
+       #         print()
                
-           try:
-               p_cci_pc = grafik_oscilator_interval_pc(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_cci_pc)
-           except: 
-               print()
+       #     try:
+       #         p_cci_pc = grafik_oscilator_interval_pc(dt[['coin','CCI20']],interval,'CCI20',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_cci_pc)
+       #     except: 
+       #         print()
                
-           try:
-               p_ema200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_ema200_pc)
-           except: 
-               print()
-           try:
-               p_ema100_pc = grafik_oscilator_interval_pc(dt[['coin','EMA100 %']],interval,'EMA100 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_ema100_pc)
-           except: 
-               print()
-           try:
-               p_ema50_pc = grafik_oscilator_interval_pc(dt[['coin','EMA50 %']],interval,'EMA50 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_ema50_pc)
-           except: 
-               print()
-           try:   
-               p_sma200_pc = grafik_oscilator_interval_pc(dt[['coin','SMA200 %']],interval,'SMA200 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_sma200_pc)
-           except: 
-               print()
-           try:
-               p_sma100_pc = grafik_oscilator_interval_pc(dt[['coin','SMA100 %']],interval,'SMA100 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_sma100_pc)
-           except: 
-               print()
-           try:
-               p_sma50_pc = grafik_oscilator_interval_pc(dt[['coin','SMA50 %']],interval,'SMA50 %',usdt_btc,sortiranje_po_value)
-               tab2.bokeh_chart(p_sma50_pc)
-           except: 
-               print()
+       #     try:
+       #         p_ema200_pc = grafik_oscilator_interval_pc(dt[['coin','EMA200 %']],interval,'EMA200 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_ema200_pc)
+       #     except: 
+       #         print()
+       #     try:
+       #         p_ema100_pc = grafik_oscilator_interval_pc(dt[['coin','EMA100 %']],interval,'EMA100 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_ema100_pc)
+       #     except: 
+       #         print()
+       #     try:
+       #         p_ema50_pc = grafik_oscilator_interval_pc(dt[['coin','EMA50 %']],interval,'EMA50 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_ema50_pc)
+       #     except: 
+       #         print()
+       #     try:   
+       #         p_sma200_pc = grafik_oscilator_interval_pc(dt[['coin','SMA200 %']],interval,'SMA200 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_sma200_pc)
+       #     except: 
+       #         print()
+       #     try:
+       #         p_sma100_pc = grafik_oscilator_interval_pc(dt[['coin','SMA100 %']],interval,'SMA100 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_sma100_pc)
+       #     except: 
+       #         print()
+       #     try:
+       #         p_sma50_pc = grafik_oscilator_interval_pc(dt[['coin','SMA50 %']],interval,'SMA50 %',usdt_btc,sortiranje_po_value)
+       #         tab2.bokeh_chart(p_sma50_pc)
+       #     except: 
+       #         print()
      # time.sleep(20)
       
 
-container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
+           container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
