@@ -1163,8 +1163,9 @@ if usdt_btc and kolona_sortiranja:
        except: 
            st.write('No Data')    
         
+       tab1 = st.empty() 
        for i in ['RSI','BB.Position','change','CCI20','EMA200 %','EMA100 %','EMA50 %','SMA200 %','SMA100 %','SMA50 %']: 
-           tab1 = st.empty()
+           
            with tab1.container():   
                try:
                    grafik = grafik_oscilator_interval_sp(dt[['coin',i]],interval,i,usdt_btc,sortiranje_po_value)
