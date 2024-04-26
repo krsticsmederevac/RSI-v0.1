@@ -1164,7 +1164,7 @@ if usdt_btc and kolona_sortiranja:
              st.write('No Data')    
           
          tab1 = st.empty()
-         time.sleep(2)
+         
          with tab1.container():
                  
              try:
@@ -1172,6 +1172,9 @@ if usdt_btc and kolona_sortiranja:
                  tab1.bokeh_chart(p_rsi_sp)
              except: 
                  print()  
+         tab1 = st.empty()
+         
+         with tab1.container():     
              try:
                  p_bb_sp = grafik_oscilator_interval_sp(dt[['coin','BB.Position']],interval,'BB.Position',usdt_btc,sortiranje_po_value)
                  tab1.bokeh_chart(p_bb_sp)
