@@ -1162,8 +1162,9 @@ if usdt_btc and kolona_sortiranja:
                  sortiranje_po_value = True
          except: 
              st.write('No Data')    
-
-         with tab1:
+          
+         tab1 = st.empty()
+         with tab1.container():
                  
              try:
                  p_rsi_sp = grafik_oscilator_interval_sp(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
@@ -1220,7 +1221,7 @@ if usdt_btc and kolona_sortiranja:
 
        
        
-         tab1.empty()
+         # tab1.empty()
 
        
      
