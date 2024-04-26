@@ -8,6 +8,7 @@ from tradingview_ta import TA_Handler, Interval, Exchange
 import numpy as np
 import pandas as pd
 import json 
+import time
 
 from datetime import datetime, timedelta
 
