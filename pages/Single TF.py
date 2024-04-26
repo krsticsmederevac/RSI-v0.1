@@ -1238,7 +1238,7 @@ if usdt_btc and kolona_sortiranja:
            with tab2.container():   
                try:
                    grafik = grafik_oscilator_interval_pc(dt[['coin',i]],interval,i,usdt_btc,sortiranje_po_value)
-                   tab1.bokeh_chart(grafik)
+                   tab2.bokeh_chart(grafik)
                except: 
                    print()
    
