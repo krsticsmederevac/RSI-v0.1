@@ -1272,6 +1272,6 @@ if usdt_btc and kolona_sortiranja:
              except: 
                  print()
      # time.sleep(20)
-       placeholder.empty()
+      placeholder.empty()
 
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
