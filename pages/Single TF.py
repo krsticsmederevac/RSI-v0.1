@@ -1123,7 +1123,7 @@ with st.sidebar.form(key ='Form1'):
     
 if usdt_btc and kolona_sortiranja:
 
-  while True:
+  for j in range(2):
 
   
        try: 
