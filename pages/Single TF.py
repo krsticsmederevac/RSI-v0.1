@@ -1172,7 +1172,8 @@ if usdt_btc and kolona_sortiranja:
                    tab1.bokeh_chart(grafik)
                except: 
                    print()  
-       tab1 = st.empty()     
+       # tab1 = st.empty()  
+   
        # tab1 = st.empty()
        # with tab1.container():     
        #     try:
@@ -1242,7 +1243,8 @@ if usdt_btc and kolona_sortiranja:
                    tab2.bokeh_chart(grafik)
                except: 
                    print()
-       tab2 = st.empty()
+       # tab2 = st.empty()
+
        # with tab2:
        #     try:
        #         p_rsi_pc = grafik_oscilator_interval_pc(dt[['coin','RSI']],interval,'RSI',usdt_btc,sortiranje_po_value)
