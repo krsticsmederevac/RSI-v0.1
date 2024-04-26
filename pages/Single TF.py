@@ -1164,6 +1164,7 @@ if usdt_btc and kolona_sortiranja:
              st.write('No Data')    
           
          tab1 = st.empty()
+         time.sleep(2)
          with tab1.container():
                  
              try:
