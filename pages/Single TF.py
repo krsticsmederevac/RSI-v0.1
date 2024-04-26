@@ -1273,6 +1273,6 @@ if usdt_btc and kolona_sortiranja:
              tab2.bokeh_chart(p_sma50_pc)
          except: 
              print()
-     time.sleep(20)
+     # time.sleep(20)
 
 container.download_button("Download Coin List",json_podesavanja,"my_coin_list.json","application/json")
