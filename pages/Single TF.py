@@ -1141,7 +1141,7 @@ if usdt_btc and kolona_sortiranja:
            # dt['BB'] =np.select(conditions,values)
    
            dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-           dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /4
+           dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
            dt['BB.Position'] = (dt['close'] - dt['BB.SMA']) / dt['BB.STD']
    
    
