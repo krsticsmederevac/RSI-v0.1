@@ -714,23 +714,23 @@ if usdt_btc :
         ax4.set_xlabel('')
         ax4.set_ylabel('')
         
-        dt['BB SMA'] = (dt['BB.upper'] + dt['BB.lower']) / 2
+#         dt['BB SMA'] = (dt['BB.upper'] + dt['BB.lower']) / 2
         
-        conditions = [
-        (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
-        ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
-        ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
-        (dt['BB SMA'] < dt.close),
-        (dt['BB SMA'] > dt.close)
-#         ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
-        ]
+#         conditions = [
+#         (dt['BB.upper'].isna() | dt['BB.lower'].isna() ),
+#         ((dt['BB.upper']<= dt.high) | (dt['BB.upper']<= dt.close)),
+#         ((dt['BB.lower']>= dt.low) | (dt['BB.lower']>=dt.close)),
+#         (dt['BB SMA'] < dt.close),
+#         (dt['BB SMA'] > dt.close)
+# #         ((dt['BB.upper']> dt.high) | (dt['BB.upper']> dt.close) | (dt['BB.lower']< dt.low) | (dt['BB.lower']<dt.close))
+#         ]
         
-        values = [np.nan, 1,-1, 0.5, -0.75]
+#         values = [np.nan, 1,-1, 0.5, -0.75]
 
-        dt['BB'] =np.select(conditions,values)
+#         dt['BB'] =np.select(conditions,values)
         
         dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
+        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /4
         dt['BB.Position'] = round((dt['close'] - dt['BB.SMA']) / dt['BB.STD'],2)
         
         dt5 = dt.pivot(index='coin', columns='timeframe', values='BB.Position')
