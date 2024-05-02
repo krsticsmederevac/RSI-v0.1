@@ -730,7 +730,7 @@ if usdt_btc :
 #         dt['BB'] =np.select(conditions,values)
         
         dt['BB.SMA'] =  (dt['BB.upper'] + dt['BB.lower']) /2
-        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /4
+        dt['BB.STD'] = (dt['BB.upper'] - dt['BB.SMA']) /2
         dt['BB.Position'] = round((dt['close'] - dt['BB.SMA']) / dt['BB.STD'],2)
         
         dt5 = dt.pivot(index='coin', columns='timeframe', values='BB.Position')
