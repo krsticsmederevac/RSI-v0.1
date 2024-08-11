@@ -1,11 +1,12 @@
-streamlit
 extra_streamlit_components
 bokeh == 2.4.3
-pandas
 requests
-numpy
 tradingview_ta
 matplotlib
 seaborn
 streamlit_option_menu
 streamlit_extras
+streamlit==1.22.0
+pandas==2.0.1
+scikit_learn==1.2.2
+numpy==1.24.3
