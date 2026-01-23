@@ -1,0 +1,58 @@
+{
+  "name": "Crypto Technical Analysis",
+  "short_name": "CryptoTA",
+  "description": "Real-time cryptocurrency technical analysis with multiple indicators and timeframes",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%230f172a' width='192' height='192'/><text x='50%' y='50%' font-size='80' font-weight='bold' fill='%233b82f6' text-anchor='middle' dominant-baseline='middle'>TA</text></svg>",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512'><rect fill='%230f172a' width='512' height='512'/><text x='50%' y='50%' font-size='280' font-weight='bold' fill='%233b82f6' text-anchor='middle' dominant-baseline='middle'>TA</text></svg>",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 540 720'><rect fill='%230f172a' width='540' height='720'/><text x='270' y='360' font-size='120' font-weight='bold' fill='%233b82f6' text-anchor='middle' dominant-baseline='middle'>Crypto TA</text></svg>",
+      "sizes": "540x720",
+      "type": "image/svg+xml",
+      "form_factor": "narrow"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Single Timeframe",
+      "short_name": "Single TF",
+      "description": "Analyze coins across a single timeframe",
+      "url": "/?page=single-tf",
+      "icons": []
+    },
+    {
+      "name": "Multiple Timeframes",
+      "short_name": "Multi TF",
+      "description": "View indicators across multiple timeframes",
+      "url": "/?page=multi-tf",
+      "icons": []
+    },
+    {
+      "name": "Filter by RSI",
+      "short_name": "Filter RSI",
+      "description": "Filter coins by RSI values",
+      "url": "/?page=filter-rsi",
+      "icons": []
+    }
+  ],
+  "categories": ["finance", "productivity"],
+  "prefer_related_applications": false
+}

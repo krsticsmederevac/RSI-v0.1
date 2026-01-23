@@ -1,0 +1,244 @@
+.filter-rsi {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.analysis-config {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--bg-tertiary);
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.config-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.config-section label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.config-section label strong {
+  color: var(--accent-color);
+}
+
+.config-section select {
+  padding: 0.6rem;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  border: 1px solid var(--bg-tertiary);
+  border-radius: 6px;
+  min-width: 120px;
+}
+
+.analyze-btn {
+  padding: 0.6rem 1.5rem;
+  background: var(--accent-color);
+  color: white;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.analyze-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.rsi-controls {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--bg-tertiary);
+}
+
+.rsi-section h3 {
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+}
+
+.range-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.input-group label {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.range-slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--bg-tertiary);
+  outline: none;
+  -webkit-appearance: none;
+}
+
+.range-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.range-slider::-webkit-slider-thumb:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.range-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-color);
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.range-slider::-moz-range-thumb:hover {
+  background: var(--accent-hover);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+.checkbox-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--accent-color);
+}
+
+.checkbox-group label {
+  cursor: pointer;
+  color: var(--text-secondary);
+}
+
+.range-description {
+  padding: 1rem;
+  background: var(--bg-primary);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+  color: var(--accent-color);
+  font-weight: 500;
+}
+
+.coin-selector {
+  background: var(--bg-secondary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--bg-tertiary);
+}
+
+.coin-selector h3 {
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+}
+
+.coins-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.75rem;
+}
+
+.coin-btn {
+  padding: 0.75rem;
+  background: var(--bg-primary);
+  color: var(--text-secondary);
+  border: 2px solid var(--bg-tertiary);
+  border-radius: 6px;
+  font-weight: 600;
+  transition: all 0.2s;
+  font-size: 0.9rem;
+}
+
+.coin-btn:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.coin-btn.active {
+  background: var(--accent-color);
+  color: white;
+  border-color: var(--accent-color);
+}
+
+.analysis-results {
+  background: var(--bg-secondary);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--bg-tertiary);
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholder {
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.placeholder p {
+  margin: 0.5rem 0;
+}
+
+.text-secondary {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+@media (max-width: 768px) {
+  .analysis-config {
+    flex-direction: column;
+  }
+
+  .analyze-btn {
+    width: 100%;
+  }
+
+  .coins-grid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+  }
+
+  .coin-btn {
+    padding: 0.6rem;
+    font-size: 0.8rem;
+  }
+}
