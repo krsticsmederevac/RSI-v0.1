@@ -55,35 +55,6 @@
   color: var(--accent-color);
 }
 
-.indicators-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1rem;
-}
-
-.indicator-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.25rem;
-  background: var(--bg-secondary);
-  border: 1px solid var(--bg-tertiary);
-  border-radius: 8px;
-  transition: all 0.2s;
-  color: var(--text-primary);
-}
-
-.indicator-card:hover {
-  background: var(--bg-tertiary);
-  border-color: var(--accent-color);
-  transform: translateY(-2px);
-}
-
-.external-icon {
-  font-size: 1.2rem;
-  color: var(--accent-color);
-}
-
 .tips-section {
   background: var(--bg-secondary);
   padding: 2rem;
@@ -123,10 +94,6 @@
 @media (max-width: 768px) {
   .home-intro h1 {
     font-size: 1.8rem;
-  }
-
-  .indicators-grid {
-    grid-template-columns: 1fr;
   }
 
   .tip-item {
