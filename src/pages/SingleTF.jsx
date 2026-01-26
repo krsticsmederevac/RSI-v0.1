@@ -14,6 +14,7 @@ export default function SingleTF() {
   const [sortBy, setSortBy] = useState('coin')
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+  const [results, setResults] = useState(null)
 
   const toggleCoin = (coin) => {
     setSelectedCoins(prev =>
@@ -26,10 +27,39 @@ export default function SingleTF() {
   const handleAnalyze = async () => {
     setLoading(true)
     setError(null)
+    setResults(null)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/crypto-analysis`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            coins: selectedCoins,
+            timeframe: selectedTimeframe,
+            type: 'single',
+          }),
+        }
+      )
+
+      const data = await response.json()
+      if (!data.success) {
+        throw new Error(data.error || 'Analysis failed')
+      }
+
+      let sortedData = [...data.data]
+      if (sortBy === 'value') {
+        sortedData.sort((a, b) => b.rsi - a.rsi)
+      } else {
+        sortedData.sort((a, b) => a.coin.localeCompare(b.coin))
+      }
+
+      setResults(sortedData)
     } catch (err) {
-      setError(err.message)
+      setError(err instanceof Error ? err.message : 'Unknown error occurred')
     } finally {
       setLoading(false)
     }
@@ -82,10 +112,51 @@ export default function SingleTF() {
       {error && <div className="error-message">{error}</div>}
 
       <div className="analysis-results">
-        <div className="placeholder">
-          <p>Select coins and click Analyze to view technical indicators</p>
-          <p className="text-secondary">Indicators: RSI, Bollinger Bands, EMA, SMA, CCI, Price Change</p>
-        </div>
+        {!results ? (
+          <div className="placeholder">
+            <p>Select coins and click Analyze to view technical indicators</p>
+            <p className="text-secondary">Indicators: RSI, Bollinger Bands, EMA, SMA, CCI, Price Change</p>
+          </div>
+        ) : (
+          <table className="results-table">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th>RSI</th>
+                <th>Change %</th>
+                <th>EMA20</th>
+                <th>EMA50</th>
+                <th>EMA100</th>
+                <th>SMA20</th>
+                <th>BB Position</th>
+                <th>CCI</th>
+              </tr>
+            </thead>
+            <tbody>
+              {results.map((row) => (
+                <tr key={row.coin}>
+                  <td className="coin-name">{row.coin}</td>
+                  <td className={row.rsi > 70 ? 'overbought' : row.rsi < 30 ? 'oversold' : ''}>
+                    {row.rsi.toFixed(1)}
+                  </td>
+                  <td className={row.change > 0 ? 'positive' : 'negative'}>
+                    {row.change.toFixed(2)}%
+                  </td>
+                  <td>{row.ema20.toFixed(2)}</td>
+                  <td>{row.ema50.toFixed(2)}</td>
+                  <td>{row.ema100.toFixed(2)}</td>
+                  <td>{row.sma20.toFixed(2)}</td>
+                  <td className={row.bb_position > 0 ? 'positive' : 'negative'}>
+                    {row.bb_position.toFixed(2)}
+                  </td>
+                  <td className={Math.abs(row.cci) > 100 ? 'extreme' : ''}>
+                    {row.cci.toFixed(1)}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        )}
       </div>
     </div>
   )

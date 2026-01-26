@@ -22,6 +22,8 @@ export default function MultiTF() {
   const [selectedTimeframes, setSelectedTimeframes] = useState(['4h', '1d'])
   const [activeTab, setActiveTab] = useState('rsi')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
+  const [results, setResults] = useState(null)
 
   const toggleCoin = (coin) => {
     setSelectedCoins(prev =>
@@ -39,10 +41,58 @@ export default function MultiTF() {
     )
   }
 
+  const getHeatmapColor = (value, type) => {
+    if (type === 'rsi') {
+      if (value > 70) return '#ef4444'
+      if (value < 30) return '#22c55e'
+      return '#3b82f6'
+    }
+    if (type === 'change') {
+      if (value > 2) return '#22c55e'
+      if (value < -2) return '#ef4444'
+      return '#3b82f6'
+    }
+    if (type === 'bb') {
+      if (value > 1) return '#ef4444'
+      if (value < -1) return '#22c55e'
+      return '#3b82f6'
+    }
+    if (type === 'cci') {
+      if (Math.abs(value) > 100) return '#ef4444'
+      return '#3b82f6'
+    }
+    return '#3b82f6'
+  }
+
   const handleAnalyze = async () => {
     setLoading(true)
+    setError(null)
+    setResults(null)
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000))
+      const response = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/crypto-analysis`,
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${import.meta.env.VITE_SUPABASE_ANON_KEY}`,
+          },
+          body: JSON.stringify({
+            coins: selectedCoins,
+            timeframes: selectedTimeframes,
+            type: 'multi',
+          }),
+        }
+      )
+
+      const data = await response.json()
+      if (!data.success) {
+        throw new Error(data.error || 'Analysis failed')
+      }
+
+      setResults(data.data)
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'Unknown error occurred')
     } finally {
       setLoading(false)
     }
@@ -102,11 +152,62 @@ export default function MultiTF() {
         </div>
       </div>
 
+      {error && <div className="error-message">{error}</div>}
+
       <div className="heatmap-container">
-        <div className="placeholder">
-          <p>Select coins and timeframes to view multi-timeframe analysis</p>
-          <p className="text-secondary">Heatmaps will display technical indicators across selected timeframes</p>
-        </div>
+        {!results ? (
+          <div className="placeholder">
+            <p>Select coins and timeframes to view multi-timeframe analysis</p>
+            <p className="text-secondary">Heatmaps will display technical indicators across selected timeframes</p>
+          </div>
+        ) : (
+          <div className="heatmap-grid">
+            {selectedCoins.map(coin => (
+              <div key={coin} className="heatmap-row">
+                <div className="coin-label">{coin}</div>
+                {selectedTimeframes.map(tf => {
+                  const cellData = results.find(r => r.coin === coin && r.timeframe === tf)
+                  if (!cellData) return null
+
+                  let value, displayValue
+                  if (activeTab === 'rsi') {
+                    value = cellData.rsi
+                    displayValue = value.toFixed(1)
+                  } else if (activeTab === 'bb') {
+                    value = cellData.bb_position
+                    displayValue = value.toFixed(2)
+                  } else if (activeTab === 'cci') {
+                    value = cellData.cci
+                    displayValue = value.toFixed(0)
+                  } else if (activeTab === 'change') {
+                    value = cellData.change
+                    displayValue = value.toFixed(2)
+                  } else if (activeTab === 'ema') {
+                    value = ((cellData.ema50 - cellData.close) / cellData.close) * 100
+                    displayValue = value.toFixed(1)
+                  } else if (activeTab === 'sma') {
+                    value = ((cellData.sma50 - cellData.close) / cellData.close) * 100
+                    displayValue = value.toFixed(1)
+                  }
+
+                  const color = getHeatmapColor(value, activeTab)
+
+                  return (
+                    <div
+                      key={`${coin}-${tf}`}
+                      className="heatmap-cell"
+                      style={{ backgroundColor: color }}
+                      title={`${coin} ${tf}: ${displayValue}`}
+                    >
+                      <span className="cell-label">{tf}</span>
+                      <span className="cell-value">{displayValue}</span>
+                    </div>
+                  )
+                })}
+              </div>
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )

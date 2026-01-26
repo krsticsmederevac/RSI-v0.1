@@ -224,6 +224,74 @@
   color: var(--text-secondary);
 }
 
+.error-message {
+  padding: 1rem;
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+  border-radius: 6px;
+  border-left: 3px solid var(--danger-color);
+}
+
+.results-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.results-table thead {
+  background: var(--bg-primary);
+  border-bottom: 2px solid var(--bg-tertiary);
+}
+
+.results-table th {
+  padding: 0.75rem;
+  text-align: left;
+  color: var(--accent-color);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.results-table tbody tr {
+  border-bottom: 1px solid var(--bg-tertiary);
+  transition: background-color 0.2s;
+}
+
+.results-table tbody tr:hover {
+  background-color: var(--bg-primary);
+}
+
+.results-table td {
+  padding: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.results-table .coin-name {
+  font-weight: 600;
+  color: var(--accent-color);
+}
+
+.results-table .positive {
+  color: var(--success-color);
+}
+
+.results-table .negative {
+  color: var(--danger-color);
+}
+
+.results-table .overbought {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+}
+
+.results-table .oversold {
+  background-color: rgba(34, 197, 94, 0.1);
+  color: var(--success-color);
+}
+
+.results-table .extreme {
+  font-weight: 600;
+}
+
 @media (max-width: 768px) {
   .analysis-config {
     flex-direction: column;
